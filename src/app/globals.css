@@ -2,26 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #f7f2ff;
+}
+
+h1 {
+  font-family: var(--font-title);
+}
+
+.selector {
+  background-image: linear-gradient(
+    7deg,
+    #f7f2ff 25.77%,
+    #38d0ce 73.92%,
+    #049a98 88.45%
+  );
+  background-size: cover;
+  background-position: center;
+}
+
+.svg {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.outline-text {
+  text-shadow: 2px 2px 0 #025a4e, -2px -2px 0 #025a4e, 2px -2px 0 #025a4e,
+    -2px 2px 0 #025a4e, 2px 2px 0 #025a4e;
+  color: #f7f2ff;
+}
+
+@media (min-width: 1024px) {
+  .selector {
+    clip-path: polygon(
+      100% 100%,
+      0% 100%,
+      0% 9.92%,
+      3.33% 9.41%,
+      6.67% 8.47%,
+      10% 7.19%,
+      13.33% 5.7%,
+      16.67% 4.13%,
+      20% 2.65%,
+      23.33% 1.4%,
+      26.67% 0.51%,
+      30% 0.05%,
+      33.33% 0.08%,
+      36.67% 0.59%,
+      40% 1.53%,
+      43.33% 2.81%,
+      46.67% 4.3%,
+      50% 5.87%,
+      53.33% 7.35%,
+      56.67% 8.6%,
+      60% 9.49%,
+      63.33% 9.95%,
+      66.67% 9.92%,
+      70% 9.41%,
+      73.33% 8.47%,
+      76.67% 7.19%,
+      80% 5.7%,
+      83.33% 4.13%,
+      86.67% 2.65%,
+      90% 1.4%,
+      93.33% 0.51%,
+      96.67% 0.05%,
+      100% 0.08%
+    );
+  }
 }
