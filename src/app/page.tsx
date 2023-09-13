@@ -40,12 +40,12 @@ export default function Home() {
               </span>
               <span
                 className={clsx(
-                  'block text-3xl lg:text-5xl mt-9 lg:mt-9',
+                  'block text-3xl lg:text-4xl mt-9 lg:mt-9',
                   montserrat.className
                 )}
               >
-                A front-end developer and <br />
-                computer science student.
+                Caffeine-Fueled Front-End Developer <br /> & Computer Science
+                Student 🚀
               </span>
             </h1>
           </div>
