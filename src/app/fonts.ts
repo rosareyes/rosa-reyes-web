@@ -18,7 +18,7 @@ export const playfair_display = Playfair_Display({
 export const montserrat = Montserrat({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-title',
+  weight: ['200', '400', '600', '700'],
 });
 
 export const pacifico = Pacifico({ weight: '400', subsets: ['latin'] });

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 import Image from 'next/image';
 import { playfair_display, montserrat, pacifico, poppings } from './fonts';
@@ -22,10 +23,21 @@ export default function Home() {
   console.log(router);
   return (
     <div>
-      <main className="flex flex-col items-center justify-betweenbg-[#F7F2FF] dark:bg-[#8D6B94]">
+      <main className="overflow-hidden relative flex flex-col items-center justify-between bg-[#F7F2FF] dark:bg-gradient-to-b dark:from-purple-400 dark:via-purple-500 dark:to-purple-500">
         <Navbar />
+        <img
+          className="opacity-40 absolute left-0 top-0 w-full h-auto z-0 dark:hidden"
+          src="/hero-light-bg.png"
+          alt="bg"
+        />
+        <img
+          className="opacity-80 absolute left-0 top-0 w-full h-auto z-0 hidden dark:block"
+          src="/hero-dark-bg.png"
+          alt="bg"
+        />
+
         <div className="justify-center items-center text-center lg:min-h-[calc(100vh-200px)] px-9 lg:px-24">
-          <div className="py-24 transition-colors dark:text-white text-[#025a4e] relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
+          <div className="py-24 transition-colors dark:text-dimWhite text-[#025a4e] relative flex place-items-center ">
             <h1>
               <span
                 style={{
@@ -40,7 +52,7 @@ export default function Home() {
               </span>
               <span
                 className={clsx(
-                  'block text-3xl lg:text-4xl mt-9 lg:mt-9',
+                  'block text-xl lg:text-3xl mt-9 lg:mt-8',
                   montserrat.className
                 )}
               >
@@ -67,22 +79,25 @@ export default function Home() {
           <div className="lg:px-24  px-9 grid-cols-1 lg:grid-cols-3 grid justify-center items-center text-center gap-9 justify-items-center">
             <div className="justify-center col-span-1 transition-colors dark:text-white text-[#025a4e] relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
               <span className={clsx(poppings.className, 'font-normal text-lg')}>
-                hey fellow humans of the internet! I&apos;m just a gal on a
-                mission to conquer the digital world, armed with nothing but a
-                noisy keyboard and a trusty cup of coffee 👩‍💻☕ <br />
+                I&apos;m just a gal on a mission to conquer the digital world,
+                armed with nothing but a noisy keyboard and a trusty cup of
+                coffee 👩‍💻☕ <br />
                 <br />
                 By day, I&apos;m a part-time computer science student and a
                 front-end developer, crafting code that brings websites to life.
                 By night, you&apos;ll often find me rocking out at music
-                concerts, soaking up the energy of live performances and having
-                the time of my life.
+                concerts.
               </span>
             </div>
 
             <div className="order-first lg:order-none max-w-sm lg:max-w-none w-full relative pt-[40px] flex justify-center mb-[50px]">
               <img
-                className="max-w-sm lg:max-w-none w-full h-auto"
-                src="rosarosa.png"
+                className="dark:hidden max-w-sm lg:max-w-none w-full h-auto "
+                src="rosa-light.png"
+              />
+              <img
+                className="hidden dark:block max-w-sm lg:max-w-none w-full h-auto"
+                src="rosa-dark.png"
               />
               <div className="absolute top-0 right-0">
                 <span className="mb-2 ">coffee addict</span>
@@ -221,15 +236,7 @@ export default function Home() {
                 turning caffeine into code and my ability to binge-watch TV
                 shows without blinking, I&apos;m also a dedicated and
                 hardworking individual who believes in giving my best to
-                everything I do. Each day is a learning adventure, and I embrace
-                the opportunity to grow and evolve, both personally and
-                professionally. 🌱
-                <br />
-                <br />
-                Whether I&apos;m in the library studying for my computer science
-                degree, or creating digital magic as a front-end developer, one
-                thing&apos;s for sure: I bring a whole lotta dedication to
-                everything I do. 🌟
+                everything I do.🌱
               </span>
             </div>
           </div>

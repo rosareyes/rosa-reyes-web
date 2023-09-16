@@ -8,7 +8,23 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'hero-dark-bg': "url('/hero-dark-bg.png')",
+        'hero-light-bg': "url('/hero-light-bg.png')",
+      },
+      colors: {
+        dimWhite: '#e2e8f0',
+        purple: {
+          100: '#ECC5F5',
+          150: '#8D6B94',
+          200: '#64336F',
+          300: '#3D044A',
+          400: '#22022A',
+          500: '#1E0025',
+        },
+      },
+    },
   },
   plugins: [],
 };

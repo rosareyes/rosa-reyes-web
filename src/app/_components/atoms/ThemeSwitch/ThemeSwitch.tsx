@@ -25,7 +25,7 @@ export const ThemeSwitch = () => {
       whileTap={{ rotate: 360 }}
       whileHover={{ scale: 1.2 }}
       onClick={toggleSwitch}
-      className="cursor-pointer flex h-[24px] w-[24px] items-center justify-center rounded-full dark:bg-black/90 bg-zinc-500"
+      className="cursor-pointer flex h-[24px] w-[24px] items-center justify-center rounded-full dark:bg-[#64336F] bg-[#00553D]"
       layout
       transition={spring}
     >

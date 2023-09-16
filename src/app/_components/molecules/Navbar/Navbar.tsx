@@ -1,6 +1,8 @@
 'use client';
+import clsx from 'clsx';
 import { ThemeSwitch } from '../../atoms/ThemeSwitch';
 import { useState } from 'react';
+import { montserrat } from '@/app/fonts';
 
 export const navLinks = [
   {
@@ -30,15 +32,23 @@ export const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <nav className="w-full flex py-6 justify-between items-center navbar bg-transparent">
+    <nav className="w-full flex py-6 justify-between items-center navbar bg-transparent z-10">
       {/* Desktop Navigation */}
-      <ul className="list-none sm:flex hidden justify-end items-center flex-1">
+      <ul
+        className={clsx(
+          montserrat.className,
+          'list-none sm:flex hidden justify-end items-center flex-1 text-xl font-semibold'
+        )}
+      >
         {navLinks.map((nav, index) => (
           <li
             key={nav.id}
-            className={`font-poppins font-normal cursor-pointer text-[16px] ${
-              active === nav.title ? 'text-white' : 'text-dimWhite'
-            } ${index === navLinks.length ? 'mr-0' : 'mr-10'}`}
+            className={clsx(
+              `cursor-pointer text-[16px] dark:text-dimWhite text-[#003D2C] ${
+                index === navLinks.length ? 'mr-0' : 'mr-10'
+              }`,
+              { 'font-bold': active === nav.title }
+            )}
             onClick={() => setActive(nav.title)}
           >
             <a href={`#${nav.id}`}>{nav.title}</a>
