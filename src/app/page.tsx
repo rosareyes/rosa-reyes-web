@@ -3,10 +3,12 @@
 import Image from 'next/image';
 import { playfair_display, montserrat, pacifico, poppings } from './fonts';
 import clsx from 'clsx';
-import { motion } from 'framer-motion';
+import { motion, useCycle, useScroll, useTransform } from 'framer-motion';
 import { ThemeSwitch } from './_components/atoms/ThemeSwitch/ThemeSwitch';
 import { Navbar } from './_components/molecules/Navbar/Navbar';
 import { useRouter } from 'next/navigation';
+import ExperienceCard from './_components/molecules/Cards/Experience';
+import { useEffect, useRef } from 'react';
 
 export default function Home() {
   const icon = {
@@ -21,23 +23,26 @@ export default function Home() {
   };
   const router = useRouter();
   console.log(router);
+
+  const containerRef = useRef(null);
+
   return (
     <div>
-      <main className="overflow-hidden relative flex flex-col items-center justify-between bg-[#F7F2FF] dark:bg-gradient-to-b dark:from-purple-400 dark:via-purple-500 dark:to-purple-500">
+      <main className="relative flex flex-col items-center justify-between overflow-hidden bg-[#F7F2FF] dark:bg-gradient-to-b dark:from-purple-400 dark:via-purple-500 dark:to-purple-500">
         <Navbar />
         <img
-          className="opacity-40 absolute left-0 top-0 w-full h-auto z-0 dark:hidden"
+          className="absolute left-0 top-0 z-0 h-auto w-full opacity-40 dark:hidden"
           src="/hero-light-bg.png"
           alt="bg"
         />
         <img
-          className="opacity-80 absolute left-0 top-0 w-full h-auto z-0 hidden dark:block"
+          className="absolute left-0 top-0 z-0 hidden h-auto w-full opacity-80 dark:block"
           src="/hero-dark-bg.png"
           alt="bg"
         />
 
-        <div className="justify-center items-center text-center lg:min-h-[calc(100vh-200px)] px-9 lg:px-24">
-          <div className="py-24 transition-colors dark:text-dimWhite text-[#025a4e] relative flex place-items-center ">
+        <div className="items-center justify-center px-9 text-center lg:min-h-[calc(100vh-200px)] lg:px-24">
+          <div className="relative flex place-items-center py-24 text-[#025a4e] transition-colors dark:text-dimWhite ">
             <h1>
               <span
                 style={{
@@ -45,24 +50,33 @@ export default function Home() {
                 }}
                 className={clsx(
                   pacifico.className,
-                  'font-bold block leading-none lg:leading-normal'
+                  'block font-bold leading-none lg:leading-normal',
                 )}
               >
                 Hi! I&apos;m <span className="underline">Rosa.</span>
               </span>
               <span
                 className={clsx(
-                  'block text-xl lg:text-3xl mt-9 lg:mt-8',
-                  montserrat.className
+                  'mt-9 block text-xl lg:mt-8 lg:text-3xl',
+                  montserrat.className,
                 )}
               >
                 Caffeine-Fueled Front-End Developer <br /> & Computer Science
-                Student 🚀
+                Student{' '}
+                <motion.button
+                  className="inline"
+                  animate={{
+                    scale: [1, 2, 2, 1, 1],
+                    rotate: [0, 0, 270, 270, 0],
+                  }}
+                >
+                  🚀
+                </motion.button>
               </span>
             </h1>
           </div>
         </div>
-        <div className="py-9 lg:py-24 selector text-center" style={{}}>
+        <div className="selector py-9 text-center lg:py-24">
           <h2>
             <span
               style={{
@@ -70,15 +84,17 @@ export default function Home() {
               }}
               className={clsx(
                 pacifico.className,
-                'font-bold block text-[#001E16] pb-8 mt-12'
+                'mt-12 block pb-8 font-bold text-[#001E16] dark:text-white-50',
               )}
             >
               about me!
             </span>
           </h2>
-          <div className="lg:px-24  px-9 grid-cols-1 lg:grid-cols-3 grid justify-center items-center text-center gap-9 justify-items-center">
-            <div className="justify-center col-span-1 transition-colors dark:text-white text-[#025a4e] relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-              <span className={clsx(poppings.className, 'font-normal text-lg')}>
+          <div className="grid  grid-cols-1 items-center justify-center justify-items-center gap-9 px-9 text-center lg:grid-cols-3 lg:px-24">
+            <div className="before:bg-gradient-radial before:from-white after:bg-gradient-conic relative col-span-1 flex place-items-center justify-center text-[#025a4e] transition-colors before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] dark:text-slate-200 before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
+              <span
+                className={clsx(poppings.className, 'text-lg font-normal ')}
+              >
                 I&apos;m just a gal on a mission to conquer the digital world,
                 armed with nothing but a noisy keyboard and a trusty cup of
                 coffee 👩‍💻☕ <br />
@@ -90,17 +106,22 @@ export default function Home() {
               </span>
             </div>
 
-            <div className="order-first lg:order-none max-w-sm lg:max-w-none w-full relative pt-[40px] flex justify-center mb-[50px]">
+            <motion.div
+              ref={containerRef}
+              className="relative order-first mb-[50px] flex w-full max-w-sm justify-center pt-[40px] lg:order-none lg:max-w-none"
+            >
               <img
-                className="dark:hidden max-w-sm lg:max-w-none w-full h-auto "
+                className="h-auto w-full max-w-sm dark:hidden lg:max-w-2xl "
                 src="rosa-light.png"
+                alt="front-end-dev"
               />
               <img
-                className="hidden dark:block max-w-sm lg:max-w-none w-full h-auto"
+                className="hidden h-auto w-full max-w-sm dark:block lg:max-w-2xl"
                 src="rosa-dark.png"
+                alt="front-end-dev"
               />
-              <div className="absolute top-0 right-0">
-                <span className="mb-2 ">coffee addict</span>
+              <div className="absolute right-0 top-0">
+                <span className="mb-2 dark:text-white-50">coffee addict</span>
                 <motion.svg
                   width="64"
                   height="45"
@@ -133,7 +154,9 @@ export default function Home() {
                 </motion.svg>
               </div>
               <div className="absolute bottom-[0px] left-0">
-                <span className="-mb-1 flex -ml-5">gamer</span>
+                <span className="-mb-1 -ml-5 flex dark:text-white-50">
+                  gamer
+                </span>
                 <motion.svg
                   width="83"
                   height="41"
@@ -194,10 +217,10 @@ export default function Home() {
                     }}
                   />
                 </motion.svg>
-                <span className="">huh?</span>
+                <span className="dark:text-white-50">huh?</span>
               </div>
               <div className="absolute bottom-[250px] left-0">
-                <span className="flex mb-2 -ml-5">geek</span>
+                <span className="-ml-5 mb-2 flex dark:text-white-50">geek</span>
                 <motion.svg
                   className={'-scale-x-100'}
                   width="64"
@@ -229,9 +252,9 @@ export default function Home() {
                   />
                 </motion.svg>
               </div>
-            </div>
-            <div className="justify-center col-span-1 transition-colors dark:text-white text-[#025a4e] relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-              <span className={clsx(poppings.className, 'font-normal text-lg')}>
+            </motion.div>
+            <div className="before:bg-gradient-radial before:from-white after:bg-gradient-conic relative col-span-1 flex place-items-center justify-center text-[#025a4e] transition-colors before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] dark:text-slate-200 before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
+              <span className={clsx(poppings.className, 'text-lg font-normal')}>
                 <strong>So, why me?</strong> besides my impressive talent for
                 turning caffeine into code and my ability to binge-watch TV
                 shows without blinking, I&apos;m also a dedicated and
@@ -241,7 +264,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="text-center px-24 py-14">
+        <div className="px-24 py-14 text-center " id="experience">
           <h2>
             <span
               style={{
@@ -249,23 +272,59 @@ export default function Home() {
               }}
               className={clsx(
                 pacifico.className,
-                'font-bold block text-[#001E16] pb-8'
+                'block pb-14 font-bold text-[#001E16] dark:text-white-50',
               )}
             >
-              projects
+              experience
             </span>
           </h2>
-          <span>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </span>
+          <div className="-mx-2 flex flex-wrap pb-4 md:-mx-4">
+            <div className="flex w-full px-2 pb-4 md:w-1/3 md:px-4 md:pb-0">
+              <ExperienceCard
+                title="Front-End Developer"
+                subtitle="Stylib"
+                year="2022 - Present"
+                secondary
+                stack={
+                  <>
+                    <p>HTML · CSS · NextJS</p>
+                    <p>Javascript · ReactJS</p>
+                    <p>Typescript · Jest · Cypress</p>
+                  </>
+                }
+              />
+            </div>
+            <div className="flex w-full px-2 pb-4 md:w-1/3 md:px-4 md:pb-0">
+              <ExperienceCard
+                title="Front-End Developer"
+                subtitle="qreuz"
+                year="2021 - 2022"
+                stack={
+                  <>
+                    <p>HTML · CSS · Material UI</p>
+                    <p>Javascript · ReactJS</p>
+                    <p>NodeJS </p>
+                  </>
+                }
+              />
+            </div>
+            <div className="flex w-full px-2 md:w-1/3 md:px-4">
+              <ExperienceCard
+                title="Freelance Web Developer"
+                subtitle="upwork"
+                year="2020 - 2021"
+                stack={
+                  <>
+                    <p>HTML · CSS · Figma</p>
+                    <p>Javascript · ReactJS</p>
+                    <p>Typescript · Python · Wordpress</p>
+                  </>
+                }
+              />
+            </div>
+          </div>
         </div>
-        <div className="text-center px-24 py-14">
+        <div className="px-24 py-14 text-center">
           <h2>
             <span
               style={{
@@ -273,7 +332,7 @@ export default function Home() {
               }}
               className={clsx(
                 pacifico.className,
-                'font-bold block text-[#001E16] pb-8'
+                'block pb-8 font-bold text-[#001E16]',
               )}
             >
               🌻virtual garden🌼
@@ -289,7 +348,7 @@ export default function Home() {
             culpa qui officia deserunt mollit anim id est laborum.
           </span>
         </div>
-        <div className="text-center px-24 py-14">
+        <div className="px-24 py-14 text-center">
           <h2>
             <span
               style={{
@@ -297,7 +356,7 @@ export default function Home() {
               }}
               className={clsx(
                 pacifico.className,
-                'font-bold block text-[#001E16] pb-8'
+                'block pb-8 font-bold text-[#001E16]',
               )}
             >
               contact me

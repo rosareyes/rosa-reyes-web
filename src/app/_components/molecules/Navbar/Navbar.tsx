@@ -10,12 +10,12 @@ export const navLinks = [
     title: 'Home',
   },
   {
-    id: 'features',
+    id: 'about',
     title: 'About Me',
   },
   {
-    id: 'product',
-    title: 'Blog',
+    id: 'experience',
+    title: 'Experience',
   },
   {
     id: 'clients',
@@ -32,22 +32,22 @@ export const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <nav className="w-full flex py-6 justify-between items-center navbar bg-transparent z-10">
+    <nav className="navbar z-10 flex w-full flex-wrap items-center justify-between bg-transparent py-6">
       {/* Desktop Navigation */}
       <ul
         className={clsx(
           montserrat.className,
-          'list-none sm:flex hidden justify-end items-center flex-1 text-xl font-semibold'
+          'flex w-full  flex-1 list-none items-center justify-end text-xl font-semibold',
         )}
       >
         {navLinks.map((nav, index) => (
           <li
             key={nav.id}
             className={clsx(
-              `cursor-pointer text-[16px] dark:text-dimWhite text-[#003D2C] ${
+              `cursor-pointer text-[16px] text-[#003D2C] dark:text-dimWhite ${
                 index === navLinks.length ? 'mr-0' : 'mr-10'
               }`,
-              { 'font-bold': active === nav.title }
+              { 'font-bold': active === nav.title },
             )}
             onClick={() => setActive(nav.title)}
           >
@@ -60,11 +60,13 @@ export const Navbar = () => {
       </ul>
 
       {/* Mobile Navigation */}
-      <div className="sm:hidden flex flex-1 justify-end items-center">
+      {/* <div className="flex flex-1 items-center justify-end sm:hidden"> */}
+
+      <div className=" hidden flex-1 items-center justify-end">
         <img
           /*  src={toggle ? close : menu} */
           alt="menu"
-          className="w-[28px] h-[28px] object-contain"
+          className="h-[28px] w-[28px] object-contain"
           onClick={() => setToggle(!toggle)}
         />
 
@@ -72,13 +74,13 @@ export const Navbar = () => {
         <div
           className={`${
             !toggle ? 'hidden' : 'flex'
-          } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
+          } bg-black-gradient sidebar absolute right-0 top-20 mx-4 my-2 min-w-[140px] rounded-xl p-6`}
         >
-          <ul className="list-none flex justify-end items-start flex-1 flex-col">
+          <ul className="flex flex-1 list-none flex-col items-start justify-end">
             {navLinks.map((nav, index) => (
               <li
                 key={nav.id}
-                className={`font-poppins font-medium cursor-pointer text-[16px] ${
+                className={`font-poppins cursor-pointer text-[16px] font-medium ${
                   active === nav.title ? 'text-white' : 'text-dimWhite'
                 } ${index === navLinks.length - 1 ? 'mb-0' : 'mb-4'}`}
                 onClick={() => setActive(nav.title)}
