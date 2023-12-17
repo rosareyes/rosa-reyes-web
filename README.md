@@ -1,11 +1,10 @@
 <p align="center">
-  <a href="https://rosa-reyes-web.vercel.app/">
-    <img src='https://github.com/rosareyes/rosa-reyes-web/assets/63470281/ef2a2ae0-9a18-4d4e-b758-995d5717d6fd' height='200px'>
-      </a>
-    <h1 align="center">Personal Website</h1>
-    <a href="https://rosa-reyes-web.vercel.app/"><p align="center">Live demo</p>  </a>
-
+    <h1 align="center">Rosa Reyes website v1</h1>
+    <a href="https://rosa-reyes-web.vercel.app/"><p align="center">Live demo</a>
 </p>
+<div align="center">
+  <img align="center" src='https://github.com/rosareyes/rosa-reyes-web/assets/63470281/ca4dc1af-703b-4336-9009-06793f142420' height='200px'>
+</div>
 
 ## Contact
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rosaareyesc/)
@@ -32,3 +31,17 @@
 - [ ] **Performance Optimization**: Optimize loading times and overall performance.
 - [ ] **Analytics Integration**: Implement tools to track website traffic and user engagement.
 - [ ] **Feedback Mechanism**: Create a way for visitors to leave feedback or comments.
+
+
+## 🎨 color codes
+
+| Color          | Hex                                                                |
+| -------------- | ------------------------------------------------------------------ |
+| Tropical Rain Forest           | ![#007D5A](https://via.placeholder.com/10/007D5A?text=+) `#007D5A` |
+| Aqua Deep      | ![#00553D](https://via.placeholder.com/10/00553D?text=+) `#00553D` |
+| Niagara  | ![#049A98](https://via.placeholder.com/10/049A98?text=+) `#049A98` |
+| Trendy Pink          | ![#8D6B94](https://via.placeholder.com/10/8D6B94?text=+) `#8D6B94` |
+| Black Rock    | ![#22022A](https://via.placeholder.com/10/22022A?text=+) `#22022A` |
+| Clairvoyant | ![#3D044A](https://via.placeholder.com/10/3D044A?text=+) `#3D044A` |
+| Moon Raker          | ![#ECC5F5](https://via.placeholder.com/10/ECC5F5?text=+) `#ECC5F5` |
+| Magnolia          | ![#F7F2FF](https://via.placeholder.com/10/F7F2FF?text=+) `#F7F2FF` |
