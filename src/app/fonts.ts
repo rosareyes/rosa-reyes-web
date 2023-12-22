@@ -3,6 +3,7 @@ import {
   Playfair_Display,
   Montserrat,
   Pacifico,
+  NTR,
 } from 'next/font/google';
 
 export const poppings = Poppins({
@@ -22,3 +23,5 @@ export const montserrat = Montserrat({
 });
 
 export const pacifico = Pacifico({ weight: '400', subsets: ['latin'] });
+
+export const ntr = NTR({ weight: '400', subsets: ['latin'] });

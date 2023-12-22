@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
 import Image from 'next/image';
-import { playfair_display, montserrat, pacifico, poppings } from './fonts';
+import { playfair_display, montserrat, pacifico, poppings, ntr } from './fonts';
 import clsx from 'clsx';
 import { motion, useCycle, useScroll, useTransform } from 'framer-motion';
-import { ThemeSwitch } from './_components/atoms/ThemeSwitch/ThemeSwitch';
-import { Navbar } from './_components/molecules/Navbar/Navbar';
+import { ThemeSwitch } from './components/atoms/ThemeSwitch/ThemeSwitch';
+import { Navbar } from './components/molecules/Navbar/Navbar';
 import { useRouter } from 'next/navigation';
-import ExperienceCard from './_components/molecules/Cards/Experience';
+import ExperienceCard from './components/molecules/Cards/Experience';
 import { useEffect, useRef } from 'react';
 
 export default function Home() {
@@ -28,7 +28,7 @@ export default function Home() {
 
   return (
     <div>
-      <main className="relative flex flex-col items-center justify-between overflow-hidden bg-[#F7F2FF] dark:bg-gradient-to-b dark:from-purple-400 dark:via-purple-500 dark:to-purple-500">
+      <main className="relative flex flex-col items-center justify-between overflow-hidden bg-[#F7F2FF] dark:bg-gradient-to-b dark:from-purple-500 dark:via-purple-500 dark:to-purple-500">
         <Navbar />
         <img
           className="absolute left-0 top-0 z-0 h-auto w-full opacity-40 dark:hidden"
@@ -36,13 +36,13 @@ export default function Home() {
           alt="bg"
         />
         <img
-          className="absolute left-0 top-0 z-0 hidden h-auto w-full opacity-80 dark:block"
+          className="absolute left-0 top-0 z-0 hidden h-auto w-full opacity-50 dark:block"
           src="/hero-dark-bg.png"
           alt="bg"
         />
 
         <div className="items-center justify-center px-9 text-center lg:min-h-[calc(100vh-200px)] lg:px-24">
-          <div className="relative flex place-items-center py-24 text-[#025a4e] transition-colors dark:text-dimWhite ">
+          <div className="relative flex place-items-center py-24 text-[#025a4e] transition-colors">
             <h1>
               <span
                 style={{
@@ -50,19 +50,19 @@ export default function Home() {
                 }}
                 className={clsx(
                   pacifico.className,
-                  'block font-bold leading-none lg:leading-normal',
+                  'block font-bold leading-none dark:text-purple-100 lg:leading-normal',
                 )}
               >
-                Hi! I&apos;m <span className="underline">Rosa.</span>
+                Hi, it&apos;s <span className="underline">Rosa.</span>
               </span>
               <span
                 className={clsx(
-                  'mt-9 block text-xl lg:mt-8 lg:text-3xl',
-                  montserrat.className,
+                  'mt-9 block text-xl dark:text-purple-200 lg:mt-5 lg:text-3xl',
+                  ntr.className,
                 )}
               >
-                Caffeine-Fueled Front-End Developer <br /> & Computer Science
-                Student{' '}
+                I&apos;m a computer science student & <br /> software engineer
+                based in Madrid.
                 <motion.button
                   className="inline"
                   animate={{
@@ -76,36 +76,8 @@ export default function Home() {
             </h1>
           </div>
         </div>
-        <div className="selector py-9 text-center lg:py-24">
-          <h2>
-            <span
-              style={{
-                fontSize: '70px',
-              }}
-              className={clsx(
-                pacifico.className,
-                'mt-12 block pb-8 font-bold text-[#001E16] dark:text-white-50',
-              )}
-            >
-              about me!
-            </span>
-          </h2>
+        <div className="selector py-9 text-center dark:bg-gradient-to-b  dark:from-purple-500 dark:via-purple-500 dark:to-purple-500 lg:py-24">
           <div className="grid  grid-cols-1 items-center justify-center justify-items-center gap-9 px-9 text-center lg:grid-cols-3 lg:px-24">
-            <div className="before:bg-gradient-radial before:from-white after:bg-gradient-conic relative col-span-1 flex place-items-center justify-center text-[#025a4e] transition-colors before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] dark:text-slate-200 before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-              <span
-                className={clsx(poppings.className, 'text-lg font-normal ')}
-              >
-                I&apos;m just a gal on a mission to conquer the digital world,
-                armed with nothing but a noisy keyboard and a trusty cup of
-                coffee 👩‍💻☕ <br />
-                <br />
-                By day, I&apos;m a part-time computer science student and a
-                front-end developer, crafting code that brings websites to life.
-                By night, you&apos;ll often find me rocking out at music
-                concerts.
-              </span>
-            </div>
-
             <motion.div
               ref={containerRef}
               className="relative order-first mb-[50px] flex w-full max-w-sm justify-center pt-[40px] lg:order-none lg:max-w-none"
@@ -128,10 +100,9 @@ export default function Home() {
                   viewBox="0 0 64 45"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className={'relative'}
+                  className={'relative stroke-blue-100 dark:stroke-slate-300'}
                   style={{
                     overflow: 'visible',
-                    stroke: '#C79FBE',
                     strokeWidth: 2,
                     strokeLinejoin: 'round',
                     strokeLinecap: 'round',
@@ -161,11 +132,11 @@ export default function Home() {
                   width="83"
                   height="41"
                   viewBox="0 0 83 41"
+                  className={'stroke-blue-100 dark:stroke-slate-300'}
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                   style={{
                     overflow: 'visible',
-                    stroke: '#C79FBE',
                     strokeWidth: 2,
                     strokeLinejoin: 'round',
                     strokeLinecap: 'round',
@@ -189,6 +160,7 @@ export default function Home() {
               </div>
               <div className="absolute -bottom-[50px] -right-[0]">
                 <motion.svg
+                  className={'stroke-blue-100 dark:stroke-slate-300'}
                   width="30"
                   height="71"
                   viewBox="0 0 30 71"
@@ -196,7 +168,6 @@ export default function Home() {
                   xmlns="http://www.w3.org/2000/svg"
                   style={{
                     overflow: 'visible',
-                    stroke: '#C79FBE',
                     strokeWidth: 2,
                     strokeLinejoin: 'round',
                     strokeLinecap: 'round',
@@ -222,7 +193,9 @@ export default function Home() {
               <div className="absolute bottom-[250px] left-0">
                 <span className="-ml-5 mb-2 flex dark:text-white-50">geek</span>
                 <motion.svg
-                  className={'-scale-x-100'}
+                  className={
+                    '-scale-x-100 stroke-blue-100 dark:stroke-slate-300'
+                  }
                   width="64"
                   height="45"
                   viewBox="0 0 64 45"
@@ -230,7 +203,6 @@ export default function Home() {
                   xmlns="http://www.w3.org/2000/svg"
                   style={{
                     overflow: 'visible',
-                    stroke: '#C79FBE',
                     strokeWidth: 2,
                     strokeLinejoin: 'round',
                     strokeLinecap: 'round',
@@ -253,7 +225,37 @@ export default function Home() {
                 </motion.svg>
               </div>
             </motion.div>
-            <div className="before:bg-gradient-radial before:from-white after:bg-gradient-conic relative col-span-1 flex place-items-center justify-center text-[#025a4e] transition-colors before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] dark:text-slate-200 before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
+            <div className="before:bg-gradient-radial before:from-white after:bg-gradient-conic relative col-span-2 flex flex-col text-left text-[#025a4e] transition-colors before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] dark:text-slate-200 before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
+              <h2>
+                <span
+                  style={{
+                    fontSize: '70px',
+                  }}
+                  className={clsx(
+                    pacifico.className,
+                    'mt-12 block pb-8 font-bold text-[#001E16] dark:text-purple-100',
+                  )}
+                >
+                  about me!
+                </span>
+              </h2>
+              <span
+                className={clsx(
+                  poppings.className,
+                  'text-lg font-normal dark:text-purple-200',
+                )}
+              >
+                I&apos;m just a gal on a mission to conquer the digital world,
+                armed with nothing but a noisy keyboard and a trusty cup of
+                coffee 👩‍💻☕ <br />
+                <br />
+                By day, I&apos;m a part-time computer science student and a
+                front-end developer, crafting code that brings websites to life.
+                By night, you&apos;ll often find me rocking out at music
+                concerts.
+              </span>
+            </div>
+            {/*             <div className="before:bg-gradient-radial before:from-white after:bg-gradient-conic relative col-span-1 flex place-items-center justify-center text-[#025a4e] transition-colors before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] dark:text-slate-200 before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
               <span className={clsx(poppings.className, 'text-lg font-normal')}>
                 <strong>So, why me?</strong> besides my impressive talent for
                 turning caffeine into code and my ability to binge-watch TV
@@ -261,7 +263,7 @@ export default function Home() {
                 hardworking individual who believes in giving my best to
                 everything I do.🌱
               </span>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="px-24 py-14 text-center " id="experience">
