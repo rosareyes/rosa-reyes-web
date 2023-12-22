@@ -2,10 +2,9 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { RiMoonClearFill, RiSunFill } from 'react-icons/ri';
-
+import { SunIcon, MoonIcon } from '@heroicons/react/24/solid';
 export const ThemeSwitch = () => {
-  const [isOn, setIsOn] = useState(false);
+  const [isOn, setIsOn] = useState(true);
 
   const toggleSwitch = () => {
     setIsOn(!isOn);
@@ -25,14 +24,15 @@ export const ThemeSwitch = () => {
       whileTap={{ rotate: 360 }}
       whileHover={{ scale: 1.2 }}
       onClick={toggleSwitch}
-      className="cursor-pointer flex h-[24px] w-[24px] items-center justify-center rounded-full dark:bg-[#64336F] bg-[#00553D]"
+      className="flex h-[24px] w-[24px] cursor-pointer items-center justify-center rounded-full bg-[#00553D] dark:bg-blue-200"
       layout
       transition={spring}
+      role="button"
     >
       {isOn ? (
-        <RiSunFill className="h-4 w-4 text-yellow-300" />
+        <SunIcon className="h-4 w-4 text-yellow-100" />
       ) : (
-        <RiMoonClearFill className="h-4 w-4 text-slate-200" />
+        <MoonIcon className="h-4 w-4 text-slate-200" />
       )}
     </motion.div>
   );

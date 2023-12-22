@@ -1,5 +1,0 @@
-{
-    "rewrites": [
-      {"source": "/brooklyn-burger", "destination": "https://brooklyn-burger-web.vercel.app/"}
-      ]
-  }

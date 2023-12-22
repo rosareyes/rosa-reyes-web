@@ -4,11 +4,15 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: #f7f2ff;
 }
 
 h1 {
   font-family: var(--font-title);
+}
+
+a:hover {
+  color: #ff7d45;
+  cursor: pointer;
 }
 
 .selector {
@@ -23,14 +27,7 @@ h1 {
 }
 
 .dark .selector {
-  background-image: linear-gradient(
-    355deg,
-    #22022a 31.35%,
-    #60286d 77.64%,
-    #3d044a 91.45%
-  );
-  background-size: cover;
-  background-position: center;
+  background-image: none;
 }
 
 .svg {
@@ -40,8 +37,12 @@ h1 {
 }
 
 .outline-text {
-  text-shadow: 2px 2px 0 #025a4e, -2px -2px 0 #025a4e, 2px -2px 0 #025a4e,
-    -2px 2px 0 #025a4e, 2px 2px 0 #025a4e;
+  text-shadow:
+    2px 2px 0 #025a4e,
+    -2px -2px 0 #025a4e,
+    2px -2px 0 #025a4e,
+    -2px 2px 0 #025a4e,
+    2px 2px 0 #025a4e;
   color: #f7f2ff;
 }
 
