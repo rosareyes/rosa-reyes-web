@@ -4,6 +4,7 @@ import {
   Montserrat,
   Pacifico,
   NTR,
+  Inter,
 } from 'next/font/google';
 
 export const poppings = Poppins({
@@ -25,3 +26,8 @@ export const montserrat = Montserrat({
 export const pacifico = Pacifico({ weight: '400', subsets: ['latin'] });
 
 export const ntr = NTR({ weight: '400', subsets: ['latin'] });
+
+export const inter = Inter({
+  weight: ['200', '400', '600', '700'],
+  subsets: ['latin'],
+});

@@ -32,21 +32,22 @@ export const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <nav className="navbar z-10 flex w-full flex-wrap items-center justify-between bg-transparent py-6">
+    <nav
+      style={{ transform: 'translate(0, -50%)' }}
+      className="navbar fixed right-0 top-1/2 z-10 flex translate-y--2/4 flex-wrap items-end justify-center bg-transparent px-6"
+    >
       {/* Desktop Navigation */}
       <ul
         className={clsx(
           montserrat.className,
-          'flex w-full  flex-1 list-none items-center justify-end text-xl font-semibold',
+          'flex flex-1 list-none flex-col items-end justify-end text-xl font-semibold',
         )}
       >
         {navLinks.map((nav, index) => (
           <li
             key={nav.id}
             className={clsx(
-              `cursor-pointer text-[16px] text-[#003D2C] dark:text-dimWhite ${
-                index === navLinks.length ? 'mr-0' : 'mr-10'
-              }`,
+              `cursor-pointer text-[16px] text-[#003D2C] dark:text-dimWhite `,
               { 'font-bold': active === nav.title },
             )}
             onClick={() => setActive(nav.title)}
@@ -54,7 +55,7 @@ export const Navbar = () => {
             <a href={`#${nav.id}`}>{nav.title}</a>
           </li>
         ))}
-        <li className="mr-10">
+        <li className="mt-2">
           <ThemeSwitch />
         </li>
       </ul>

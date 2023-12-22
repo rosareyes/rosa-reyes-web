@@ -4,11 +4,15 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: #f7f2ff;
 }
 
 h1 {
   font-family: var(--font-title);
+}
+
+a:hover {
+  color: #ff7d45;
+  cursor: pointer;
 }
 
 .selector {

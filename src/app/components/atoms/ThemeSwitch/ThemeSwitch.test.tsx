@@ -3,5 +3,6 @@ import { ThemeSwitch } from './ThemeSwitch';
 
 test('ThemeSwitch starts in light mode', () => {
   render(<ThemeSwitch />);
-  screen.getByRole('button', { name: /light mode/i });
+  const buttonElement = screen.getByRole('button');
+  expect(buttonElement).toHaveClass('bg-[#00553D]');
 });
