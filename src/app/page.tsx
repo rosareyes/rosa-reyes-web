@@ -2,7 +2,6 @@
 import { useRef } from 'react';
 import { inter, ntr } from './fonts';
 import React from 'react';
-import { Rotate, Fade } from 'react-awesome-reveal';
 import clsx from 'clsx';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { SiUpwork } from 'react-icons/si';
@@ -51,7 +50,7 @@ export default function Home() {
               <span className="underline underline-offset-8 dark:decoration-orange-100">
                 Rosa
               </span>
-              <Rotate className="inline-block">.</Rotate>
+              .
             </span>
           </h1>
           <h2
@@ -87,39 +86,38 @@ export default function Home() {
         >
           <div className="col-span-1 flex w-full flex-col text-left text-green-450 transition-colors">
             <Subtitle subtitle="about me" />
-            <Fade>
-              <span
-                className={clsx(
-                  inter.className,
-                  'text-md max-w-xl font-normal dark:text-blue-200 lg:text-lg',
-                )}
-              >
-                I&apos;m a passionate software enthusiast in Madrid, on a
-                mission to shape the digital landscape. My tools? A{' '}
-                <span className="italic">really</span> loud keyboard and my
-                trusty cup of coffee 👩‍💻☕
-                <br /> <br />
-                By day, I&apos;m a part-time{' '}
-                <span className="text-green-500 dark:text-blue-100">
-                  Computer Science and Engineering student
-                </span>{' '}
-                at{' '}
-                <a className="text-green-500 underline dark:text-blue-100">
-                  UC3M
-                </a>{' '}
-                and
-                <span className="text-green-500 dark:text-blue-100">
-                  {' '}
-                  Frontend Engineer{' '}
-                </span>
-                at{' '}
-                <a className="text-green-500 underline dark:text-blue-100">
-                  Stylib
-                </a>
-                , crafting code that brings interfaces to life. By night,
-                you&apos;ll often find me rocking out at music concerts.
+
+            <span
+              className={clsx(
+                inter.className,
+                'text-md max-w-xl font-normal dark:text-blue-200 lg:text-lg',
+              )}
+            >
+              I&apos;m a passionate software enthusiast in Madrid, on a mission
+              to shape the digital landscape. My tools? A{' '}
+              <span className="italic">really</span> loud keyboard and my trusty
+              cup of coffee 👩‍💻☕
+              <br /> <br />
+              By day, I&apos;m a part-time{' '}
+              <span className="text-green-500 dark:text-blue-100">
+                Computer Science and Engineering student
+              </span>{' '}
+              at{' '}
+              <a className="text-green-500 underline dark:text-blue-100">
+                UC3M
+              </a>{' '}
+              and
+              <span className="text-green-500 dark:text-blue-100">
+                {' '}
+                Frontend Engineer{' '}
               </span>
-            </Fade>
+              at{' '}
+              <a className="text-green-500 underline dark:text-blue-100">
+                Stylib
+              </a>
+              , crafting code that brings interfaces to life. By night,
+              you&apos;ll often find me rocking out at music concerts.
+            </span>
           </div>
           <ProfileImage containerRef={containerRef} />
         </div>
@@ -141,25 +139,25 @@ export default function Home() {
       >
         <div className="flex  flex-col text-center">
           <Subtitle subtitle="projects" />
-          <Fade>
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 2xl:grid-cols-3">
-              {projects.map((project) => {
-                const { title, description, stack, url, github } = project;
 
-                return (
-                  <div className="col-span-1" key={title}>
-                    <ProjectCard
-                      title={title}
-                      description={description}
-                      stack={stack}
-                      github={github}
-                      url={url}
-                    />
-                  </div>
-                );
-              })}
-            </div>
-          </Fade>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 2xl:grid-cols-3">
+            {projects.map((project) => {
+              const { title, description, stack, url, github } = project;
+
+              return (
+                <div className="col-span-1" key={title}>
+                  <ProjectCard
+                    title={title}
+                    description={description}
+                    stack={stack}
+                    github={github}
+                    url={url}
+                  />
+                </div>
+              );
+            })}
+          </div>
+
           <div className="flex items-center justify-center">
             <a
               href="https://github.com/rosareyes"

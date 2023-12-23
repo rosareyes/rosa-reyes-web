@@ -18,6 +18,7 @@
     "@types/react-dom": "18.2.7",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "10.4.15",
+    "baby-i-am-faded": "^4.0.14",
     "clsx": "^2.0.0",
     "eslint-config-next": "13.4.19",
     "framer-motion": "^10.16.2",
