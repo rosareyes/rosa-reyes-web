@@ -148,9 +148,8 @@ export default function Home() {
                 const { title, description, stack, url, github } = project;
 
                 return (
-                  <div className="col-span-1">
+                  <div className="col-span-1" key={title}>
                     <ProjectCard
-                      key={title}
                       title={title}
                       description={description}
                       stack={stack}

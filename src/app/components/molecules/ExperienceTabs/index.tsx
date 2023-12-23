@@ -48,7 +48,7 @@ const ExperiencePanel: FC<any> = ({
       <p className="my-2 uppercase">{year}</p>
       <ul className="max-w-2xl list-disc">
         {descriptions?.map((description: string, index: number) => (
-          <li className="mt-3" id={`{title}-${index}`}>
+          <li className="mt-3" key={`{title}-${index}`}>
             {description}
           </li>
         ))}
