@@ -36,16 +36,16 @@ export default function Home() {
         alt="bg"
       />
 
-      <div className="flex items-center justify-center text-center lg:min-h-[calc(100vh-200px)] lg:px-24">
-        <div className="relative flex flex-col place-items-center py-24 text-[#025a4e] transition-colors">
+      <div className="flex items-center justify-center text-center lg:min-h-[calc(100vh-100px)] lg:px-24 2xl:min-h-[calc(100vh-200px)]">
+        <div className="text-green-450 relative flex flex-col place-items-center py-24 transition-colors">
           <h1 className="m-0">
             <span
-              style={{
-                fontSize: 'clamp(4.2rem, .5692rem + 8.238vw, 15rem)',
-              }}
+              /*     style={{
+                fontSize: 'clamp(4.2rem, .5692rem + 8.238vw, 12rem)',
+              }} */
               className={clsx(
                 inter.className,
-                'block font-bold leading-none dark:text-blue-100 lg:leading-normal',
+                'block text-8xl font-bold leading-none dark:text-blue-100 lg:leading-normal 2xl:text-9xl',
               )}
             >
               Hi, it&apos;s{' '}
@@ -57,7 +57,7 @@ export default function Home() {
           </h1>
           <h2
             className={clsx(
-              'block text-lg dark:text-blue-200 lg:text-3xl',
+              'text-md block dark:text-blue-200 lg:text-3xl',
               ntr.className,
             )}
           >
@@ -81,8 +81,8 @@ export default function Home() {
         </div>
       </div>
       <div className="selector w-full py-9 text-center dark:bg-gradient-to-b  dark:from-blue-500 dark:via-blue-500 dark:to-blue-500 lg:py-24">
-        <div className="mt-12 grid w-full grid-cols-1 justify-center justify-items-center gap-1 px-[15%] py-14 text-center lg:grid-cols-2">
-          <div className="col-span-1 flex w-full flex-col text-left text-[#025a4e] transition-colors">
+        <div className="mt-12 grid w-full grid-cols-1 justify-center justify-items-center gap-1 px-[10%] py-14 text-center lg:grid-cols-2 2xl:px-[15%]">
+          <div className="text-green-450 col-span-1 flex w-full flex-col text-left transition-colors">
             <Subtitle subtitle="about me" />
             <span
               className={clsx(
@@ -96,33 +96,48 @@ export default function Home() {
               cup of coffee 👩‍💻☕
               <br /> <br />
               By day, I&apos;m a part-time{' '}
-              <span className="text-blue-100">
+              <span className="text-green-500 dark:text-blue-100">
                 Computer Science and Engineering student
               </span>{' '}
-              at <a className="text-blue-100 underline">UC3M</a> and
-              <span className="text-blue-100"> Frontend Engineer </span>at{' '}
-              <a className="text-blue-100 underline">Stylib</a>, crafting code
-              that brings interfaces to life. By night, you&apos;ll often find
-              me rocking out at music concerts.
+              at{' '}
+              <a className="text-green-500 underline dark:text-blue-100">
+                UC3M
+              </a>{' '}
+              and
+              <span className="text-green-500 dark:text-blue-100">
+                {' '}
+                Frontend Engineer{' '}
+              </span>
+              at{' '}
+              <a className="text-green-500 underline dark:text-blue-100">
+                Stylib
+              </a>
+              , crafting code that brings interfaces to life. By night,
+              you&apos;ll often find me rocking out at music concerts.
             </span>
           </div>
           <ProfileImage containerRef={containerRef} />
         </div>
       </div>
-      <div className="flex w-full px-[15%] pb-12 pt-8" id="experience">
+      <div
+        className="flex w-full px-[10%] pb-12 pt-8 2xl:px-[15%]"
+        id="experience"
+      >
         <div className="flex  flex-col">
           <Subtitle subtitle="experience" />
           <ExperienceTabs />
         </div>
       </div>
-      <div className="flex w-full px-[15%] py-12" id="projects">
+      <div className="flex w-full px-[10%] py-12 2xl:px-[15%]" id="projects">
         <div className="flex  flex-col">
           <Subtitle subtitle="projects" />
 
-          <div className="-mx-2 flex flex-wrap pb-4 md:-mx-4">
-            <div className="flex w-full px-2 pb-4 md:w-1/3 md:px-4 md:pb-0">
+          <div className="grid grid-cols-2 gap-6 2xl:grid-cols-3">
+            <div className="col-span-1">
               <ExperienceCard
                 title="Rosa Reyes Web"
+                description="This project is a reflection of my professional journey, showcasing my
+                projects, experience, and ideas."
                 stack={
                   <p>
                     HTML · CSS · Material UI · Javascript · ReactJS · NodeJS
@@ -130,9 +145,11 @@ export default function Home() {
                 }
               />
             </div>
-            <div className="flex w-full px-2 pb-4 md:w-1/3 md:px-4 md:pb-0">
+            <div className="col-span-1 ">
               <ExperienceCard
                 title="Brooklyn Burger Web"
+                description="This project is a reflection of my professional journey, showcasing my
+                projects, experience, and ideas."
                 stack={
                   <p>
                     HTML · CSS · Material UI · Javascript · ReactJS · NodeJS
@@ -140,9 +157,23 @@ export default function Home() {
                 }
               />
             </div>
-            <div className="flex w-full px-2 md:w-1/3 md:px-4">
+            <div className="col-span-1">
               <ExperienceCard
                 title="Best Event Landing Page"
+                description="This project is a reflection of my professional journey, showcasing my
+                projects, experience, and ideas."
+                stack={
+                  <p>
+                    HTML · CSS · Material UI · Javascript · ReactJS · NodeJS
+                  </p>
+                }
+              />
+            </div>
+            <div className="col-span-1">
+              <ExperienceCard
+                title="Best Event Landing Page"
+                description="This project is a reflection of my professional journey, showcasing my
+                projects, experience, and ideas."
                 stack={
                   <p>
                     HTML · CSS · Material UI · Javascript · ReactJS · NodeJS
@@ -153,7 +184,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="flex w-full px-[15%] py-12" id="garden">
+      <div className="flex w-full px-[10%] py-12 2xl:px-[15%]" id="garden">
         <div className="flex  flex-col">
           <Subtitle subtitle="🌻virtual garden🌼" />
         </div>

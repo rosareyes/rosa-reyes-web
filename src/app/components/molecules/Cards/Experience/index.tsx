@@ -1,4 +1,4 @@
-import { poppings } from '@/app/fonts';
+import { inter, ntr, poppings } from '@/app/fonts';
 import clsx from 'clsx';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import React, { FC, ReactNode, useRef } from 'react';
@@ -8,30 +8,32 @@ import { ArrowUpRightIcon } from '@heroicons/react/24/solid';
 interface ExperienceCardProps {
   title: string;
   stack: ReactNode;
+  description: string;
   secondary?: boolean;
 }
 
 const ExperienceCard: FC<ExperienceCardProps> = ({
   title,
   stack,
+  description,
   secondary = false,
 }) => {
   return (
     <motion.div
-      whileTap={{ scale: 0.8 }}
-      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+      whileHover={{ scale: 1.05 }}
       className={clsx(
-        'group relative flex h-full flex-col items-center overflow-hidden rounded-lg bg-green-50 px-4 pt-9 hover:bg-blue-100 dark:bg-blue-300 ',
-        poppings.className,
+        ' group relative flex h-full max-w-md flex-col items-center overflow-hidden rounded-lg bg-green-50 px-4 pt-6 shadow-lg hover:bg-blue-100 dark:bg-blue-300 dark:hover:bg-blue-450',
+        inter.className,
         { 'bg-blue-100 shadow-xl dark:bg-blue-100': secondary },
       )}
     >
       <div
-        className={clsx('  dark:text-slate-200', {
+        className={clsx('pb-5 dark:text-slate-200', {
           'dark:text-blue-200': secondary,
         })}
       >
-        <div className="mb-4 flex items-center justify-between">
+        <div className="mb-2 flex items-center justify-between">
           {' '}
           <h3 className="text-lg font-bold dark:text-blue-100">
             {title}{' '}
@@ -46,19 +48,15 @@ const ExperienceCard: FC<ExperienceCardProps> = ({
           </div>
         </div>
 
-        <span className="text-base dark:text-blue-200">
-          This project is a reflection of my professional journey, showcasing my
-          projects, experience, and ideas.{' '}
-        </span>
-        <div className="flex"></div>
+        <span className="text-base dark:text-blue-200">{description}</span>
       </div>
 
       <div className="mt-auto flex w-full items-start">
         <div>
           <svg
-            width="220px"
             viewBox="40 0 620 397"
             fill="none"
+            className="w-[150px] 2xl:w-[220px]"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -158,11 +156,11 @@ const ExperienceCard: FC<ExperienceCardProps> = ({
             />
             <path
               d="M635.076 164.299H521.926C515.893 164.299 511.002 169.191 511.002 175.225V229.543C515 233.542 519.5 238.043 521.926 240.469H635.076C641.109 240.469 646 235.577 646 229.543V175.225C646 169.191 641.109 164.299 635.076 164.299Z"
-              className="fill-green-200 group-hover:fill-[#FF4E4E] dark:fill-orange-100 group-hover:dark:fill-blue-200"
+              className="fill-green-200 group-hover:fill-[#FF4E4E] dark:fill-orange-100 group-hover:dark:fill-blue-100"
             />
             <path
               d="M511.002 229.543L497.644 248.639C495.809 251.057 498.532 254.274 501.255 252.909L521.926 240.469L511.002 229.543Z"
-              className="fill-green-200 group-hover:fill-[#FF4E4E] dark:fill-orange-100  group-hover:dark:fill-blue-200"
+              className="fill-green-200 group-hover:fill-[#FF4E4E] dark:fill-orange-100  group-hover:dark:fill-blue-100"
             />
             <path
               d="M554.285 200.845C553.824 201.561 553.084 202.079 552.08 202.392C553.092 202.705 553.824 203.223 554.285 203.939C554.746 204.655 554.976 205.741 554.976 207.197V214.059C554.976 215.087 555.239 215.877 555.774 216.42C556.308 216.963 557.09 217.234 558.134 217.234H558.916V222.467H556.407C553.725 222.467 551.694 221.809 550.304 220.492C548.922 219.176 548.223 217.275 548.223 214.783V207.016C548.223 206.358 548.058 205.856 547.729 205.51C547.4 205.165 546.931 204.992 546.323 204.992H544.891V199.759H546.323C546.931 199.759 547.4 199.586 547.729 199.241C548.058 198.895 548.223 198.402 548.223 197.735V189.969C548.223 187.484 548.914 185.575 550.304 184.259C551.686 182.942 553.725 182.284 556.407 182.284H558.916V187.517H558.134C557.098 187.517 556.308 187.788 555.774 188.331C555.239 188.874 554.976 189.664 554.976 190.693V197.554C554.976 199.011 554.746 200.097 554.285 200.812V200.845Z"
@@ -186,14 +184,20 @@ const ExperienceCard: FC<ExperienceCardProps> = ({
                 y2="-174.606"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stopColor="#00D0B7" />
-                <stop offset="1" stopColor="#008FB6" />
+                <stop stop-color="var(--color-stop-start)" />
+                <stop offset="1" stop-color="var(--color-stop-end)" />
               </linearGradient>
             </defs>
           </svg>
         </div>
 
-        <div className="pt-2 font-semibold  transition-all dark:text-slate-200">
+        <div
+          className={clsx(
+            'pt-2 text-base font-medium transition-all dark:text-blue-200',
+            inter.className,
+            { 'bg-blue-100 shadow-xl dark:bg-blue-100': secondary },
+          )}
+        >
           {stack}
         </div>
       </div>

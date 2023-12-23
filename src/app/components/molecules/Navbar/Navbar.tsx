@@ -40,14 +40,14 @@ export const Navbar = () => {
       <ul
         className={clsx(
           montserrat.className,
-          'flex flex-1 list-none flex-col items-end justify-end text-xl font-semibold',
+          'flex flex-1 list-none flex-col items-end justify-end text-xl  font-medium',
         )}
       >
         {navLinks.map((nav, index) => (
           <li
             key={nav.id}
             className={clsx(
-              `cursor-pointer text-[16px] text-[#003D2C] dark:text-dimWhite `,
+              `cursor-pointer text-[16px] text-[#003D2C] dark:text-slate-200`,
               { 'font-bold': active === nav.title },
             )}
             onClick={() => setActive(nav.title)}
