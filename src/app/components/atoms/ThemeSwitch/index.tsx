@@ -3,8 +3,9 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { SunIcon, MoonIcon } from '@heroicons/react/24/solid';
-export const ThemeSwitch = () => {
-  const [isOn, setIsOn] = useState(false);
+
+const ThemeSwitch = () => {
+  const [isOn, setIsOn] = useState(true);
 
   const toggleSwitch = () => {
     setIsOn(!isOn);
@@ -37,3 +38,5 @@ export const ThemeSwitch = () => {
     </motion.div>
   );
 };
+
+export default ThemeSwitch;

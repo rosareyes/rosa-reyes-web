@@ -11,7 +11,7 @@ const Subtitle: FC<SubtitleProps> = ({ subtitle }) => {
     <h2
       className={clsx(
         inter.className,
-        'mb-12 block pt-[40px] text-6xl font-bold text-green-600 transition-colors dark:text-blue-100 2xl:text-7xl',
+        'mb-8 block text-4xl font-bold text-green-600 transition-colors dark:text-blue-100 lg:mb-12 lg:pt-[40px] lg:text-5xl 2xl:text-6xl',
       )}
     >
       {subtitle}
