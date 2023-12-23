@@ -46,7 +46,6 @@ export const ProfileImage: FC<any> = ({ containerRef }) => {
           }}
         >
           <motion.path
-            /* fill="#C79FBE" */
             d="M62.71 0.808224C53.207 20.6672 31.42 33.6072 9.90698 37.5762C10.746 37.2412 11.568 36.8842 12.354 36.4882C13.498 35.9122 14.162 35.7912 14.484 34.4452C14.599 33.9632 14.332 33.5572 13.885 33.3892L13.546 33.2622C12.653 32.9262 12.002 34.4402 12.89 34.8172C10.845 33.9492 3.83797 37.5602 1.14797 38.6972C1.12297 38.6992 1.09696 38.7022 1.07196 38.7032C0.863955 38.7172 0.674975 38.8192 0.522975 38.9632C-0.212025 39.3322 -0.156033 40.3172 0.633967 40.6292C3.54697 41.7762 6.45897 42.9242 9.37197 44.0722C10.305 44.4402 10.992 42.8342 10.061 42.4392C8.23497 41.6642 6.40896 40.8932 4.58196 40.1202C28.151 37.3132 53.51 23.4802 63.378 1.19821C63.576 0.751208 62.928 0.355224 62.71 0.808224Z"
             variants={icon}
             initial={{ pathLength: 0 }}
@@ -56,7 +55,8 @@ export const ProfileImage: FC<any> = ({ containerRef }) => {
               ease: 'easeInOut',
               repeat: Infinity,
               repeatType: 'loop',
-              repeatDelay: 2,
+              repeatDelay: 10,
+              delay: 1,
             }}
           />
         </motion.svg>
@@ -90,7 +90,7 @@ export const ProfileImage: FC<any> = ({ containerRef }) => {
               ease: 'easeInOut',
               repeat: Infinity,
               repeatType: 'loop',
-              repeatDelay: 2,
+              repeatDelay: 10,
             }}
           />
         </motion.svg>
@@ -121,7 +121,8 @@ export const ProfileImage: FC<any> = ({ containerRef }) => {
               ease: 'easeInOut',
               repeat: Infinity,
               repeatType: 'loop',
-              repeatDelay: 2,
+              repeatDelay: 10,
+              delay: 2,
             }}
           />
         </motion.svg>
@@ -156,7 +157,8 @@ export const ProfileImage: FC<any> = ({ containerRef }) => {
               ease: 'easeInOut',
               repeat: Infinity,
               repeatType: 'loop',
-              repeatDelay: 2,
+              repeatDelay: 10,
+              delay: 3,
             }}
           />
         </motion.svg>

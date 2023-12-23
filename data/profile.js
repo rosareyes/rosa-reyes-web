@@ -10,6 +10,8 @@ export const jobs = [
       'Conduct testing to ensure top performance, cutting down state management bugs, and create clear component documentation, making it easier and quicker to develop new features for the team.',
       'Engineered a robust "Like" feature from backend to frontend, including database integration and Python API development, resulting in a boost in daily user interactions',
     ],
+    technologies:
+      'Javascript, TypeScript, React, NextJS, Redux, Storybook, CSS, HTML, Tailwind, Jest, Cypress, DynamoDB.',
   },
   {
     title: 'Frontend Engineer',
@@ -20,6 +22,8 @@ export const jobs = [
       'Developed interactive UI interfaces across a variety of different use cases, enhancing web application functionality and user engagement.',
       'DDocumented development processes and coding standards, enhancing code maintainability and easing debugging.',
     ],
+    technologies:
+      'Javascript, React, Context API, styled-components, Material UI, CSS, HTML, AWS, Bitbucket.',
   },
   {
     title: 'Software Developer',
@@ -31,6 +35,7 @@ export const jobs = [
       'Accumulated over 200 hours of professional frontend development work, including building a landing page for an Australian farm marketplace and a responsive page for a Chinese ecommerce builder, showcasing my extensive practical experience and understanding of diverse client needs',
       'Achieved a perfect 5/5 stars rating across 15 projects and earned high praise for professionalism, intelligence, and quality of work, solidifying my reputation as one of the best freelancers in the field.',
     ],
+    technologies: 'HTML, CSS, Javascript, Typescript, React, Redux, Wordpress.',
   },
   {
     title: 'IT Support Technician',
@@ -44,6 +49,8 @@ export const jobs = [
       'Wrote script for automatic check-in/check-out date integration, improving booking management for the entire administrative team, leading to a smoother and more efficient booking experience.',
       'Implemented an automation process for generating rental contracts, substantially reducing manual effort and enhancing efficiency for all future contract handling.',
     ],
+    technologies:
+      'GCP, AWS, Scripting, Jira, Wordpress, Elementor, Javascript.',
   },
 ];
 

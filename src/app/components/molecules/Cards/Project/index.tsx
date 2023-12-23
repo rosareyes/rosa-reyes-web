@@ -1,6 +1,6 @@
-import { inter, ntr, poppings } from '@/app/fonts';
+import { inter } from '@/app/fonts';
 import clsx from 'clsx';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import React, { FC, ReactNode, useRef } from 'react';
 import { FaGithub } from 'react-icons/fa';
 import { ArrowUpRightIcon } from '@heroicons/react/24/solid';

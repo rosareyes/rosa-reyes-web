@@ -1,8 +1,8 @@
-import { Tab } from '@headlessui/react';
-import { URL } from 'next/dist/compiled/@edge-runtime/primitives/url';
 import { FC, Fragment } from 'react';
-import { jobs } from '../../../../../data/profile';
+import { Tab } from '@headlessui/react';
 import { ArrowUpRightIcon } from '@heroicons/react/24/solid';
+import { Fade } from 'react-awesome-reveal';
+import { jobs } from '../../../../../data/profile';
 
 const ExperienceTab: FC<any> = ({ text }) => {
   return (
@@ -53,6 +53,9 @@ const ExperiencePanel: FC<any> = ({
           </li>
         ))}
       </ul>
+      <p className="mt-4 max-w-3xl dark:text-blue-100">
+        <strong>Skills:</strong> {technologies}
+      </p>
     </Tab.Panel>
   );
 };
@@ -60,39 +63,50 @@ const ExperiencePanel: FC<any> = ({
 const ExperienceTabs = () => {
   return (
     <Tab.Group vertical>
-      <div className="flex flex-col lg:h-[500px] lg:flex-row">
-        <Tab.List className="flex flex-col rounded-lg bg-green-200 p-4 text-green-500 dark:bg-transparent dark:text-blue-100">
-          {jobs.map((job) => {
-            return (
-              <ExperienceTab
-                text={job.company}
-                key={`${job.title}-${job.year}`}
-              />
-            );
-          })}
+      <Fade>
+        <div className="flex flex-col lg:h-[500px] lg:flex-row">
+          <Tab.List className="flex flex-col rounded-lg bg-green-200 p-4 text-green-500 dark:bg-transparent dark:text-blue-100">
+            {jobs.map((job) => {
+              return (
+                <ExperienceTab
+                  text={job.company}
+                  key={`${job.title}-${job.year}`}
+                />
+              );
+            })}
 
-          <button className="mb-2 mt-auto rounded-md p-3 text-right hover:underline">
-            <span className="font-semibold">View full CV</span>
-            <ArrowUpRightIcon className="ml-2 inline-block h-4 w-4" />
-          </button>
-        </Tab.List>
-        <Tab.Panels className="flex-1 p-4">
-          {jobs.map((job) => {
-            const { title, company, year, descriptions, location, url } = job;
-            return (
-              <ExperiencePanel
-                key={`${title}-${company}`}
-                title={title}
-                descriptions={descriptions}
-                company={company}
-                year={year}
-                location={location}
-                url={url}
-              />
-            );
-          })}
-        </Tab.Panels>
-      </div>
+            <button className="mb-2 mt-auto rounded-md p-3 text-right hover:underline">
+              <span className="font-semibold">View full CV</span>
+              <ArrowUpRightIcon className="ml-2 inline-block h-4 w-4" />
+            </button>
+          </Tab.List>
+          <Tab.Panels className="flex-1 p-4">
+            {jobs.map((job) => {
+              const {
+                title,
+                company,
+                year,
+                descriptions,
+                location,
+                url,
+                technologies,
+              } = job;
+              return (
+                <ExperiencePanel
+                  key={`${title}-${company}`}
+                  title={title}
+                  descriptions={descriptions}
+                  company={company}
+                  year={year}
+                  location={location}
+                  url={url}
+                  technologies={technologies}
+                />
+              );
+            })}
+          </Tab.Panels>
+        </div>
+      </Fade>
     </Tab.Group>
   );
 };
