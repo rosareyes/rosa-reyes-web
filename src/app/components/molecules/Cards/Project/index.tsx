@@ -9,6 +9,8 @@ interface ExperienceCardProps {
   title: string;
   stack: ReactNode;
   description: string;
+  url: string;
+  github: string;
   secondary?: boolean;
 }
 
@@ -16,11 +18,12 @@ const ExperienceCard: FC<ExperienceCardProps> = ({
   title,
   stack,
   description,
+  github,
+  url,
   secondary = false,
 }) => {
   return (
     <motion.div
-      whileTap={{ scale: 0.9 }}
       whileHover={{ scale: 1.05 }}
       className={clsx(
         ' group relative flex h-full max-w-md flex-col items-center overflow-hidden rounded-lg bg-green-50 px-4 pt-6 shadow-lg hover:bg-blue-100 dark:bg-blue-300 dark:hover:bg-blue-450',
@@ -29,7 +32,7 @@ const ExperienceCard: FC<ExperienceCardProps> = ({
       )}
     >
       <div
-        className={clsx('pb-5 dark:text-slate-200', {
+        className={clsx('pb-5 text-left dark:text-slate-200 ', {
           'dark:text-blue-200': secondary,
         })}
       >
@@ -39,10 +42,10 @@ const ExperienceCard: FC<ExperienceCardProps> = ({
             {title}{' '}
           </h3>{' '}
           <div className="flex items-center gap-4">
-            <a href="https://github.com/rosareyes" target="_blank">
+            <a href={github} target="_blank">
               <FaGithub className="h-6 w-6 dark:text-orange-100 dark:hover:text-orange-100" />{' '}
             </a>
-            <a href="https://github.com/rosareyes" target="_blank">
+            <a href={url} target="_blank">
               <ArrowUpRightIcon className="h-5 w-5 dark:text-orange-100 dark:hover:text-orange-100" />{' '}
             </a>
           </div>
@@ -184,8 +187,8 @@ const ExperienceCard: FC<ExperienceCardProps> = ({
                 y2="-174.606"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="var(--color-stop-start)" />
-                <stop offset="1" stop-color="var(--color-stop-end)" />
+                <stop stopColor="var(--color-stop-start)" />
+                <stop offset="1" stopColor="var(--color-stop-end)" />
               </linearGradient>
             </defs>
           </svg>
@@ -193,7 +196,7 @@ const ExperienceCard: FC<ExperienceCardProps> = ({
 
         <div
           className={clsx(
-            'pt-2 text-base font-medium transition-all dark:text-blue-200',
+            'pt-2  text-left text-base font-medium transition-all dark:text-blue-200',
             inter.className,
             { 'bg-blue-100 shadow-xl dark:bg-blue-100': secondary },
           )}

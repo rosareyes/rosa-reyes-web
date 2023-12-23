@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { ThemeSwitch } from './ThemeSwitch';
+import ThemeSwitch from '.';
 
 test('ThemeSwitch starts in light mode', () => {
   render(<ThemeSwitch />);

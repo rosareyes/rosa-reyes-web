@@ -1,20 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
-import Image from 'next/image';
-import { pacifico, poppings, inter, ntr } from './fonts';
+import { inter, ntr } from './fonts';
 import React from 'react';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { SiUpwork } from 'react-icons/si';
 import clsx from 'clsx';
-import { motion, useCycle, useScroll, useTransform } from 'framer-motion';
-import { ThemeSwitch } from './components/atoms/ThemeSwitch/ThemeSwitch';
+
 import { Navbar } from './components/molecules/Navbar/Navbar';
 import { useRouter } from 'next/navigation';
-import ExperienceCard from './components/molecules/Cards/Experience';
-import { useEffect, useRef } from 'react';
-import Subtitle from './components/atoms/ThemeSwitch/Subtitle/Subtitle';
-import ExperienceTabs from './components/molecules/ExperienceTabs/ExperienceTabs';
+import ProjectCard from './components/molecules/Cards/Project';
+import { useRef } from 'react';
+import Subtitle from './components/atoms/Subtitle';
+import ExperienceTabs from './components/molecules/ExperienceTabs';
 import { ProfileImage } from './components/atoms/ProfileImage/ProfileImage';
+import { projects } from '../../data/profile';
 
 export default function Home() {
   const router = useRouter();
@@ -23,32 +22,33 @@ export default function Home() {
   const containerRef = useRef(null);
 
   return (
-    <main className="relative flex flex-col items-center justify-between overflow-hidden bg-[#F7F2FF] dark:bg-blue-500">
+    <main className="relative flex flex-col items-center justify-between overflow-hidden bg-[#f7f2ff] dark:bg-blue-500">
       <Navbar />
       <img
-        className="absolute left-0 top-0 z-0 h-auto w-full opacity-40 dark:hidden"
+        className="absolute left-0 top-0 z-0 hidden h-auto w-full opacity-40 md:block dark:md:hidden"
         src="/hero-light-bg.png"
         alt="bg"
       />
       <img
-        className="absolute left-0 top-0 z-0 hidden h-auto w-full opacity-60 dark:block"
+        className="absolute left-0 top-0 z-0 hidden h-auto w-full opacity-60 md:block dark:md:block"
         src="/hero-dark-bg.png"
         alt="bg"
       />
 
-      <div className="flex items-center justify-center text-center lg:min-h-[calc(100vh-100px)] lg:px-24 2xl:min-h-[calc(100vh-200px)]">
-        <div className="text-green-450 relative flex flex-col place-items-center py-24 transition-colors">
-          <h1 className="m-0">
+      <div
+        className="flex items-center justify-center px-4 text-center lg:min-h-[calc(100vh-100px)] lg:px-24 2xl:min-h-[calc(100vh-200px)]"
+        id={'home'}
+      >
+        <div className="relative flex flex-col place-items-center py-20 text-green-450 transition-colors lg:py-24">
+          <h1 className="m-0 mb-4 2xl:mb-6">
             <span
-              /*     style={{
-                fontSize: 'clamp(4.2rem, .5692rem + 8.238vw, 12rem)',
-              }} */
               className={clsx(
                 inter.className,
-                'block text-8xl font-bold leading-none dark:text-blue-100 lg:leading-normal 2xl:text-9xl',
+                'block text-6xl font-bold dark:text-blue-100 md:text-8xl md:leading-none lg:leading-normal 2xl:text-9xl',
               )}
             >
-              Hi, it&apos;s{' '}
+              Hi,
+              <br className="block lg:hidden" /> it&apos;s{' '}
               <span className="underline underline-offset-8 dark:decoration-orange-100">
                 Rosa
               </span>
@@ -57,7 +57,7 @@ export default function Home() {
           </h1>
           <h2
             className={clsx(
-              'text-md block dark:text-blue-200 lg:text-3xl',
+              'block text-xl dark:text-blue-200 lg:text-3xl',
               ntr.className,
             )}
           >
@@ -80,14 +80,17 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="selector w-full py-9 text-center dark:bg-gradient-to-b  dark:from-blue-500 dark:via-blue-500 dark:to-blue-500 lg:py-24">
-        <div className="mt-12 grid w-full grid-cols-1 justify-center justify-items-center gap-1 px-[10%] py-14 text-center lg:grid-cols-2 2xl:px-[15%]">
-          <div className="text-green-450 col-span-1 flex w-full flex-col text-left transition-colors">
+      <div className="selector w-full pb-6 pt-9 text-center dark:bg-gradient-to-b  dark:from-blue-500 dark:via-blue-500 dark:to-blue-500 2xl:py-24">
+        <div
+          className="grid w-full grid-cols-1 justify-center justify-items-center gap-1 px-[10%] py-10 text-center lg:mt-12 lg:grid-cols-2 lg:py-14 2xl:px-[15%]"
+          id={'about'}
+        >
+          <div className="col-span-1 flex w-full flex-col text-left text-green-450 transition-colors">
             <Subtitle subtitle="about me" />
             <span
               className={clsx(
                 inter.className,
-                'max-w-xl text-lg font-normal dark:text-blue-200',
+                'text-md max-w-xl font-normal dark:text-blue-200 lg:text-lg',
               )}
             >
               I&apos;m a passionate software enthusiast in Madrid, on a mission
@@ -120,7 +123,7 @@ export default function Home() {
         </div>
       </div>
       <div
-        className="flex w-full px-[10%] pb-12 pt-8 2xl:px-[15%]"
+        className="flex w-full px-[10%] py-8 lg:py-14 2xl:px-[15%]"
         id="experience"
       >
         <div className="flex  flex-col">
@@ -128,78 +131,67 @@ export default function Home() {
           <ExperienceTabs />
         </div>
       </div>
-      <div className="flex w-full px-[10%] py-12 2xl:px-[15%]" id="projects">
-        <div className="flex  flex-col">
+      <div
+        className="flex w-full justify-center px-[10%] py-8 2xl:px-[15%] 2xl:py-12"
+        id="projects"
+      >
+        <div className="flex  flex-col text-center">
           <Subtitle subtitle="projects" />
 
-          <div className="grid grid-cols-2 gap-6 2xl:grid-cols-3">
-            <div className="col-span-1">
-              <ExperienceCard
-                title="Rosa Reyes Web"
-                description="This project is a reflection of my professional journey, showcasing my
-                projects, experience, and ideas."
-                stack={
-                  <p>
-                    HTML · CSS · Material UI · Javascript · ReactJS · NodeJS
-                  </p>
-                }
-              />
-            </div>
-            <div className="col-span-1 ">
-              <ExperienceCard
-                title="Brooklyn Burger Web"
-                description="This project is a reflection of my professional journey, showcasing my
-                projects, experience, and ideas."
-                stack={
-                  <p>
-                    HTML · CSS · Material UI · Javascript · ReactJS · NodeJS
-                  </p>
-                }
-              />
-            </div>
-            <div className="col-span-1">
-              <ExperienceCard
-                title="Best Event Landing Page"
-                description="This project is a reflection of my professional journey, showcasing my
-                projects, experience, and ideas."
-                stack={
-                  <p>
-                    HTML · CSS · Material UI · Javascript · ReactJS · NodeJS
-                  </p>
-                }
-              />
-            </div>
-            <div className="col-span-1">
-              <ExperienceCard
-                title="Best Event Landing Page"
-                description="This project is a reflection of my professional journey, showcasing my
-                projects, experience, and ideas."
-                stack={
-                  <p>
-                    HTML · CSS · Material UI · Javascript · ReactJS · NodeJS
-                  </p>
-                }
-              />
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 2xl:grid-cols-3">
+            {projects.map((project) => {
+              const { title, description, stack, url, github } = project;
+
+              return (
+                <div className="col-span-1">
+                  <ProjectCard
+                    key={title}
+                    title={title}
+                    description={description}
+                    stack={stack}
+                    github={github}
+                    url={url}
+                  />
+                </div>
+              );
+            })}
+          </div>
+          <div className="flex items-center justify-center">
+            <a
+              href="https://github.com/rosareyes"
+              target="_blank"
+              className={clsx(
+                ntr.className,
+                'my-8 flex rounded-md bg-green-450 px-3 py-2 text-lg font-semibold uppercase text-dimWhite shadow-md hover:bg-slate-500 hover:text-dimWhite dark:bg-orange-100 dark:hover:bg-orange-50 dark:hover:text-dimWhite',
+              )}
+            >
+              View more
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        className="flex w-full justify-center px-[10%] py-12 2xl:px-[15%]"
+        id="garden"
+      >
+        <div className="flex flex-col">
+          <Subtitle subtitle="🌻virtual garden🌼" />
+          <div className="flex items-center justify-center">
+            <div
+              className={clsx(
+                ntr.className,
+                'my-4 flex  bg-orange-100 px-3 py-2 text-lg uppercase shadow-md dark:text-dimWhite',
+              )}
+            >
+              WORK IN PROGRESS
             </div>
           </div>
         </div>
       </div>
-      <div className="flex w-full px-[10%] py-12 2xl:px-[15%]" id="garden">
-        <div className="flex  flex-col">
-          <Subtitle subtitle="🌻virtual garden🌼" />
-        </div>
-      </div>
-      <div className="px-24 py-14 text-center">
-        <span>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </span>
-      </div>
+
+      <footer className="mt-8 py-2 text-right text-blue-200">
+        built by Rosa Reyes
+      </footer>
     </main>
   );
 }
