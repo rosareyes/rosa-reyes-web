@@ -17,8 +17,8 @@
 
 - [X] **Dark Mode / Normal Mode**: Implement a toggle to switch between dark and light themes.
 - [X] **Hero Section**: Implement an attractive and informative hero section as the landing area of the website.
-- [ ] **Portfolio Section**: Create a section with cards to display my projects, including descriptions, images, and links.
-- [ ] **Mini 'About Me'**: Develop a small section with a photo and a brief text about myself.
+- [X] **Portfolio Section**: Create a section with cards to display my projects, including descriptions, images, and links.
+- [X] **Mini 'About Me'**: Develop a small section with a photo and a brief text about myself.
 - [ ] **Virtual Garden (Mini Blog)**: Set up a space for blog entries where I can share ideas or discuss things I've done.
 - [ ] **'Let's Work Together' Section**: Add a final section with my contact information, encouraging visitors to reach out for collaborations.
 - [ ] **Animations**: Incorporate subtle animations to enhance the user experience.
