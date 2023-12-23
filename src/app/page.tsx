@@ -17,7 +17,6 @@ import { projects } from '../../data/profile';
 
 export default function Home() {
   const router = useRouter();
-  console.log(router);
 
   const containerRef = useRef(null);
 

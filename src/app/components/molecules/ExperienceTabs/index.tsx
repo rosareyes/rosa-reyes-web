@@ -1,3 +1,4 @@
+'use client';
 import { FC, Fragment } from 'react';
 import { Tab } from '@headlessui/react';
 import { ArrowUpRightIcon } from '@heroicons/react/24/solid';
