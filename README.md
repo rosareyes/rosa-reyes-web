@@ -24,6 +24,7 @@
 - [ ] **Animations**: Incorporate subtle animations to enhance the user experience.
 - [ ] **SEO Optimization**: Ensure the website is optimized for search engines.
 - [ ] **Responsiveness**: Make the website fully responsive to ensure a great experience on all devices.
+- [ ] **Spanish Support**: translate website and make a language switch.
 
 ### additional goals
 
