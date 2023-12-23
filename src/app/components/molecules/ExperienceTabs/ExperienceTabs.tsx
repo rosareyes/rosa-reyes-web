@@ -11,8 +11,8 @@ const ExperienceTab: FC<any> = ({ text }) => {
         <button
           className={`${
             selected
-              ? ' border-r-2 border-orange-100 text-orange-100 '
-              : 'text-blue-100 hover:bg-blue-400 hover:text-blue-200'
+              ? ' border-r-2 border-green-300 text-green-300 dark:border-orange-100 dark:text-orange-100'
+              : 'text-green-450 hover:bg-green-100 dark:text-blue-100 hover:dark:bg-blue-400 hover:dark:text-blue-200'
           } mb-2 p-3 pr-6 text-right font-semibold uppercase leading-4 tracking-wide focus:outline-none `}
         >
           {text}
@@ -32,9 +32,11 @@ const ExperiencePanel: FC<any> = ({
 }) => {
   return (
     <Tab.Panel className="rounded-lg px-4 dark:text-blue-200 ">
-      <h3 className="text-2xl font-semibold dark:text-blue-100">
+      <h3 className="text-2xl font-semibold text-green-500 dark:text-blue-100">
         {title} @{' '}
-        <span className="font-semibold text-orange-100">{company}</span>
+        <span className="font-semibold text-green-300 dark:text-orange-100">
+          {company}
+        </span>
       </h3>
       <span className="text-lg dark:text-blue-100">{location}</span>
       <p className="my-2 uppercase">{year}</p>
@@ -51,7 +53,7 @@ const ExperienceTabs = () => {
   return (
     <Tab.Group vertical>
       <div className="flex">
-        <Tab.List className="text-white flex flex-col p-4">
+        <Tab.List className="flex flex-col p-4 text-green-500 dark:text-blue-100">
           <ExperienceTab text="stylib" />
           <ExperienceTab text="qreuz" />
           <ExperienceTab text="freelancer" />

@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Define your default colors for light mode */
+:root {
+  --color-stop-start: #00d0b7; /* This is the default light mode start color */
+  --color-stop-end: #008fb6; /* This is the default light mode end color */
+}
+
+/* Define your colors for dark mode */
+.dark {
+  --color-stop-start: #ff7d45; /* Replace with your dark mode start color */
+  --color-stop-end: #db4200; /* Replace with your dark mode end color */
+}
+
 body {
   color: rgb(var(--foreground-rgb));
 }
@@ -11,6 +23,11 @@ h1 {
 }
 
 a:hover {
+  color: #007d5a;
+  cursor: pointer;
+}
+
+a:hover .dark {
   color: #ff7d45;
   cursor: pointer;
 }

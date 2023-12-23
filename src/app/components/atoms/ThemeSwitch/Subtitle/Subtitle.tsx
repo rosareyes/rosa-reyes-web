@@ -9,12 +9,9 @@ interface SubtitleProps {
 const Subtitle: FC<SubtitleProps> = ({ subtitle }) => {
   return (
     <h2
-      style={{
-        fontSize: '70px',
-      }}
       className={clsx(
         inter.className,
-        'block pb-8 pt-[40px] font-bold text-[#001E16] transition-colors dark:text-blue-100',
+        'mb-12 block pt-[40px] text-6xl font-bold text-green-600 transition-colors dark:text-blue-100 2xl:text-7xl',
       )}
     >
       {subtitle}
