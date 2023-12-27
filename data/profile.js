@@ -61,7 +61,7 @@ export const projects = [
       'This project is a reflection of my professional journey, showcasing my projects, experience, and ideas.',
     stack: <p>HTML · CSS · Material UI · Javascript · ReactJS · NodeJS</p>,
     github: 'https://github.com/rosareyes/rosa-reyes-web',
-    url: 'https://rosa-reyes-web.vercel.app',
+    url: '/',
   },
   {
     title: 'Glosku Landing Page',
