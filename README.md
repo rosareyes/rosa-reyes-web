@@ -1,6 +1,6 @@
 <p align="center">
-    <h1 align="center">Rosa Reyes website v1</h1>
-    <a href="https://rosa-reyes-web.vercel.app/"><p align="center">Live demo</p></a>
+    <h1 align="center">Rosa Reyes v1</h1>
+    <a href="https://rosareyes.vercel.app/"><p align="center">Live demo</p></a>
 </p>
 <div align="center">
   <img align="center" src='https://github.com/rosareyes/rosa-reyes-web/assets/63470281/cd222b62-5452-44bb-a183-264858b573b0' height='200px'>
