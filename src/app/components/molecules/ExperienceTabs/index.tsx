@@ -74,7 +74,13 @@ const ExperienceTabs = () => {
           })}
 
           <button className="mb-2 mt-auto rounded-md p-3 text-right hover:underline">
-            <span className="font-semibold">View full CV</span>
+            <a
+              className="font-semibold"
+              href="/rosa-reyes-eng.pdf"
+              target="_blank"
+            >
+              View full CV
+            </a>
             <ArrowUpRightIcon className="ml-2 inline-block h-4 w-4" />
           </button>
         </Tab.List>

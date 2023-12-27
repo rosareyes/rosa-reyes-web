@@ -13,6 +13,7 @@ import Subtitle from './components/atoms/Subtitle';
 import ExperienceTabs from './components/molecules/ExperienceTabs';
 import { ProfileImage } from './components/atoms/ProfileImage/ProfileImage';
 import { projects } from '../../data/profile';
+import ThemeSwitch from './components/atoms/ThemeSwitch';
 
 export default function Home() {
   const router = useRouter();
@@ -22,6 +23,10 @@ export default function Home() {
   return (
     <main className="relative flex flex-col items-center justify-between overflow-hidden bg-[#f7f2ff] dark:bg-blue-500">
       <Navbar />
+      <div className="absolute right-0 top-0 z-10 p-4 lg:hidden">
+        <ThemeSwitch />
+      </div>
+
       <img
         className="absolute left-0 top-0 z-0 hidden h-auto w-full opacity-40 md:block dark:md:hidden"
         src="/hero-light-bg.png"
