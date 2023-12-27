@@ -177,7 +177,7 @@ export default function Home() {
         id="garden"
       >
         <div className="flex flex-col">
-          <Subtitle subtitle="🌻virtual garden🌼" />
+          <Subtitle subtitle="virtual garden🌻" />
           <div className="flex items-center justify-center">
             <div
               className={clsx(
