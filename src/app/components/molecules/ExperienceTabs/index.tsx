@@ -1,5 +1,5 @@
 import { FC, Fragment } from 'react';
-import { Tab } from '@headlessui/react';
+import { Tab, TabGroup, TabList, TabPanels, TabPanel } from '@headlessui/react';
 import { ArrowUpRightIcon } from '@heroicons/react/24/solid';
 import { jobs } from '../../../../../data/profile';
 
@@ -31,7 +31,7 @@ const ExperiencePanel: FC<any> = ({
   technologies,
 }) => {
   return (
-    <Tab.Panel className="flex-1 rounded-lg  px-4 dark:text-blue-200">
+    <TabPanel className="flex-1 rounded-lg  px-4 dark:text-blue-200">
       <h3 className="text-2xl font-semibold text-green-500 dark:text-blue-100">
         {title} @{' '}
         <a
@@ -55,15 +55,15 @@ const ExperiencePanel: FC<any> = ({
       <p className="mt-4 max-w-3xl dark:text-blue-100">
         <strong>Skills:</strong> {technologies}
       </p>
-    </Tab.Panel>
+    </TabPanel>
   );
 };
 
 const ExperienceTabs = () => {
   return (
-    <Tab.Group vertical>
+    <TabGroup vertical>
       <div className="flex flex-col lg:h-[500px] lg:flex-row">
-        <Tab.List className="flex flex-col rounded-lg bg-green-200 p-4 text-green-500 dark:bg-transparent dark:text-blue-100">
+        <TabList className="flex flex-col rounded-lg bg-green-200 p-4 text-green-500 dark:bg-transparent dark:text-blue-100">
           {jobs.map((job) => {
             return (
               <ExperienceTab
@@ -83,8 +83,8 @@ const ExperienceTabs = () => {
             </a>
             <ArrowUpRightIcon className="ml-2 inline-block h-4 w-4" />
           </button>
-        </Tab.List>
-        <Tab.Panels className="flex-1 p-4">
+        </TabList>
+        <TabPanels className="flex-1 p-4">
           {jobs.map((job) => {
             const {
               title,
@@ -108,9 +108,9 @@ const ExperienceTabs = () => {
               />
             );
           })}
-        </Tab.Panels>
+        </TabPanels>
       </div>
-    </Tab.Group>
+    </TabGroup>
   );
 };
 

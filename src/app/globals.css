@@ -1,16 +1,58 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-:root {
-  --color-stop-start: #00d0b7; /* This is the default light mode start color */
-  --color-stop-end: #008fb6; /* This is the default light mode end color */
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-dimWhite: #e2e8f0;
+
+  --color-blue-50: #e6f1ff;
+  --color-blue-100: #ccd6f6;
+  --color-blue-150: #a8b2d1;
+  --color-blue-200: #8892b0;
+  --color-blue-300: #233554;
+  --color-blue-400: #112240;
+  --color-blue-450: #142c50;
+  --color-blue-500: #0a192f;
+
+  --color-green-50: #ddf2ec;
+  --color-green-55: #64ffda;
+  --color-green-100: #8ed6c2;
+  --color-green-200: #36c39c;
+  --color-green-300: #007d5a;
+  --color-green-400: #00553d;
+  --color-green-450: #025a4e;
+  --color-green-500: #001e16;
+  --color-green-600: #19362e;
+
+  --color-purple-100: #c79fbe;
+
+  --color-orange-50: #ffa57d;
+  --color-orange-100: #ff7d45;
 }
 
-/* Define your colors for dark mode */
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+:root {
+  --color-stop-start: #00d0b7;
+  --color-stop-end: #008fb6;
+}
+
 .dark {
-  --color-stop-start: #ff7d45; /* Replace with your dark mode start color */
-  --color-stop-end: #db4200; /* Replace with your dark mode end color */
+  --color-stop-start: #ff7d45;
+  --color-stop-end: #db4200;
 }
 
 h1 {
