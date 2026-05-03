@@ -1,98 +1,96 @@
 export const jobs = [
   {
-    title: 'Frontend Engineer',
-    company: 'Stylib',
+    role: 'Software Engineer',
+    co: 'Stylib',
     url: 'https://stylib.com/',
-    year: 'may 2022 - Present',
-    location: 'London, UK (remote)',
-    descriptions: [
-      'Regularly collaborate with cross-functional teams to transform design wireframes into functional interfaces, achieving an average of 15 successful implementations per month.',
-      'Conduct testing to ensure top performance, cutting down state management bugs, and create clear component documentation, making it easier and quicker to develop new features for the team.',
-      'Engineered a robust "Like" feature from backend to frontend, including database integration and Python API development, resulting in a boost in daily user interactions',
+    range: 'May 2022 to Apr 2026 · 4 yrs',
+    loc: 'London, UK · Remote · Part-time',
+    bullets: [
+      'Developed complex user-facing features and application logic using React and Next.js, integrating REST APIs to enable scalable, data-driven functionality.',
+      'Designed and implemented backend services for a full-stack feature using Python (FastAPI) and DynamoDB on AWS, including API design and data modeling.',
+      'Built a multi-agent backend system for semantic search using an Entity–Filter–Validator pipeline to transform natural language queries into structured filters.',
+      'Implemented testing and CI/CD pipelines with Jest, Cypress, and GitHub Actions.',
     ],
-    technologies:
-      'Javascript, TypeScript, React, NextJS, Redux, Storybook, CSS, HTML, Tailwind, Jest, Cypress, DynamoDB.',
+    skills: ['React', 'Next.js', 'TypeScript', 'Python', 'FastAPI', 'DynamoDB', 'AWS', 'Jest', 'Cypress', 'GitHub Actions'],
   },
   {
-    title: 'Frontend Engineer',
-    company: 'Qreuz',
-    year: 'sept 2021 - may 2022',
-    location: 'Berlin, Germany (remote)',
-    descriptions: [
-      'Developed interactive UI interfaces across a variety of different use cases, enhancing web application functionality and user engagement.',
-      'DDocumented development processes and coding standards, enhancing code maintainability and easing debugging.',
-    ],
-    technologies:
-      'Javascript, React, Context API, styled-components, Material UI, CSS, HTML, AWS, Bitbucket.',
-  },
-  {
-    title: 'Software Developer',
-    company: 'Freelancer',
+    role: 'Web Developer',
+    co: 'Freelance',
     url: 'https://www.upwork.com/freelancers/~01bcf3b51bb38b47a8',
-    year: 'march 2020 - may 2022',
-    location: 'Madrid, Spain (remote)',
-    descriptions: [
-      'Accumulated over 200 hours of professional frontend development work, including building a landing page for an Australian farm marketplace and a responsive page for a Chinese ecommerce builder, showcasing my extensive practical experience and understanding of diverse client needs',
-      'Achieved a perfect 5/5 stars rating across 15 projects and earned high praise for professionalism, intelligence, and quality of work, solidifying my reputation as one of the best freelancers in the field.',
+    range: 'Mar 2020 to May 2022 · 2 yrs',
+    loc: 'Madrid, ES · Remote',
+    bullets: [
+      'Delivered 15+ web applications with REST API integrations, focusing on data flow, validation, and error handling across client-server interactions.',
+      'Built React/TypeScript applications with structured state management and production-ready architecture.',
+      'Developed backend integrations using Node.js and Express for API handling and server-side logic.',
+      'Maintained a 5/5 client rating for code quality, reliability, and communication.',
     ],
-    technologies: 'HTML, CSS, Javascript, Typescript, React, Redux, Wordpress.',
+    skills: ['React', 'TypeScript', 'Node.js', 'Express', 'REST APIs'],
   },
   {
-    title: 'IT Support Technician',
-    company: 'Vanrays',
+    role: 'IT Technician, Systems & Automation',
+    co: 'Vanrays',
     url: 'https://www.vanrays.com/',
-    year: 'oct 2019 - sept 2021',
-    location: 'Madrid, Spain',
-    descriptions: [
-      'Led IT project for the company’s internal booking channel manager, supervising 5 freelancers and handling critical technical elements including user experience and functional requirements.',
-      'Developed the WordPress website, using Elementor and a variety of plugins, improving the user interface and experience, attracting and engaging over 100 weekly visitors and registered users.',
-      'Wrote script for automatic check-in/check-out date integration, improving booking management for the entire administrative team, leading to a smoother and more efficient booking experience.',
-      'Implemented an automation process for generating rental contracts, substantially reducing manual effort and enhancing efficiency for all future contract handling.',
+    range: 'Oct 2019 to Sep 2021 · 2 yrs',
+    loc: 'Madrid, ES · Part-time',
+    bullets: [
+      'Led development of an internal booking system, coordinating 3+ freelancers and contributing to frontend and backend implementation using React and Node.js.',
+      'Automated booking and contract workflows, reducing manual effort by 80% and improving operational efficiency.',
+      'Improved system reliability through data handling and process automation solutions.',
     ],
-    technologies:
-      'GCP, AWS, Scripting, Jira, Wordpress, Elementor, Javascript.',
+    skills: ['React', 'Node.js', 'JavaScript', 'Process Automation'],
   },
 ];
 
 export const projects = [
   {
-    title: 'Rosa Reyes Web',
+    title: 'Semantic Search Engine',
+    kind: 'Bachelor thesis',
+    year: '2026',
     description:
-      'This project is a reflection of my professional journey, showcasing my projects, experience, and ideas.',
-    stack: <p>HTML · CSS · Material UI · Javascript · ReactJS · NodeJS</p>,
-    github: 'https://github.com/rosareyes/rosa-reyes-web',
-    url: '/',
-  },
-  {
-    title: 'Glosku Landing Page',
-    description:
-      'Highly responsive and technically refined landing page that demonstrates the potential for a user-centric, secure, and scalable e-commerce management platform.',
-    stack: <p>HTML · CSS · Javascript · Bootstrap</p>,
-    github: 'https://github.com/rosareyes/glosku-landing-page',
-    url: 'https://glosku-project.netlify.app/',
-  },
-  {
-    title: 'Brooklyn Burger Web',
-    description:
-      'Webpage designed with a focus on creating an accessible, usable, and engaging online presence for a fictional burger restaurant.',
-    stack: <p>HTML · CSS · Javascript</p>,
-    github: 'https://github.com/rosareyes/brooklyn-burger-web',
-    url: 'https://brooklyn-burger-web.vercel.app/',
-  },
-  {
-    title: 'Edash Dashboard Mockup',
-    description:
-      'Fully responsive dashboard template designed to provide a seamless user experience across devices.',
-    stack: <p>HTML · CSS · Material UI · Javascript · ReactJS · NodeJS</p>,
-    github: 'https://github.com/rosareyes/Edash-Dashboard-Mockup',
-    url: 'https://edash-project.netlify.app/',
-  },
-  {
-    title: 'Heuristic Search Visualization',
-    description:
-      'Project that visualizes the A* algorithm, for a university assignment.',
-    stack: <p>HTML · CSS · Javascript · ReactJS · Python </p>,
+      'My CS bachelor thesis, built in collaboration with Stylib. A multi AI agent system that turns natural language into structured product searches using an Entity-Filter-Validator pipeline. Makes finding architectural products actually work.',
+    tags: ['Python', 'FastAPI', 'NLP', 'LLMs', 'DynamoDB'],
     github: '',
     url: '',
+  },
+  {
+    title: 'Stylib Visual Search Widget',
+    kind: 'Work',
+    year: '2024',
+    description:
+      'Semantic product search widgets for Stylib. Users upload a photo of what they need and get matched to real architectural products. Built the full frontend integration.',
+    tags: ['React', 'TypeScript', 'REST APIs'],
+    github: '',
+    url: 'https://stylib.com/product-search-engine-for-architectural-products/',
+  },
+  {
+    title: 'Stylib Product Showcase',
+    kind: 'Work',
+    year: '2023',
+    description:
+      'Frontend architecture for an interactive product showcase built around design specifications. Focused on performance and making complex product data feel effortless to browse.',
+    tags: ['React', 'Next.js', 'TypeScript', 'Tailwind'],
+    github: '',
+    url: 'https://stylib.com/interactive-product-showcase-for-design-specifications/',
+  },
+  {
+    title: 'Secure Messaging App',
+    kind: 'University',
+    year: '2024',
+    description:
+      'End-to-end encrypted chat built for a cryptography course. AES-GCM for messages, RSA for key exchange, digital signatures, and a full PKI for user registration and cert management.',
+    tags: ['Python', 'Flask', 'AES-GCM', 'RSA', 'OpenSSL'],
+    github: 'https://github.com/rosareyes/cryptography-project/',
+    url: 'https://github.com/rosareyes/cryptography-project/',
+  },
+  {
+    title: 'Rosa Reyes Web',
+    kind: 'Personal',
+    year: '2025',
+    description:
+      'This site, built and rebuilt as a design and engineering playground. Currently on its third version.',
+    tags: ['Next.js', 'Tailwind', 'Vercel'],
+    github: 'https://github.com/rosareyes/rosa-reyes-web',
+    url: '/',
   },
 ];

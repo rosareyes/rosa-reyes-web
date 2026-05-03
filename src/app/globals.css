@@ -1,141 +1,61 @@
 @import 'tailwindcss';
 
-@variant dark (&:where(.dark, .dark *));
-
 @theme {
-  --color-dimWhite: #e2e8f0;
+  --color-ink:           #0B0D10;
+  --color-ink2:          #0F1216;
+  --color-surface:       #14171C;
+  --color-surface2:      #1A1E24;
+  --color-text:          #E9ECEF;
+  --color-dim:           #9AA3AD;
+  --color-faint:         #5A636C;
+  --color-accent:        oklch(0.74 0.18 45);
+  --color-accent-dim:    oklch(0.55 0.14 45);
+  --color-accent-second: oklch(0.72 0.15 330);
+  --color-accent-tags:   oklch(0.82 0.13 75);
+  --color-accent-tags2:  oklch(0.78 0.13 245);
+  --color-line:          rgba(255, 255, 255, 0.08);
+  --color-line2:         rgba(255, 255, 255, 0.14);
 
-  --color-blue-50: #e6f1ff;
-  --color-blue-100: #ccd6f6;
-  --color-blue-150: #a8b2d1;
-  --color-blue-200: #8892b0;
-  --color-blue-300: #233554;
-  --color-blue-400: #112240;
-  --color-blue-450: #142c50;
-  --color-blue-500: #0a192f;
-
-  --color-green-50: #ddf2ec;
-  --color-green-55: #64ffda;
-  --color-green-100: #8ed6c2;
-  --color-green-200: #36c39c;
-  --color-green-300: #007d5a;
-  --color-green-400: #00553d;
-  --color-green-450: #025a4e;
-  --color-green-500: #001e16;
-  --color-green-600: #19362e;
-
-  --color-purple-100: #c79fbe;
-
-  --color-orange-50: #ffa57d;
-  --color-orange-100: #ff7d45;
+  --font-display: 'Fraunces', serif;
+  --font-body:    'Geist', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
 }
 
-/*
-  The default border color has changed to `currentcolor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-*/
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(0.85); opacity: 0.6; }
+}
+
 @layer base {
   *,
   ::after,
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
+    border-color: var(--color-line, currentcolor);
+    box-sizing: border-box;
   }
-}
 
-:root {
-  --color-stop-start: #00d0b7;
-  --color-stop-end: #008fb6;
-}
+  html {
+    background: var(--color-ink);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
 
-.dark {
-  --color-stop-start: #ff7d45;
-  --color-stop-end: #db4200;
-}
+  body {
+    margin: 0;
+    overflow-x: hidden;
+  }
 
-h1 {
-  font-family: var(--font-title);
-}
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 
-a:hover {
-  color: #007d5a;
-  cursor: pointer;
-}
-
-.dark a:hover {
-  color: #ff7d45;
-  cursor: pointer;
-}
-
-.selector {
-  background-image: linear-gradient(
-    7deg,
-    #f7f2ff 25.77%,
-    #38d0ce 73.92%,
-    #049a98 88.45%
-  );
-  background-size: cover;
-  background-position: center;
-}
-
-.dark .selector {
-  background-image: none;
-}
-
-.svg {
-  position: absolute;
-  width: 0;
-  height: 0;
-}
-
-.outline-text {
-  text-shadow:
-    2px 2px 0 #025a4e,
-    -2px -2px 0 #025a4e,
-    2px -2px 0 #025a4e,
-    -2px 2px 0 #025a4e,
-    2px 2px 0 #025a4e;
-  color: #f7f2ff;
-}
-
-@media (min-width: 1024px) {
-  .selector {
-    clip-path: polygon(
-      100% 100%,
-      0% 100%,
-      0% 9.92%,
-      3.33% 9.41%,
-      6.67% 8.47%,
-      10% 7.19%,
-      13.33% 5.7%,
-      16.67% 4.13%,
-      20% 2.65%,
-      23.33% 1.4%,
-      26.67% 0.51%,
-      30% 0.05%,
-      33.33% 0.08%,
-      36.67% 0.59%,
-      40% 1.53%,
-      43.33% 2.81%,
-      46.67% 4.3%,
-      50% 5.87%,
-      53.33% 7.35%,
-      56.67% 8.6%,
-      60% 9.49%,
-      63.33% 9.95%,
-      66.67% 9.92%,
-      70% 9.41%,
-      73.33% 8.47%,
-      76.67% 7.19%,
-      80% 5.7%,
-      83.33% 4.13%,
-      86.67% 2.65%,
-      90% 1.4%,
-      93.33% 0.51%,
-      96.67% 0.05%,
-      100% 0.08%
-    );
+  h1, h2, h3, h4 {
+    margin: 0;
+    font-family: var(--font-display);
   }
 }

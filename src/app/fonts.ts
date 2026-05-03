@@ -1,33 +1,20 @@
-import {
-  Poppins,
-  Playfair_Display,
-  Montserrat,
-  Pacifico,
-  NTR,
-  Inter,
-} from 'next/font/google';
+import { Fraunces, Geist, JetBrains_Mono } from 'next/font/google';
 
-export const poppings = Poppins({
+export const fraunces = Fraunces({
   subsets: ['latin'],
-  weight: ['200', '400', '700'],
+  variable: '--font-display',
+  weight: ['300', '400'],
+  style: ['normal', 'italic'],
 });
 
-export const playfair_display = Playfair_Display({
+export const geist = Geist({
   subsets: ['latin'],
-  display: 'swap',
+  variable: '--font-body',
+  weight: ['300', '400', '500'],
 });
 
-export const montserrat = Montserrat({
+export const mono = JetBrains_Mono({
   subsets: ['latin'],
-  display: 'swap',
-  weight: ['200', '400', '600', '700'],
-});
-
-export const pacifico = Pacifico({ weight: '400', subsets: ['latin'] });
-
-export const ntr = NTR({ weight: '400', subsets: ['latin'] });
-
-export const inter = Inter({
-  weight: ['200', '400', '600', '700'],
-  subsets: ['latin'],
+  variable: '--font-mono',
+  weight: ['400', '500'],
 });

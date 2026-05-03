@@ -1,12 +1,11 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-
-const inter = Inter({ subsets: ['latin'] });
+import { fraunces, geist, mono } from './fonts';
 
 export const metadata: Metadata = {
-  title: 'Rosa Reyes',
-  description: '',
+  title: 'Rosa Reyes · Software Engineer',
+  description:
+    'Software engineer in Madrid. Frontend, design systems, and the interfaces in between.',
 };
 
 export default function RootLayout({
@@ -15,8 +14,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
-      <body className={inter.className}>{children}</body>
+    <html
+      lang="en"
+      className={`${fraunces.variable} ${geist.variable} ${mono.variable}`}
+    >
+      <body>{children}</body>
     </html>
   );
 }
