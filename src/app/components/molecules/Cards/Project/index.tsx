@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { clsx } from 'clsx';
 import type { Project } from '../../../../../types';
+import { ArrowUpRight } from '../../../atoms/icons';
 
 type ProjectCardProps = Omit<Project, 'github'> & { index: number; github?: string };
 
@@ -80,7 +81,7 @@ export default function ProjectCard({ index, title, kind, year, description, tag
               hover ? 'text-accent translate-x-0.5 -translate-y-0.5' : 'text-faint translate-x-0 translate-y-0',
             )}
           >
-            ↗
+            <ArrowUpRight />
           </span>
         </div>
       </div>

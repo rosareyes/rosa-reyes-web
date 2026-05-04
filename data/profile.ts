@@ -8,8 +8,8 @@ export const jobs: Job[] = [
     range: 'May 2022 to Apr 2026 · 4 yrs',
     loc: 'London, UK · Remote · Part-time',
     bullets: [
-      'Developed complex user-facing features and application logic using React and Next.js, integrating REST APIs to enable scalable, data-driven functionality.',
-      'Designed and implemented backend services for a full-stack feature using Python (FastAPI) and DynamoDB on AWS, including API design and data modeling.',
+      'Delivered features end-to-end across the stack — React/TypeScript frontends and FastAPI + PostgreSQL backends — including a social like system built from API design to UI.',
+      'Architected Stylib HUB, a product catalog management platform for suppliers: React/TypeScript/Redux frontend with AWS-backed infrastructure for multi-channel data distribution.',
       'Built a multi-agent backend system for semantic search using an Entity–Filter–Validator pipeline to transform natural language queries into structured filters.',
       'Implemented testing and CI/CD pipelines with Jest, Cypress, and GitHub Actions.',
     ],

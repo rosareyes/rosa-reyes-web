@@ -1,46 +1,63 @@
 import SectionHeader from '../../../components/atoms/SectionHeader';
 
-const TAGS = ['Live music', 'Video games', 'Bouldering', 'Reading', 'Coffee', 'Gym'] as const;
+const TAGS = [
+  'Live music',
+  'Video games',
+  'Bouldering',
+  'Reading',
+  'Coffee',
+  'Gym',
+] as const;
 
 export default function AboutSection() {
   return (
     <section id="about" className="scroll-mt-25 py-16 md:py-25">
       <SectionHeader
         label="01 / About"
-        title={<>A bit about <em className="text-accent">who I am.</em></>}
+        title={
+          <>
+            A bit about <em className="text-accent">who I am.</em>
+          </>
+        }
       />
-      <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr] gap-10 md:gap-20 items-start">
-        <div className="text-[16px] md:text-[17px] leading-[1.75] text-dim">
+      <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-[1.4fr_1fr] md:gap-20">
+        <div className="text-dim text-[16px] leading-[1.75] md:text-[17px]">
           <p className="mb-6">
             I&apos;m Rosa, a software engineer based in{' '}
-            <strong className="text-text">Madrid</strong>, with a really loud keyboard and a deep
-            cup of coffee. I&apos;m into the engineering side of things: how systems fit together, why
-            they break, and what makes them feel good to use.
+            <strong className="text-text">Madrid</strong>, with a really loud
+            keyboard and a deep cup of coffee. I&apos;m into the engineering
+            side of things: how systems fit together, why they break, and what
+            makes them feel good to use.
           </p>
           <p className="mb-6">
-            I got into programming as a kid because I wanted more out of The Sims. What started as
-            cracking games for me and my friends turned into being the household tech support:
-            fixing missing DLLs, mystery Windows errors, the works. Somewhere between rebooting
-            routers and rewriting save files, I figured out this was what I wanted to do for real.
+            I got into programming as a kid because I wanted more out of The
+            Sims. Cracking games turned into fixing missing DLLs and mystery
+            Windows errors for everyone I knew, which turned into torrenting
+            software, which turned into taking online courses and building
+            websites for anyone who&apos;d let me. I was self-taught before I
+            even knew that was a thing.
           </p>
           <p>
-            I studied{' '}
-            <strong className="text-text">Computer Science and Engineering</strong> at{' '}
-            <strong className="text-text">UC3M</strong>, and I write code that ships to actual
-            humans. Off-screen: bouldering when my hands let me, music concerts whenever I can,
-            video games, and a stack of books I&apos;m definitely going to finish this year.
+            I started university in Venezuela, ended up finishing my{' '}
+            <strong className="text-text">
+              Computer Science and Engineering
+            </strong>{' '}
+            degree at <strong className="text-text">UC3M </strong> in Madrid and
+            stayed. Off-screen: bouldering when my hands let me, concerts
+            whenever I can, video games, and a stack of books I&apos;m
+            definitely going to finish this year.
           </p>
         </div>
 
         <div>
-          <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-faint mb-4.5">
+          <div className="text-faint mb-4.5 font-mono text-[10px] tracking-[0.2em] uppercase">
             Currently into
           </div>
           <div className="flex flex-wrap gap-2">
             {TAGS.map((t) => (
               <span
                 key={t}
-                className="inline-flex items-center px-3.5 py-2 rounded-full border border-line2 bg-white/[0.02] text-[13px] text-text"
+                className="border-line2 text-text inline-flex items-center rounded-full border bg-white/[0.02] px-3.5 py-2 text-[13px]"
               >
                 {t}
               </span>
@@ -48,15 +65,19 @@ export default function AboutSection() {
           </div>
 
           {/* Now Playing card */}
-          <div className="mt-8 p-4.5 border border-line rounded-3.5 bg-white/[0.02] flex items-center gap-3.5">
-            <div className="w-12 h-12 rounded-lg shrink-0 bg-[linear-gradient(135deg,var(--color-accent-second),var(--color-accent))]" />
-            <div className="flex-1 min-w-0">
-              <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-accent mb-1 flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full shrink-0 bg-accent animate-[pulse_1.5s_ease-in-out_infinite]" />
+          <div className="border-line rounded-3.5 mt-8 flex items-center gap-3.5 border bg-white/[0.02] p-4.5">
+            <div className="h-12 w-12 shrink-0 rounded-lg bg-brand-gradient" />
+            <div className="min-w-0 flex-1">
+              <div className="text-accent mb-1 flex items-center gap-1.5 font-mono text-[10px] tracking-[0.18em] uppercase">
+                <span className="bg-accent h-1.5 w-1.5 shrink-0 animate-[pulse_1.5s_ease-in-out_infinite] rounded-full" />
                 Now playing
               </div>
-              <div className="text-[14px] text-text font-medium">Dog Days Are Over</div>
-              <div className="text-[12px] text-dim">Florence + the Machine, Lungs</div>
+              <div className="text-text text-[14px] font-medium">
+                Dog Days Are Over
+              </div>
+              <div className="text-dim text-[12px]">
+                Florence + the Machine, Lungs
+              </div>
             </div>
           </div>
         </div>

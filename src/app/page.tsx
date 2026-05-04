@@ -53,7 +53,7 @@ export default function Home() {
           <StackSection />
         </section>
 
-        <section id="contact" className="scroll-mt-25 py-16 md:py-25">
+        <section id="contact" className="scroll-mt-25 min-h-[70vh] py-16 md:py-25">
           <ContactSection />
         </section>
 

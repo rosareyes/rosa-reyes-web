@@ -21,6 +21,10 @@
   --font-mono:    'JetBrains Mono', monospace;
 }
 
+@utility bg-brand-gradient {
+  background: linear-gradient(135deg, var(--color-accent-tags), var(--color-accent));
+}
+
 @keyframes pulse {
   0%, 100% { transform: scale(1); opacity: 1; }
   50%       { transform: scale(0.85); opacity: 0.6; }
