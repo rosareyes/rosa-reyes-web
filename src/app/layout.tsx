@@ -1,11 +1,12 @@
 import './globals.css';
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { fraunces, geist, mono } from './fonts';
 
 export const metadata: Metadata = {
-  title: 'Rosa Reyes · Software Engineer',
+  title: 'Rosa Reyes - Software Engineer',
   description:
-    'Software engineer in Madrid. Frontend, design systems, and the interfaces in between.',
+    'Software engineer in Madrid. Building products end-to-end — backend systems, APIs, and the interfaces in between.',
 };
 
 export default function RootLayout({
@@ -18,7 +19,14 @@ export default function RootLayout({
       lang="en"
       className={`${fraunces.variable} ${geist.variable} ${mono.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <Script
+          src="https://cloud.umami.is/script.js"
+          data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
+          strategy="afterInteractive"
+        />
+        {children}
+      </body>
     </html>
   );
 }

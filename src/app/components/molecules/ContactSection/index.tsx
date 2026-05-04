@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { clsx } from 'clsx';
 import SectionHeader from '../../atoms/SectionHeader';
 import { ArrowRight, ArrowUpRight } from '../../atoms/icons';
+import { useAnalytics } from '@/app/hooks/useAnalytics';
 
 const LINKS = [
   {
@@ -31,6 +32,7 @@ function ContactRow({
   last?: boolean;
 }) {
   const [hover, setHover] = useState(false);
+  const { track } = useAnalytics();
   return (
     <a
       href={href}
@@ -38,6 +40,7 @@ function ContactRow({
       rel="noopener noreferrer"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
+      onClick={() => track('link-click', { label: k.toLowerCase() })}
       className={clsx(
         'text-text flex items-center justify-between border-t py-5 no-underline transition-all duration-200',
         last && 'border-line border-b',
@@ -70,6 +73,7 @@ function ContactRow({
 }
 
 export default function ContactSection() {
+  const { track } = useAnalytics();
   return (
     <div>
       <SectionHeader
@@ -89,6 +93,7 @@ export default function ContactSection() {
           </p>
           <a
             href="mailto:hello@rosareyes.dev"
+            onClick={() => track('email-click')}
             className="font-display text-text border-accent inline-flex items-center gap-2 border-b pb-1 text-[clamp(22px,4vw,44px)] tracking-[-0.01em] no-underline"
           >
             hello@rosareyes.dev

@@ -6,6 +6,7 @@ import { jobs } from '../../../../../data/profile';
 import { ArrowUpRight } from '../../atoms/icons';
 import type { Job } from '../../../../types';
 import SectionHeader from '../../atoms/SectionHeader';
+import { useAnalytics } from '@/app/hooks/useAnalytics';
 
 function RoleRow({
   item,
@@ -116,6 +117,7 @@ function RoleRow({
 
 export default function WorkSection() {
   const [open, setOpen] = useState(0);
+  const { track } = useAnalytics();
 
   return (
     <div>
@@ -143,6 +145,7 @@ export default function WorkSection() {
         href="/rosa-reyes-eng.pdf"
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => track('cv-download')}
         className="text-text border-line2 mt-8 inline-flex items-center gap-2 border-b pb-1 text-[13px] no-underline"
       >
         Download full CV <ArrowUpRight className="text-accent" />

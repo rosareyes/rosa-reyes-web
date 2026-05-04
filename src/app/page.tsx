@@ -10,10 +10,12 @@ import ContactSection    from './components/molecules/ContactSection';
 import Footer            from './components/molecules/Footer';
 import SectionHeader     from './components/atoms/SectionHeader';
 import { projects }      from '../../data/profile';
+import { SectionTracker } from './components/atoms/SectionTracker';
 
 export default function Home() {
   return (
     <main className="bg-ink min-h-screen relative">
+      <SectionTracker />
       <CursorHalo />
       <BgGrain />
       <Navbar />

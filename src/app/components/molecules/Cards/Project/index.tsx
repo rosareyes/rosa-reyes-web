@@ -4,11 +4,13 @@ import { useState } from 'react';
 import { clsx } from 'clsx';
 import type { Project } from '../../../../../types';
 import { ArrowUpRight } from '../../../atoms/icons';
+import { useAnalytics } from '@/app/hooks/useAnalytics';
 
 type ProjectCardProps = Omit<Project, 'github'> & { index: number; github?: string };
 
 export default function ProjectCard({ index, title, kind, year, description, tags, url, image }: ProjectCardProps) {
   const [hover, setHover] = useState(false);
+  const { track } = useAnalytics();
   const href = url || '#';
 
   return (
@@ -18,6 +20,7 @@ export default function ProjectCard({ index, title, kind, year, description, tag
       rel="noopener noreferrer"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
+      onClick={() => track('project-click', { name: title })}
       className={clsx(
         'flex flex-col no-underline text-inherit',
         'p-7 rounded-4.5 border relative overflow-hidden',

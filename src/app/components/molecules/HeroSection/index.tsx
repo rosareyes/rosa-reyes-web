@@ -35,6 +35,7 @@ export default function HeroSection() {
             src="/rosa-portrait.jpg"
             alt="Rosa Reyes"
             fill
+            sizes="(max-width: 768px) 320px, 40vw"
             className="object-cover"
             style={{ filter: 'saturate(0.95) contrast(1.02)' }}
             priority
