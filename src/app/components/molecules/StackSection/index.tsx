@@ -1,60 +1,35 @@
+import { clsx } from 'clsx';
 import { STACK } from '../../../../../data/stack';
-
-function SectionHeader({ label, title, kicker }: { label: string; title: React.ReactNode; kicker?: string }) {
-  return (
-    <div style={{ marginBottom: 56 }}>
-      <div style={{
-        display: 'flex', alignItems: 'center', gap: 14, marginBottom: 24,
-        fontFamily: 'var(--font-mono)', fontSize: 11,
-        letterSpacing: '0.16em', textTransform: 'uppercase',
-        color: 'var(--color-accent)',
-      }}>
-        <span>{label}</span>
-        <span style={{ flex: 1, height: 1, background: 'var(--color-line)' }} />
-      </div>
-      <h2 style={{
-        fontFamily: 'var(--font-display)', fontWeight: 400,
-        fontSize: 'clamp(40px, 5vw, 64px)', lineHeight: 1.05,
-        letterSpacing: '-0.02em', color: 'var(--color-text)',
-      }}>{title}</h2>
-      {kicker && (
-        <p style={{
-          marginTop: 18, fontSize: 17, lineHeight: 1.6,
-          color: 'var(--color-dim)', maxWidth: 620,
-        }}>{kicker}</p>
-      )}
-    </div>
-  );
-}
+import SectionHeader from '../../atoms/SectionHeader';
 
 export default function StackSection() {
-  const entries = Object.entries(STACK) as [string, string[]][];
+  const entries = Object.entries(STACK);
 
   return (
     <div>
       <SectionHeader
         label="04 / Stack"
-        title={<>Tools I've <em style={{ color: 'var(--color-accent)' }}>used.</em></>}
-        kicker="Things I've used in real projects."/>
-      <div style={{
-        display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)',
-        border: '1px solid var(--color-line)',
-        borderRadius: 14, overflow: 'hidden',
-      }}>
+        title={<>Tools I&apos;ve <em className="text-accent">used.</em></>}
+        kicker="Things I've used in real projects."
+      />
+      {/* Mobile: 2-col grid of individual cards. Desktop: single bordered 5-col container */}
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-0 md:border md:border-line md:rounded-3.5 md:overflow-hidden">
         {entries.map(([cat, items], i) => (
-          <div key={cat} style={{
-            padding: '28px 24px',
-            borderRight: i < 4 ? '1px solid var(--color-line)' : 'none',
-            background: i % 2 === 0 ? 'rgba(255,255,255,0.01)' : 'transparent',
-          }}>
-            <div style={{
-              fontFamily: 'var(--font-mono)', fontSize: 10,
-              letterSpacing: '0.18em', textTransform: 'uppercase',
-              color: 'var(--color-accent)', marginBottom: 18,
-            }}>{String(i + 1).padStart(2, '0')} {cat}</div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+          <div
+            key={cat}
+            className={clsx(
+              'p-5 md:p-7',
+              'border border-line rounded-xl md:border-none md:rounded-none',
+              i < 4 && 'md:border-r md:border-line',
+              i % 2 === 0 ? 'bg-white/[0.01]' : 'bg-transparent',
+            )}
+          >
+            <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-accent mb-4 md:mb-4.5">
+              {String(i + 1).padStart(2, '0')} {cat}
+            </div>
+            <div className="flex flex-col gap-2 md:gap-2.5">
               {items.map((it) => (
-                <div key={it} style={{ fontSize: 14, color: 'var(--color-text)' }}>{it}</div>
+                <div key={it} className="text-[13px] md:text-[14px] text-text">{it}</div>
               ))}
             </div>
           </div>

@@ -1,6 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { clsx } from 'clsx';
+import { useScrollProgress } from '../../../hooks/useScrollProgress';
+import { useActiveSection } from '../../../hooks/useActiveSection';
 
 const NAV = [
   { id: 'intro',    label: 'Index',    n: '00' },
@@ -9,135 +11,76 @@ const NAV = [
   { id: 'projects', label: 'Projects', n: '03' },
   { id: 'stack',    label: 'Stack',    n: '04' },
   { id: 'contact',  label: 'Contact',  n: '05' },
-];
+] as const;
 
-export const Navbar = () => {
-  const [active, setActive]     = useState('intro');
-  const [scrolled, setScrolled] = useState(0);
+const SECTION_IDS = NAV.map((n) => n.id);
 
-  useEffect(() => {
-    const onScroll = () => {
-      const max = document.body.scrollHeight - window.innerHeight;
-      setScrolled(max > 0 ? window.scrollY / max : 0);
-    };
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
-  useEffect(() => {
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => { if (e.isIntersecting) setActive(e.target.id); });
-      },
-      { rootMargin: '-40% 0px -55% 0px' }
-    );
-    NAV.forEach(({ id }) => {
-      const el = document.getElementById(id);
-      if (el) obs.observe(el);
-    });
-    return () => obs.disconnect();
-  }, []);
+export function Navbar() {
+  const scrolled = useScrollProgress();
+  const active   = useActiveSection(SECTION_IDS);
 
   return (
     <>
       {/* Fixed top header */}
-      <header style={{
-        position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50,
-        backdropFilter: 'blur(14px)',
-        background: 'rgba(11,13,16,0.7)',
-        borderBottom: '1px solid var(--color-line)',
-      }}>
-        <div style={{
-          maxWidth: 1180, margin: '0 auto',
-          padding: '18px 80px',
-          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-          fontFamily: 'var(--font-mono)', fontSize: 12,
-          letterSpacing: '0.04em',
-        }}>
+      <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-[14px] bg-[rgba(11,13,16,0.7)] border-b border-line">
+        <div className="max-w-[1180px] mx-auto px-5 md:px-20 py-4.5 flex items-center justify-between font-mono text-[12px] tracking-[0.04em]">
           {/* Left */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-            <div style={{
-              width: 28, height: 28, borderRadius: 8, flexShrink: 0,
-              background: 'linear-gradient(135deg, var(--color-accent), var(--color-accent-second))',
-              display: 'grid', placeItems: 'center',
-              color: '#0B0D10',
-              fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 16,
-              fontStyle: 'italic',
-            }}>r</div>
-            <span style={{ color: 'var(--color-dim)' }}>Rosa Reyes</span>
-            <span style={{ color: 'var(--color-faint)' }}>·</span>
-            <span style={{ color: 'var(--color-faint)' }}>Software Engineer · Madrid</span>
+          <div className="flex items-center gap-3.5">
+            <div className="w-7 h-7 rounded-lg shrink-0 grid place-items-center bg-[linear-gradient(135deg,var(--color-accent),var(--color-accent-second))] font-display font-semibold text-base italic text-ink">
+              r
+            </div>
+            <span className="text-dim">Rosa Reyes</span>
+            <span className="hidden md:inline text-faint">·</span>
+            <span className="hidden md:inline text-faint">Software Engineer · Madrid</span>
           </div>
 
           {/* Right */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-            <span style={{
-              display: 'inline-flex', alignItems: 'center', gap: 8,
-              padding: '6px 12px', borderRadius: 999,
-              border: '1px solid var(--color-line)',
-              background: 'rgba(255,255,255,0.02)',
-              fontSize: 11, color: 'var(--color-dim)',
-            }}>
-              <span style={{
-                width: 7, height: 7, borderRadius: '50%', flexShrink: 0,
-                background: 'var(--color-accent)',
-                boxShadow: '0 0 0 4px oklch(0.74 0.18 45 / 0.22)',
-                animation: 'pulse 2s ease-in-out infinite',
-              }} />
+          <div className="flex items-center gap-3">
+            <span className="hidden md:inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-line bg-white/[0.02] text-[11px] text-dim">
+              <span className="w-[7px] h-[7px] rounded-full shrink-0 bg-accent shadow-[0_0_0_4px_oklch(0.74_0.18_45/0.22)] animate-[pulse_2s_ease-in-out_infinite]" />
               Open to new roles
             </span>
-            <a href="#contact" style={{
-              display: 'inline-flex', alignItems: 'center', gap: 6,
-              color: 'var(--color-text)', textDecoration: 'none',
-              border: '1px solid var(--color-line2)',
-              padding: '8px 14px', borderRadius: 999,
-              background: 'rgba(255,255,255,0.02)',
-              fontFamily: 'var(--font-mono)', fontSize: 11,
-              letterSpacing: '0.06em', textTransform: 'uppercase',
-            }}>
-              Get in touch <span style={{ color: 'var(--color-accent)' }}>→</span>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-1.5 text-text border border-line2 px-3.5 py-2 rounded-full bg-white/[0.02] font-mono text-[11px] tracking-[0.06em] uppercase no-underline"
+            >
+              Get in touch <span className="text-accent">→</span>
             </a>
           </div>
         </div>
 
         {/* Scroll progress bar */}
-        <div style={{
-          position: 'absolute', left: 0, bottom: -1, height: 1,
-          width: `${scrolled * 100}%`,
-          background: 'var(--color-accent)',
-          transition: 'width 60ms linear',
-        }} />
+        <div
+          className="absolute left-0 -bottom-px h-px bg-accent transition-[width] duration-[60ms] linear"
+          style={{ width: `${scrolled * 100}%` }}
+        />
       </header>
 
-      {/* Right-rail dot nav */}
-      <nav aria-label="Section navigation" style={{
-        position: 'fixed', top: '50%', right: 36,
-        transform: 'translateY(-50%)',
-        zIndex: 40,
-        display: 'flex', flexDirection: 'column', gap: 4,
-      }}>
+      {/* Right-rail dot nav — desktop only */}
+      <nav
+        aria-label="Section navigation"
+        className="hidden md:flex fixed top-1/2 right-9 -translate-y-1/2 z-40 flex-col gap-1"
+      >
         {NAV.map((n) => {
           const on = active === n.id;
           return (
-            <a key={n.id} href={`#${n.id}`} style={{
-              display: 'flex', alignItems: 'center', gap: 10,
-              textDecoration: 'none',
-              padding: '8px 4px',
-              fontFamily: 'var(--font-mono)',
-              fontSize: 11, letterSpacing: '0.08em',
-              color: on ? 'var(--color-text)' : 'var(--color-faint)',
-              transition: 'color 200ms',
-            }}>
-              <span style={{ opacity: on ? 1 : 0.5, minWidth: 18 }}>{n.n}</span>
-              <span style={{
-                height: 1,
-                width: on ? 28 : 14,
-                background: on ? 'var(--color-accent)' : 'var(--color-faint)',
-                transition: 'width 250ms, background 250ms',
-                flexShrink: 0,
-              }} />
-              <span style={{ textTransform: 'uppercase', fontWeight: on ? 600 : 400 }}>
+            <a
+              key={n.id}
+              href={`#${n.id}`}
+              className={clsx(
+                'flex items-center gap-2.5 no-underline py-2 px-1',
+                'font-mono text-[11px] tracking-[0.08em] transition-colors duration-200',
+                on ? 'text-text' : 'text-faint',
+              )}
+            >
+              <span className={clsx('min-w-4.5', !on && 'opacity-50')}>{n.n}</span>
+              <span
+                className={clsx(
+                  'h-px shrink-0 transition-[width,background-color] duration-[250ms]',
+                  on ? 'w-7 bg-accent' : 'w-3.5 bg-faint',
+                )}
+              />
+              <span className={clsx('uppercase', on ? 'font-semibold' : 'font-normal')}>
                 {n.label}
               </span>
             </a>
@@ -146,4 +89,4 @@ export const Navbar = () => {
       </nav>
     </>
   );
-};
+}

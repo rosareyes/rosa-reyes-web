@@ -1,4 +1,6 @@
-export const jobs = [
+import type { Job, Project } from '../src/types';
+
+export const jobs: Job[] = [
   {
     role: 'Software Engineer',
     co: 'Stylib',
@@ -42,7 +44,7 @@ export const jobs = [
   },
 ];
 
-export const projects = [
+export const projects: Project[] = [
   {
     title: 'Semantic Search Engine',
     kind: 'Bachelor thesis',
