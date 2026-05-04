@@ -6,9 +6,12 @@ export default function Footer() {
       <div>© 2026 Rosa Reyes · Built with love in Madrid</div>
       <a
         href="#intro"
-        className="text-faint hover:text-text no-underline transition-colors duration-200"
+        className="text-faint hover:text-text flex items-center gap-1 no-underline transition-colors duration-200"
       >
-        Back to top <ArrowUp />
+        Back to top
+        <span>
+          <ArrowUp />
+        </span>
       </a>
     </footer>
   );
