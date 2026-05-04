@@ -16,6 +16,7 @@ export interface Project {
   tags: string[];
   url: string;
   github?: string;
+  image?: string;
 }
 
 export type Stack = Record<string, string[]>;

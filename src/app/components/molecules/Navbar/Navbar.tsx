@@ -59,7 +59,7 @@ export function Navbar() {
       {/* Right-rail dot nav — desktop only */}
       <nav
         aria-label="Section navigation"
-        className="hidden md:flex fixed top-1/2 right-9 -translate-y-1/2 z-40 flex-col gap-1"
+        className="hidden md:flex fixed top-1/2 right-5 -translate-y-1/2 z-40 flex-col gap-1"
       >
         {NAV.map((n) => {
           const on = active === n.id;
@@ -67,20 +67,26 @@ export function Navbar() {
             <a
               key={n.id}
               href={`#${n.id}`}
+              aria-label={n.label}
               className={clsx(
-                'flex items-center gap-2.5 no-underline py-2 px-1',
+                'flex items-center justify-end lg:justify-start no-underline',
+                'py-1.5 lg:py-2 lg:px-1 lg:gap-2.5',
                 'font-mono text-[11px] tracking-[0.08em] transition-colors duration-200',
                 on ? 'text-text' : 'text-faint',
               )}
             >
-              <span className={clsx('min-w-4.5', !on && 'opacity-50')}>{n.n}</span>
+              <span className={clsx('hidden lg:inline-block min-w-4.5', !on && 'opacity-50')}>
+                {n.n}
+              </span>
               <span
                 className={clsx(
-                  'h-px shrink-0 transition-[width,background-color] duration-[250ms]',
-                  on ? 'w-7 bg-accent' : 'w-3.5 bg-faint',
+                  'block h-px shrink-0 transition-[width,background-color] duration-[250ms]',
+                  on
+                    ? 'w-6 lg:w-7 bg-accent'
+                    : 'w-3 lg:w-3.5 bg-faint',
                 )}
               />
-              <span className={clsx('uppercase', on ? 'font-semibold' : 'font-normal')}>
+              <span className={clsx('hidden lg:inline uppercase', on ? 'font-semibold' : 'font-normal')}>
                 {n.label}
               </span>
             </a>

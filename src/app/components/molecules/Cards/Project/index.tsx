@@ -6,7 +6,7 @@ import type { Project } from '../../../../../types';
 
 type ProjectCardProps = Omit<Project, 'github'> & { index: number; github?: string };
 
-export default function ProjectCard({ index, title, kind, year, description, tags, url }: ProjectCardProps) {
+export default function ProjectCard({ index, title, kind, year, description, tags, url, image }: ProjectCardProps) {
   const [hover, setHover] = useState(false);
   const href = url || '#';
 
@@ -21,12 +21,27 @@ export default function ProjectCard({ index, title, kind, year, description, tag
         'flex flex-col no-underline text-inherit',
         'p-7 rounded-4.5 border relative overflow-hidden',
         'transition-all duration-[240ms] min-h-65',
-        hover
-          ? 'border-line2 bg-white/[0.025] -translate-y-0.5'
-          : 'border-line bg-white/[0.01] translate-y-0',
+        hover ? 'border-line2 -translate-y-0.5' : 'border-line translate-y-0',
+        !image && (hover ? 'bg-white/[0.025]' : 'bg-white/[0.01]'),
       )}
     >
-      {/* Radial accent overlay */}
+      {/* Background image — CSS background-image works natively with GIFs */}
+      {image ? (
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${image})` }}
+        />
+      ) : null}
+
+      {/* Dark overlay — lighter on hover so the image is visible */}
+      {image ? (
+        <div
+          className="absolute inset-0 transition-opacity duration-[240ms]"
+          style={{ background: hover ? 'rgba(11,13,16,0.65)' : 'rgba(11,13,16,0.82)' }}
+        />
+      ) : null}
+
+      {/* Accent radial — colour wash over the image */}
       <div
         className={clsx(
           'absolute inset-0 pointer-events-none transition-opacity duration-300',
@@ -35,8 +50,8 @@ export default function ProjectCard({ index, title, kind, year, description, tag
         )}
       />
 
+      {/* Content */}
       <div className="relative flex-1 flex flex-col">
-        {/* Top row */}
         <div className="flex justify-between font-mono text-[11px] tracking-[0.1em] text-faint mb-8">
           <span>{String(index + 1).padStart(2, '0')} · {kind}</span>
           <span>{year}</span>
@@ -48,7 +63,6 @@ export default function ProjectCard({ index, title, kind, year, description, tag
 
         <p className="text-[14px] leading-[1.6] text-dim flex-1">{description}</p>
 
-        {/* Bottom: tags + arrow */}
         <div className="mt-6 flex justify-between items-center">
           <div className="flex gap-1.5 flex-wrap">
             {tags.map((t) => (

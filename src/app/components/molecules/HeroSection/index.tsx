@@ -15,7 +15,7 @@ export default function HeroSection() {
       <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-10 md:gap-16 items-center">
         {/* Left: text */}
         <div>
-          <h1 className="font-display font-light text-[clamp(40px,8vw,112px)] leading-[0.95] tracking-[-0.035em] text-text">
+          <h1 className="font-display font-light text-[clamp(40px,6.5vw,112px)] leading-[0.95] tracking-[-0.035em] text-text">
             Rosa Reyes<br />
             <em className="text-accent font-normal">Software Engineer.</em>
           </h1>
@@ -30,7 +30,7 @@ export default function HeroSection() {
         </div>
 
         {/* Right: portrait */}
-        <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border border-line2 bg-surface max-w-80 w-full mx-auto md:mx-0 md:max-w-none">
+        <div className="relative aspect-3/4 rounded-2xl overflow-hidden border border-line2 bg-surface max-w-80 w-full mx-auto md:mx-0 md:max-w-none">
           <Image
             src="/rosa-portrait.jpg"
             alt="Rosa Reyes"

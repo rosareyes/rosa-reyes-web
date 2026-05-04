@@ -13,7 +13,7 @@ export const jobs: Job[] = [
       'Built a multi-agent backend system for semantic search using an Entity–Filter–Validator pipeline to transform natural language queries into structured filters.',
       'Implemented testing and CI/CD pipelines with Jest, Cypress, and GitHub Actions.',
     ],
-    skills: ['React', 'Next.js', 'TypeScript', 'Python', 'FastAPI', 'DynamoDB', 'AWS', 'Jest', 'Cypress', 'GitHub Actions'],
+    skills: ['React', 'Next.js', 'TypeScript', 'Python', 'FastAPI', 'PostgreSQL', 'DynamoDB', 'AWS', 'Jest', 'Cypress', 'GitHub Actions'],
   },
   {
     role: 'Web Developer',
@@ -51,7 +51,7 @@ export const projects: Project[] = [
     year: '2026',
     description:
       'My CS bachelor thesis, built in collaboration with Stylib. A multi AI agent system that turns natural language into structured product searches using an Entity-Filter-Validator pipeline. Makes finding architectural products actually work.',
-    tags: ['Python', 'FastAPI', 'NLP', 'LLMs', 'DynamoDB'],
+    tags: ['Python', 'FastAPI', 'NLP', 'LLMs', 'Pydantic AI'],
     github: '',
     url: '',
   },
@@ -61,9 +61,10 @@ export const projects: Project[] = [
     year: '2024',
     description:
       'Semantic product search widgets for Stylib. Users upload a photo of what they need and get matched to real architectural products. Built the full frontend integration.',
-    tags: ['React', 'TypeScript', 'REST APIs'],
+    tags: ['React', 'TypeScript', 'Context API'],
     github: '',
     url: 'https://stylib.com/product-search-engine-for-architectural-products/',
+    image: '/widget.gif'
   },
   {
     title: 'Stylib Product Showcase',
@@ -71,9 +72,21 @@ export const projects: Project[] = [
     year: '2023',
     description:
       'Frontend architecture for an interactive product showcase built around design specifications. Focused on performance and making complex product data feel effortless to browse.',
-    tags: ['React', 'Next.js', 'TypeScript', 'Tailwind'],
+    tags: ['React', 'TypeScript', 'Tailwind', 'Zustand', 'DynamoDB'],
     github: '',
     url: 'https://stylib.com/interactive-product-showcase-for-design-specifications/',
+    image: '/showcase.gif'
+  },
+  {
+    title: 'Stylib HUB',
+    kind: 'Work',
+    year: '2025',
+    description:
+      'Product catalog management dashboard for architectural material suppliers. A centralised hub to consolidate, manage, and distribute product data, images, and documents across channels — keeping every catalog accurate and up to date.',
+    tags: ['React', 'TypeScript', 'PostgreSQL', 'AWS', 'Redux', 'Tailwind'],
+    github: '',
+    url: 'https://stylib.com/product-catalog-management-software/',
+    image: '/hub.png'
   },
   {
     title: 'Secure Messaging App',
@@ -81,7 +94,7 @@ export const projects: Project[] = [
     year: '2024',
     description:
       'End-to-end encrypted chat built for a cryptography course. AES-GCM for messages, RSA for key exchange, digital signatures, and a full PKI for user registration and cert management.',
-    tags: ['Python', 'Flask', 'AES-GCM', 'RSA', 'OpenSSL'],
+    tags: ['Python', 'AES-GCM', 'RSA', 'OpenSSL'],
     github: 'https://github.com/rosareyes/cryptography-project/',
     url: 'https://github.com/rosareyes/cryptography-project/',
   },
@@ -91,7 +104,7 @@ export const projects: Project[] = [
     year: '2025',
     description:
       'This site, built and rebuilt as a design and engineering playground. Currently on its third version.',
-    tags: ['Next.js', 'Tailwind', 'Vercel'],
+    tags: ['Next.js', 'Tailwind', 'Vercel', 'Claude'],
     github: 'https://github.com/rosareyes/rosa-reyes-web',
     url: '/',
   },

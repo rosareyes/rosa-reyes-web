@@ -18,7 +18,7 @@ export default function Home() {
       <BgGrain />
       <Navbar />
 
-      <div className="max-w-[1180px] mx-auto px-5 md:px-20 pt-30 relative z-[2]">
+      <div className="max-w-295 mx-auto px-5 md:px-20 lg:pr-36 pt-30 relative z-2">
         <HeroSection />
         <AboutSection />
 
@@ -43,6 +43,7 @@ export default function Home() {
                 tags={p.tags}
                 url={p.url}
                 github={p.github}
+                image={p.image}
               />
             ))}
           </div>
