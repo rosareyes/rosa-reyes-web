@@ -7,6 +7,12 @@ export const metadata: Metadata = {
   title: 'Rosa Reyes - Software Engineer',
   description:
     'Software engineer in Madrid. Building products end-to-end — backend systems, APIs, and the interfaces in between.',
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+  },
 };
 
 export default function RootLayout({
