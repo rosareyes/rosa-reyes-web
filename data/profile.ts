@@ -8,12 +8,24 @@ export const jobs: Job[] = [
     range: 'May 2022 to Apr 2026 · 4 yrs',
     loc: 'London, UK · Remote · Part-time',
     bullets: [
-      'Delivered features end-to-end across the stack — React/TypeScript frontends and FastAPI + PostgreSQL backends — including a social like system built from API design to UI.',
+      'Delivered features end-to-end across the stack (React/TypeScript frontends and FastAPI + PostgreSQL backends), including a social like system built from API design to UI.',
       'Architected Stylib HUB, a product catalog management platform for suppliers: React/TypeScript/Redux frontend with AWS-backed infrastructure for multi-channel data distribution.',
       'Built a multi-agent backend system for semantic search using an Entity–Filter–Validator pipeline to transform natural language queries into structured filters.',
       'Implemented testing and CI/CD pipelines with Jest, Cypress, and GitHub Actions.',
     ],
-    skills: ['React', 'Next.js', 'TypeScript', 'Python', 'FastAPI', 'PostgreSQL', 'DynamoDB', 'AWS', 'Jest', 'Cypress', 'GitHub Actions'],
+    skills: [
+      'React',
+      'Next.js',
+      'TypeScript',
+      'Python',
+      'FastAPI',
+      'PostgreSQL',
+      'DynamoDB',
+      'AWS',
+      'Jest',
+      'Cypress',
+      'GitHub Actions',
+    ],
   },
   {
     role: 'Web Developer',
@@ -64,7 +76,7 @@ export const projects: Project[] = [
     tags: ['React', 'TypeScript', 'Context API'],
     github: '',
     url: 'https://stylib.com/product-search-engine-for-architectural-products/',
-    image: '/widget.gif'
+    image: '/widget.gif',
   },
   {
     title: 'Stylib Product Showcase',
@@ -75,18 +87,18 @@ export const projects: Project[] = [
     tags: ['React', 'TypeScript', 'Tailwind', 'Zustand', 'DynamoDB'],
     github: '',
     url: 'https://stylib.com/interactive-product-showcase-for-design-specifications/',
-    image: '/showcase.gif'
+    image: '/showcase.gif',
   },
   {
     title: 'Stylib HUB',
     kind: 'Work',
     year: '2025',
     description:
-      'Product catalog management dashboard for architectural material suppliers. A centralised hub to consolidate, manage, and distribute product data, images, and documents across channels — keeping every catalog accurate and up to date.',
+      'Product catalog management dashboard for architectural material suppliers. A centralised hub to consolidate, manage, and distribute product data, images, and documents across channels, keeping every catalog accurate and up to date.',
     tags: ['React', 'TypeScript', 'PostgreSQL', 'AWS', 'Redux', 'Tailwind'],
     github: '',
     url: 'https://stylib.com/product-catalog-management-software/',
-    image: '/hub.png'
+    image: '/hub.png',
   },
   {
     title: 'Secure Messaging App',
@@ -97,7 +109,7 @@ export const projects: Project[] = [
     tags: ['Python', 'AES-GCM', 'RSA', 'OpenSSL'],
     github: 'https://github.com/rosareyes/cryptography-project/',
     url: '/projects/cryptography',
-    image: '/crypto_project.png',
+    image: '',
   },
   {
     title: 'Rosa Reyes Web',

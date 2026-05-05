@@ -21,13 +21,13 @@ function RoleRow({
     <div className="border-line cursor-pointer border-t py-6" onClick={onClick}>
       {/* Desktop: 3-col grid. Mobile: 2-col (content + toggle) with date inside content */}
       <div className="grid grid-cols-[1fr_auto] items-baseline gap-4 md:grid-cols-[160px_1fr_auto] md:gap-8">
-        {/* Date column — desktop only */}
+        {/* Date column desktop only */}
         <div className="text-faint hidden font-mono text-[11px] tracking-widest md:block">
           {item.range}
         </div>
 
         <div>
-          {/* Date — mobile only, shown above title */}
+          {/* Date mobile only, shown above title */}
           <div className="text-faint mb-1.5 block font-mono text-[10px] tracking-widest md:hidden">
             {item.range}
           </div>

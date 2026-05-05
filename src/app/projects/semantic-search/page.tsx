@@ -19,7 +19,7 @@ const NAV: NavSection[] = [
 ];
 
 export const metadata: Metadata = {
-  title: 'Semantic Search Engine — Rosa Reyes',
+  title: 'Semantic Search Engine - Rosa Reyes',
   description:
     'CS bachelor thesis: a 3-stage multi-agent pipeline that converts natural language queries into structured product catalog filters using Pydantic AI and LLMs.',
 };
@@ -532,7 +532,6 @@ export default function SemanticSearchPage() {
                 · Soon
               </span>
             </button>
-            {/* GitHub is private — code cannot be shared */}
             <button
               disabled
               className="border-line bg-surface text-faint inline-flex cursor-not-allowed items-center gap-2 rounded border px-4 py-2 font-mono text-[11px] tracking-[0.08em] opacity-50"
@@ -593,8 +592,7 @@ export default function SemanticSearchPage() {
                       Input
                     </div>
                     <div className="text-text leading-[1.55]">
-                      &quot;red oak flooring wider than 150mm under
-                      50€/m²&quot;
+                      &quot;red oak flooring wider than 150mm under 50€/m²&quot;
                     </div>
                   </div>
                   <div className="text-faint flex items-center gap-3 text-[11px]">

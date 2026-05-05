@@ -98,6 +98,9 @@ export default function CryptographyPage() {
                 href="https://github.com/rosareyes/cryptography-project"
                 target="_blank"
                 rel="noopener noreferrer"
+                data-umami-event="link-click"
+                data-umami-event-label="github"
+                data-umami-event-page="cryptography"
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded border border-line2 bg-surface text-text font-mono text-[11px] tracking-[0.08em] hover:border-accent hover:text-accent transition-all duration-[240ms]"
               >
                 View on GitHub
@@ -215,6 +218,9 @@ export default function CryptographyPage() {
                   href="https://github.com/rosareyes/cryptography-project"
                   target="_blank"
                   rel="noopener noreferrer"
+                  data-umami-event="link-click"
+                  data-umami-event-label="github"
+                  data-umami-event-page="cryptography"
                   className="inline-flex items-center justify-between gap-2 px-4 py-3 rounded border border-line bg-surface2 text-text font-mono text-[11px] tracking-[0.08em] hover:border-accent hover:text-accent transition-all duration-[240ms] group"
                 >
                   <span>rosareyes/cryptography-project</span>

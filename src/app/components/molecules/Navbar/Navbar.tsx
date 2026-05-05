@@ -64,7 +64,7 @@ export function Navbar({ sections }: { sections?: NavSection[] }) {
         />
       </header>
 
-      {/* Right-rail dot nav — desktop only */}
+      {/* Right-rail dot nav desktop only */}
       {nav.length > 0 && (
         <nav
           aria-label="Section navigation"

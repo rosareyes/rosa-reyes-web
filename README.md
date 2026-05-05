@@ -1,5 +1,5 @@
 <p align="center">
-  <h1 align="center">rosareyes.dev — v3</h1>
+  <h1 align="center">rosareyes.dev (v3)</h1>
   <a href="https://rosareyes.vercel.app/"><p align="center">www.rosareyes.dev</p></a>
 </p>
 
