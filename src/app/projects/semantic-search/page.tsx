@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import {
   Navbar,
@@ -550,66 +551,96 @@ export default function SemanticSearchPage() {
             label="01 / Problem"
             title="Why catalog search is hard"
           />
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-20">
-            <div className="text-dim space-y-4 text-[15px] leading-[1.7]">
-              <p>
-                Searching a product catalog for architectural materials means
-                wading through hundreds of facets: species, finish, width,
-                thickness, color, supplier. Keyword search fails people who
-                don&apos;t know the exact terminology, and filter forms with
-                dozens of dropdowns mostly get ignored.
-              </p>
-              <p>
-                Natural language is the better interface. Users describe what
-                they need the way they would to a colleague, and the system
-                figures out the filters. The hard part is doing that reliably
-                across a taxonomy of thousands of product variants.
-              </p>
-              <p>
-                This thesis builds and benchmarks a multi-agent solution: one
-                LLM extracts the search intent, a second maps it to catalog
-                filters, and a third validates the result. If the filters are
-                wrong, the pipeline corrects itself and tries again.
-              </p>
+          <div className="space-y-14 md:space-y-16">
+            {/* Row 1: the problem */}
+            <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-14">
+              <div className="rounded-2.5 border-line overflow-hidden border opacity-85">
+                <div className="border-line text-faint border-b px-3 py-2 font-mono text-[9px] tracking-[0.12em] uppercase">
+                  The filter interface users faced
+                </div>
+                <Image
+                  src="/filters_hard.gif"
+                  alt="Traditional catalog filter interface with dozens of facets and dropdowns"
+                  width={800}
+                  height={450}
+                  unoptimized
+                  className="w-full brightness-90"
+                />
+              </div>
+              <div className="space-y-3">
+                <div className="text-faint font-mono text-[10px] tracking-[0.14em] uppercase">
+                  The problem
+                </div>
+                <p className="text-dim text-[15px] leading-[1.7]">
+                  Searching a product catalog for architectural materials means
+                  wading through hundreds of facets: species, finish, width,
+                  thickness, color, supplier. Keyword search fails people who
+                  don&apos;t know the exact terminology, and filter forms with
+                  dozens of dropdowns mostly get ignored.
+                </p>
+              </div>
             </div>
 
-            {/* Before / after code block */}
-            <div className="rounded-3.5 border-line bg-surface2 overflow-hidden border font-mono text-[13px]">
-              <div className="border-line text-faint border-b px-4 py-2.5 text-[10px] tracking-[0.14em] uppercase">
-                Example · query to filter string
+            {/* Row 2: the solution */}
+            <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-14">
+              <div className="rounded-3.5 border-line bg-surface2 overflow-hidden border font-mono text-[13px]">
+                <div className="border-line text-faint border-b px-4 py-2.5 text-[10px] tracking-[0.14em] uppercase">
+                  Example · query to filter string
+                </div>
+                <div className="space-y-5 p-6">
+                  <div>
+                    <div className="text-accent mb-2.5 text-[10px] tracking-[0.12em] uppercase">
+                      Input
+                    </div>
+                    <div className="text-text leading-[1.55]">
+                      &quot;red oak flooring wider than 150mm under
+                      50€/m²&quot;
+                    </div>
+                  </div>
+                  <div className="text-faint flex items-center gap-3 text-[11px]">
+                    <span className="bg-line h-px flex-1" />
+                    <span>3-agent pipeline</span>
+                    <span className="bg-line h-px flex-1" />
+                  </div>
+                  <div>
+                    <div className="text-accent mb-2.5 text-[10px] tracking-[0.12em] uppercase">
+                      Output
+                    </div>
+                    <div className="text-dim text-[12px] leading-[1.9]">
+                      <span className="text-faint">(</span>
+                      <span>meta.optionset.type::Color[io]:red</span>
+                      <br />
+                      <span className="text-faint">&amp;</span>
+                      <span>meta.optionset.type::Species[io]:oak</span>
+                      <br />
+                      <span className="text-faint">&amp;</span>
+                      <span>meta.optionset.type::Width[ge]:150</span>
+                      <br />
+                      <span className="text-faint">&amp;</span>
+                      <span>meta.price[le]:50</span>
+                      <span className="text-faint">)</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="space-y-5 p-6">
-                <div>
-                  <div className="text-accent mb-2.5 text-[10px] tracking-[0.12em] uppercase">
-                    Input
-                  </div>
-                  <div className="text-text leading-[1.55]">
-                    &quot;red oak flooring wider than 150mm under 50€/m²&quot;
-                  </div>
+              <div className="space-y-3">
+                <div className="text-faint font-mono text-[10px] tracking-[0.14em] uppercase">
+                  The solution
                 </div>
-                <div className="text-faint flex items-center gap-3 text-[11px]">
-                  <span className="bg-line h-px flex-1" />
-                  <span>3-agent pipeline</span>
-                  <span className="bg-line h-px flex-1" />
-                </div>
-                <div>
-                  <div className="text-accent mb-2.5 text-[10px] tracking-[0.12em] uppercase">
-                    Output
-                  </div>
-                  <div className="text-dim text-[12px] leading-[1.9]">
-                    <span className="text-faint">(</span>
-                    <span>meta.optionset.type::Color[io]:red</span>
-                    <br />
-                    <span className="text-faint">&amp;</span>
-                    <span>meta.optionset.type::Species[io]:oak</span>
-                    <br />
-                    <span className="text-faint">&amp;</span>
-                    <span>meta.optionset.type::Width[ge]:150</span>
-                    <br />
-                    <span className="text-faint">&amp;</span>
-                    <span>meta.price[le]:50</span>
-                    <span className="text-faint">)</span>
-                  </div>
+                <div className="text-dim space-y-4 text-[15px] leading-[1.7]">
+                  <p>
+                    Natural language is the better interface. Users describe
+                    what they need the way they would to a colleague, and the
+                    system figures out the filters. The hard part is doing that
+                    reliably across a taxonomy of thousands of product variants.
+                  </p>
+                  <p>
+                    This thesis builds and benchmarks a multi-agent solution:
+                    one LLM extracts the search intent, a second maps it to
+                    catalog filters, and a third validates the result. If the
+                    filters are wrong, the pipeline corrects itself and tries
+                    again.
+                  </p>
                 </div>
               </div>
             </div>
