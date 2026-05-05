@@ -53,7 +53,7 @@ export const projects: Project[] = [
       'My CS bachelor thesis, built in collaboration with Stylib. A multi AI agent system that turns natural language into structured product searches using an Entity-Filter-Validator pipeline. Makes finding architectural products actually work.',
     tags: ['Python', 'FastAPI', 'NLP', 'LLMs', 'Pydantic AI'],
     github: '',
-    url: '',
+    url: '/projects/semantic-search',
   },
   {
     title: 'Stylib Visual Search Widget',
@@ -96,7 +96,8 @@ export const projects: Project[] = [
       'End-to-end encrypted chat built for a cryptography course. AES-GCM for messages, RSA for key exchange, digital signatures, and a full PKI for user registration and cert management.',
     tags: ['Python', 'AES-GCM', 'RSA', 'OpenSSL'],
     github: 'https://github.com/rosareyes/cryptography-project/',
-    url: 'https://github.com/rosareyes/cryptography-project/',
+    url: '/projects/cryptography',
+    image: '/crypto_project.png',
   },
   {
     title: 'Rosa Reyes Web',

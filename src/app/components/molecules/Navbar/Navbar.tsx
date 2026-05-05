@@ -5,20 +5,25 @@ import { useScrollProgress } from '../../../hooks/useScrollProgress';
 import { useActiveSection } from '../../../hooks/useActiveSection';
 import { ArrowRight } from '../../atoms/icons';
 
-const NAV = [
+export type NavSection = { id: string; label: string; n: string };
+
+const DEFAULT_NAV: NavSection[] = [
   { id: 'intro', label: 'Index', n: '00' },
   { id: 'about', label: 'About', n: '01' },
   { id: 'work', label: 'Work', n: '02' },
   { id: 'projects', label: 'Projects', n: '03' },
   { id: 'stack', label: 'Stack', n: '04' },
   { id: 'contact', label: 'Contact', n: '05' },
-] as const;
+];
 
-const SECTION_IDS = NAV.map((n) => n.id);
+const DEFAULT_IDS = DEFAULT_NAV.map((n) => n.id);
 
-export function Navbar() {
+export function Navbar({ sections }: { sections?: NavSection[] }) {
+  const nav = sections ?? DEFAULT_NAV;
+  const ids = sections ? sections.map((n) => n.id) : DEFAULT_IDS;
+
   const scrolled = useScrollProgress();
-  const active = useActiveSection(SECTION_IDS);
+  const active = useActiveSection(ids);
 
   return (
     <>
@@ -60,50 +65,52 @@ export function Navbar() {
       </header>
 
       {/* Right-rail dot nav — desktop only */}
-      <nav
-        aria-label="Section navigation"
-        className="fixed top-1/2 right-5 z-40 hidden -translate-y-1/2 flex-col gap-1 md:flex"
-      >
-        {NAV.map((n) => {
-          const on = active === n.id;
-          return (
-            <a
-              key={n.id}
-              href={`#${n.id}`}
-              aria-label={n.label}
-              className={clsx(
-                'flex items-center justify-end no-underline lg:justify-start',
-                'py-1.5 lg:gap-2.5 lg:px-1 lg:py-2',
-                'font-mono text-[11px] tracking-[0.08em] transition-colors duration-200',
-                on ? 'text-text' : 'text-faint',
-              )}
-            >
-              <span
+      {nav.length > 0 && (
+        <nav
+          aria-label="Section navigation"
+          className="fixed top-1/2 right-5 z-40 hidden -translate-y-1/2 flex-col gap-1 md:flex"
+        >
+          {nav.map((n) => {
+            const on = active === n.id;
+            return (
+              <a
+                key={n.id}
+                href={`#${n.id}`}
+                aria-label={n.label}
                 className={clsx(
-                  'hidden min-w-4.5 lg:inline-block',
-                  !on && 'opacity-50',
+                  'flex items-center justify-end no-underline lg:justify-start',
+                  'py-1.5 lg:gap-2.5 lg:px-1 lg:py-2',
+                  'font-mono text-[11px] tracking-[0.08em] transition-colors duration-200',
+                  on ? 'text-text' : 'text-faint',
                 )}
               >
-                {n.n}
-              </span>
-              <span
-                className={clsx(
-                  'block h-px shrink-0 transition-[width,background-color] duration-[250ms]',
-                  on ? 'bg-accent w-6 lg:w-7' : 'bg-faint w-3 lg:w-3.5',
-                )}
-              />
-              <span
-                className={clsx(
-                  'hidden uppercase lg:inline',
-                  on ? 'font-semibold' : 'font-normal',
-                )}
-              >
-                {n.label}
-              </span>
-            </a>
-          );
-        })}
-      </nav>
+                <span
+                  className={clsx(
+                    'hidden min-w-4.5 lg:inline-block',
+                    !on && 'opacity-50',
+                  )}
+                >
+                  {n.n}
+                </span>
+                <span
+                  className={clsx(
+                    'block h-px shrink-0 transition-[width,background-color] duration-[250ms]',
+                    on ? 'bg-accent w-6 lg:w-7' : 'bg-faint w-3 lg:w-3.5',
+                  )}
+                />
+                <span
+                  className={clsx(
+                    'hidden uppercase lg:inline',
+                    on ? 'font-semibold' : 'font-normal',
+                  )}
+                >
+                  {n.label}
+                </span>
+              </a>
+            );
+          })}
+        </nav>
+      )}
     </>
   );
 }

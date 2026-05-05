@@ -16,7 +16,7 @@ export default function ProjectCard({ index, title, kind, year, description, tag
   return (
     <a
       href={href}
-      target={url && url !== '/' ? '_blank' : undefined}
+      target={url && !url.startsWith('/') ? '_blank' : undefined}
       rel="noopener noreferrer"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
