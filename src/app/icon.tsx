@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og';
 
-export const size = { width: 32, height: 32 };
+export const size = { width: 48, height: 48 };
 export const contentType = 'image/png';
 
 export default function Icon() {
@@ -8,9 +8,9 @@ export default function Icon() {
     (
       <div
         style={{
-          width: 32,
-          height: 32,
-          borderRadius: 7,
+          width: 48,
+          height: 48,
+          borderRadius: 10,
           background: 'linear-gradient(135deg, #e8c06a, #c97833)',
           display: 'flex',
           alignItems: 'center',
@@ -18,7 +18,7 @@ export default function Icon() {
           fontFamily: 'Georgia, serif',
           fontStyle: 'italic',
           fontWeight: 600,
-          fontSize: 21,
+          fontSize: 32,
           color: '#0B0D10',
           paddingBottom: 2,
         }}
