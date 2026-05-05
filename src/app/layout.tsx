@@ -7,11 +7,29 @@ export const metadata: Metadata = {
   title: 'Rosa Reyes - Software Engineer',
   description:
     'Software engineer in Madrid. Building products end-to-end: backend systems, APIs, and the interfaces in between.',
-  icons: {
-    icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/icon.svg', type: 'image/svg+xml' },
-    ],
+  metadataBase: new URL('https://www.rosareyes.dev'),
+  openGraph: {
+    title: 'Rosa Reyes - Software Engineer',
+    description:
+      'Software engineer in Madrid. Building products end-to-end: backend systems, APIs, and the interfaces in between.',
+    url: 'https://www.rosareyes.dev',
+    siteName: 'Rosa Reyes',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Rosa Reyes - Software Engineer',
+    description:
+      'Software engineer in Madrid. Building products end-to-end: backend systems, APIs, and the interfaces in between.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
 };
 
