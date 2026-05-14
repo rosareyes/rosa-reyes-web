@@ -20,12 +20,15 @@
     "clsx": "^2.0.0",
     "framer-motion": "^12.38.0",
     "next": "^16.2.4",
-    "postcss": "8.4.28",
+    "postcss": "^8.5.14",
     "react": "^19.2.5",
     "react-awesome-reveal": "^4.3.1",
     "react-dom": "^19.2.5",
     "react-icons": "^4.10.1",
     "tailwindcss": "^4.2.4"
+  },
+  "overrides": {
+    "postcss": "^8.5.14"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.5",
