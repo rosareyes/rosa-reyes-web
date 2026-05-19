@@ -8,10 +8,10 @@
   --color-text:          #E9ECEF;
   --color-dim:           #9AA3AD;
   --color-faint:         #5A636C;
-  --color-accent:        oklch(0.74 0.18 45);
-  --color-accent-dim:    oklch(0.55 0.14 45);
+  --color-accent:        oklch(0.74 0.12 285);
+  --color-accent-dim:    oklch(0.55 0.10 285);
   --color-accent-second: oklch(0.72 0.15 330);
-  --color-accent-tags:   oklch(0.82 0.13 75);
+  --color-accent-tags:   oklch(0.84 0.08 285);
   --color-accent-tags2:  oklch(0.78 0.13 245);
   --color-line:          rgba(255, 255, 255, 0.08);
   --color-line2:         rgba(255, 255, 255, 0.14);

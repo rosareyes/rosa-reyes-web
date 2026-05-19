@@ -125,7 +125,7 @@ export default function WorkSection() {
         label="02 / Work"
         title={
           <>
-            Where I&rsquo;ve <em className="text-accent">done the work.</em>
+            Where I&rsquo;ve <em className="text-accent not-italic">done the work.</em>
           </>
         }
         kicker="Five years. Product work, freelance, and a bit of everything. Click to expand."

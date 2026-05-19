@@ -80,7 +80,7 @@ export default function ContactSection() {
         label="05 / Contact"
         title={
           <>
-            Say <em className="text-accent">hello.</em>
+            Say <em className="text-accent not-italic">hello.</em>
           </>
         }
       />

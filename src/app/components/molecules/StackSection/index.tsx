@@ -9,7 +9,7 @@ export default function StackSection() {
     <div>
       <SectionHeader
         label="04 / Stack"
-        title={<>Tools I&apos;ve <em className="text-accent">used.</em></>}
+        title={<>Tools I&apos;ve <em className="text-accent not-italic">used.</em></>}
         kicker="Things I've used in real projects."
       />
       {/* Mobile: 2-col grid of individual cards. Desktop: single bordered 5-col container */}

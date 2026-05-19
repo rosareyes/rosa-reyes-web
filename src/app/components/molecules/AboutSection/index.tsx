@@ -16,7 +16,7 @@ export default function AboutSection() {
         label="01 / About"
         title={
           <>
-            A bit about <em className="text-accent">who I am.</em>
+            A bit about <em className="text-accent not-italic">who I am.</em>
           </>
         }
       />

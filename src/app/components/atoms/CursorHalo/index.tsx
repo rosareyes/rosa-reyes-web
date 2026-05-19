@@ -18,7 +18,7 @@ export default function CursorHalo() {
         inset: 0,
         pointerEvents: 'none',
         zIndex: 1,
-        background: `radial-gradient(420px at ${pos.x}px ${pos.y}px, oklch(0.74 0.18 45 / 0.08), transparent 60%)`,
+        background: `radial-gradient(420px at ${pos.x}px ${pos.y}px, oklch(0.74 0.12 285 / 0.08), transparent 60%)`,
         transition: 'background 80ms linear',
       }}
     />

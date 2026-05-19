@@ -17,7 +17,7 @@ export default function HeroSection() {
         <div>
           <h1 className="font-display font-light text-[clamp(40px,6.5vw,112px)] leading-[0.95] tracking-[-0.035em] text-text">
             Rosa Reyes<br />
-            <em className="text-accent font-normal">Software Engineer.</em>
+            <em className="text-accent font-normal not-italic">Software Engineer.</em>
           </h1>
           <p className="mt-8 md:mt-10 text-[16px] md:text-[18px] leading-[1.6] text-dim max-w-135">
             I build products end-to-end: interfaces, systems, and everything in between.
@@ -42,7 +42,7 @@ export default function HeroSection() {
           />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_60%,rgba(11,13,16,0.7)_100%)]" />
           <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
-            <span className="font-display italic text-[28px] text-text">Rosa.</span>
+            <span className="font-display not-italic text-[28px] text-text">Rosa.</span>
             <span className="font-mono text-[9px] tracking-[0.18em] text-dim uppercase">
               Madrid · 2026
             </span>
