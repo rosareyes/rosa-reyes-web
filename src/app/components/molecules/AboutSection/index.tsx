@@ -63,23 +63,6 @@ export default function AboutSection() {
               </span>
             ))}
           </div>
-
-          {/* Now Playing card */}
-          <div className="border-line rounded-3.5 mt-8 flex items-center gap-3.5 border bg-white/[0.02] p-4.5">
-            <div className="h-12 w-12 shrink-0 rounded-lg bg-brand-gradient" />
-            <div className="min-w-0 flex-1">
-              <div className="text-accent mb-1 flex items-center gap-1.5 font-mono text-[10px] tracking-[0.18em] uppercase">
-                <span className="bg-accent h-1.5 w-1.5 shrink-0 animate-[pulse_1.5s_ease-in-out_infinite] rounded-full" />
-                Now playing
-              </div>
-              <div className="text-text text-[14px] font-medium">
-                Dog Days Are Over
-              </div>
-              <div className="text-dim text-[12px]">
-                Florence + the Machine, Lungs
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

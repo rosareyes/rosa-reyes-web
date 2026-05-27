@@ -44,10 +44,6 @@ export function Navbar({ sections }: { sections?: NavSection[] }) {
 
           {/* Right */}
           <div className="flex items-center gap-3">
-            <span className="border-line text-dim hidden items-center gap-2 rounded-full border bg-white/[0.02] px-3 py-1.5 text-[11px] md:inline-flex">
-              <span className="bg-accent h-1.75 w-1.75 shrink-0 animate-[pulse_2s_ease-in-out_infinite] rounded-full shadow-[0_0_0_4px_oklch(0.74_0.18_45/0.22)]" />
-              Open to new roles
-            </span>
             <a
               href="#contact"
               className="text-text border-line2 inline-flex items-center gap-1.5 rounded-full border bg-white/[0.02] px-3.5 py-2 font-mono text-[11px] tracking-[0.06em] uppercase no-underline"
