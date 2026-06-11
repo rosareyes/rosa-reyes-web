@@ -1,11 +1,4 @@
-import { Fraunces, Geist, JetBrains_Mono } from 'next/font/google';
-
-export const fraunces = Fraunces({
-  subsets: ['latin'],
-  variable: '--font-display',
-  weight: ['300', '400'],
-  style: ['normal', 'italic'],
-});
+import { Geist, JetBrains_Mono } from 'next/font/google';
 
 export const geist = Geist({
   subsets: ['latin'],

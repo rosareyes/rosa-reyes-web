@@ -3,15 +3,26 @@ import type { Job, Project } from '../src/types';
 export const jobs: Job[] = [
   {
     role: 'Software Engineer',
+    co: 'MyTraffic',
+    url: 'https://www.mytraffic.io/en',
+    range: 'Jun 2026 to Present',
+    loc: 'Remote',
+    bullets: [
+      "Currently working on Gini, MyTraffic's geospatial AI for location intelligence and site selection.",
+    ],
+    skills: ['LLMs', 'React', 'Python', 'FastAPI', 'PostgreSQL', 'PostGIS', 'Tailwind'],
+  },
+  {
+    role: 'Software Engineer',
     co: 'Stylib',
     url: 'https://stylib.com/',
     range: 'May 2022 to Apr 2026 · 4 yrs',
-    loc: 'London, UK · Remote · Part-time',
+    loc: 'Remote · Part-time',
     bullets: [
-      'Delivered features end-to-end across the stack (React/TypeScript frontends and FastAPI + PostgreSQL backends), including a social like system built from API design to UI.',
-      'Architected Stylib HUB, a product catalog management platform for suppliers: React/TypeScript/Redux frontend with AWS-backed infrastructure for multi-channel data distribution.',
-      'Built a multi-agent backend system for semantic search using an Entity–Filter–Validator pipeline to transform natural language queries into structured filters.',
-      'Implemented testing and CI/CD pipelines with Jest, Cypress, and GitHub Actions.',
+      'Built a visual search widget that lets users upload a photo and get matched to real architectural products, handling the full frontend integration (React, TypeScript, Context API)',
+      'Created a multi-agent semantic search system that turns natural language into structured product queries, using an Entity–Filter–Validator pipeline to make finding architectural materials actually work (Python, FastAPI, LLMs, Pydantic AI)',
+      'Architected Stylib HUB, a catalog management platform that lets suppliers consolidate and distribute product data across channels while keeping every catalog accurate (React, TypeScript, Redux, PostgreSQL, AWS)',
+      'Built an interactive product showcase that makes complex design specifications effortless to browse, with a focus on performance (React, TypeScript, Tailwind, Zustand)',
     ],
     skills: [
       'React',
@@ -25,6 +36,12 @@ export const jobs: Job[] = [
       'Jest',
       'Cypress',
       'GitHub Actions',
+      'Context API',
+      'LLMs',
+      'Pydantic AI',
+      'Redux',
+      'Tailwind',
+      'Zustand',
     ],
   },
   {
@@ -68,6 +85,16 @@ export const projects: Project[] = [
     url: '/projects/semantic-search',
   },
   {
+    title: 'Vanrays HUB',
+    kind: 'Freelance',
+    year: '2026',
+    description:
+      "Operations platform for Vanrays' property management business: bookings, cleaning, maintenance, and owner settlements in one place, replacing a patchwork of spreadsheets and AppSheet forms. Separate portals for owners, cleaners, and maintenance techs. In progress.",
+    tags: ['React', 'TypeScript', 'Node.js', 'Supabase', 'Railway'],
+    github: '',
+    url: '/projects/vanrays-hub',
+  },
+  {
     title: 'Stylib Visual Search Widget',
     kind: 'Work',
     year: '2024',
@@ -99,17 +126,6 @@ export const projects: Project[] = [
     github: '',
     url: 'https://stylib.com/product-catalog-management-software/',
     image: '/hub.png',
-  },
-  {
-    title: 'Secure Messaging App',
-    kind: 'University',
-    year: '2024',
-    description:
-      'End-to-end encrypted chat built for a cryptography course. AES-GCM for messages, RSA for key exchange, digital signatures, and a full PKI for user registration and cert management.',
-    tags: ['Python', 'AES-GCM', 'RSA', 'OpenSSL'],
-    github: 'https://github.com/rosareyes/cryptography-project/',
-    url: '/projects/cryptography',
-    image: '',
   },
   {
     title: 'Rosa Reyes Web',

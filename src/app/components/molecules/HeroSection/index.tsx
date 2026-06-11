@@ -1,9 +1,9 @@
 import Image from 'next/image';
 
 const FACTS = [
-  { k: 'Based',    v: 'Madrid, ES' },
-  { k: 'Recently', v: '4 yrs @ Stylib' },
-  { k: 'Studied',  v: 'CS @ UC3M' },
+  { k: 'Based',   v: 'Madrid, ES' },
+  { k: 'Now',     v: 'MyTraffic' },
+  { k: 'Studied', v: 'CS @ UC3M' },
 ] as const;
 
 export default function HeroSection() {
@@ -15,15 +15,15 @@ export default function HeroSection() {
       <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-10 md:gap-16 items-center">
         {/* Left: text */}
         <div>
-          <h1 className="font-display font-light text-[clamp(40px,6.5vw,112px)] leading-[0.95] tracking-[-0.035em] text-text">
+          <h1 className="font-display font-light text-[clamp(32px,5vw,80px)] leading-[0.95] tracking-[-0.035em] text-text">
             Rosa Reyes<br />
             <em className="text-accent font-normal not-italic">Software Engineer.</em>
           </h1>
           <p className="mt-8 md:mt-10 text-[16px] md:text-[18px] leading-[1.6] text-dim max-w-135">
             I build products end-to-end: interfaces, systems, and everything in between.
-            Four years at{' '}
-            <span className="border-b border-dashed border-accent text-text pb-px">Stylib</span>
-            , a CS degree at{' '}
+            Now building Gini,{' '}
+            <span className="border-b border-dashed border-accent text-text pb-px">MyTraffic</span>
+            &apos;s location-intelligence AI, after four years at Stylib and a CS degree at{' '}
             <span className="border-b border-dashed border-accent text-text pb-px">UC3M</span>
             .
           </p>

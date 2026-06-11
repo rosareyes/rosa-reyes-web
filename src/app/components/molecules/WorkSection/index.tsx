@@ -123,12 +123,8 @@ export default function WorkSection() {
     <div>
       <SectionHeader
         label="02 / Work"
-        title={
-          <>
-            Where I&rsquo;ve <em className="text-accent not-italic">done the work.</em>
-          </>
-        }
-        kicker="Five years. Product work, freelance, and a bit of everything. Click to expand."
+        title="Work"
+        kicker="Five years, product and freelance. Click to expand."
       />
       <div className="flex flex-col">
         {jobs.map((job, i) => (

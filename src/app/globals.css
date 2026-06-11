@@ -8,21 +8,17 @@
   --color-text:          #E9ECEF;
   --color-dim:           #9AA3AD;
   --color-faint:         #5A636C;
-  --color-accent:        oklch(0.74 0.12 285);
-  --color-accent-dim:    oklch(0.55 0.10 285);
+  --color-accent:        oklch(0.75 0.13 195);
+  --color-accent-dim:    oklch(0.55 0.11 195);
   --color-accent-second: oklch(0.72 0.15 330);
   --color-accent-tags:   oklch(0.84 0.08 285);
   --color-accent-tags2:  oklch(0.78 0.13 245);
   --color-line:          rgba(255, 255, 255, 0.08);
   --color-line2:         rgba(255, 255, 255, 0.14);
 
-  --font-display: 'Fraunces', serif;
+  --font-display: var(--font-mono);
   --font-body:    'Geist', system-ui, sans-serif;
   --font-mono:    'JetBrains Mono', monospace;
-}
-
-@utility bg-brand-gradient {
-  background: linear-gradient(135deg, var(--color-accent-tags), var(--color-accent));
 }
 
 @keyframes pulse {

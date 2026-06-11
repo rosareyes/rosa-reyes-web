@@ -1,5 +1,4 @@
 import { Navbar }         from './components/molecules/Navbar/Navbar';
-import CursorHalo        from './components/atoms/CursorHalo';
 import BgGrain           from './components/molecules/BgGrain';
 import HeroSection       from './components/molecules/HeroSection';
 import AboutSection      from './components/molecules/AboutSection';
@@ -16,7 +15,6 @@ export default function Home() {
   return (
     <main className="bg-ink min-h-screen relative">
       <SectionTracker />
-      <CursorHalo />
       <BgGrain />
       <Navbar />
 
@@ -29,10 +27,7 @@ export default function Home() {
         </section>
 
         <section id="projects" className="scroll-mt-25 py-16 md:py-25">
-          <SectionHeader
-            label="03 / Projects"
-            title={<>Things I&rsquo;ve made, <em className="text-accent">and care about.</em></>}
-          />
+          <SectionHeader label="03 / Projects" title="Projects" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             {projects.map((p, i) => (
               <ProjectCard

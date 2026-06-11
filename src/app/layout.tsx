@@ -1,7 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import Script from 'next/script';
-import { fraunces, geist, mono } from './fonts';
+import { geist, mono } from './fonts';
 
 export const metadata: Metadata = {
   title: 'Rosa Reyes - Software Engineer',
@@ -41,7 +41,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${geist.variable} ${mono.variable}`}
+      className={`${geist.variable} ${mono.variable}`}
     >
       <body>
         <Script

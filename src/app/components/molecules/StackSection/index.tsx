@@ -7,11 +7,7 @@ export default function StackSection() {
 
   return (
     <div>
-      <SectionHeader
-        label="04 / Stack"
-        title={<>Tools I&apos;ve <em className="text-accent not-italic">used.</em></>}
-        kicker="Things I've used in real projects."
-      />
+      <SectionHeader label="04 / Stack" title="Tools" />
       {/* Mobile: 2-col grid of individual cards. Desktop: single bordered 5-col container */}
       <div className="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-0 md:border md:border-line md:rounded-3.5 md:overflow-hidden">
         {entries.map(([cat, items], i) => (

@@ -28,11 +28,11 @@ export function Navbar({ sections }: { sections?: NavSection[] }) {
   return (
     <>
       {/* Fixed top header */}
-      <header className="border-line fixed top-0 right-0 left-0 z-50 border-b bg-[rgba(11,13,16,0.7)] backdrop-blur-[14px]">
+      <header className="border-line bg-ink fixed top-0 right-0 left-0 z-50 border-b">
         <div className="mx-auto flex max-w-[1180px] items-center justify-between px-5 py-4.5 font-mono text-[12px] tracking-[0.04em] md:px-20">
           {/* Left */}
           <div className="flex items-center gap-3.5">
-            <div className="bg-brand-gradient font-display text-ink grid h-7 w-7 shrink-0 place-items-center rounded-lg text-base font-semibold italic">
+            <div className="bg-accent font-display text-ink grid h-7 w-7 shrink-0 place-items-center rounded-lg text-base font-semibold italic">
               r
             </div>
             <span className="text-dim">Rosa Reyes</span>
@@ -46,7 +46,7 @@ export function Navbar({ sections }: { sections?: NavSection[] }) {
           <div className="flex items-center gap-3">
             <a
               href="#contact"
-              className="text-text border-line2 inline-flex items-center gap-1.5 rounded-full border bg-white/[0.02] px-3.5 py-2 font-mono text-[11px] tracking-[0.06em] uppercase no-underline"
+              className="text-text border-line2 inline-flex items-center gap-1.5 rounded border bg-white/[0.02] px-3.5 py-2 font-mono text-[11px] tracking-[0.06em] uppercase no-underline"
             >
               Get in touch <ArrowRight className="text-accent" />
             </a>

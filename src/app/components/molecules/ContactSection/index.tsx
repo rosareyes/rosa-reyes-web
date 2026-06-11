@@ -1,9 +1,7 @@
 'use client';
 
-import { useState } from 'react';
 import { clsx } from 'clsx';
 import SectionHeader from '../../atoms/SectionHeader';
-import { ArrowRight, ArrowUpRight } from '../../atoms/icons';
 import { useAnalytics } from '@/app/hooks/useAnalytics';
 
 const LINKS = [
@@ -31,42 +29,23 @@ function ContactRow({
   href: string;
   last?: boolean;
 }) {
-  const [hover, setHover] = useState(false);
   const { track } = useAnalytics();
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
       onClick={() => track('link-click', { label: k.toLowerCase() })}
       className={clsx(
-        'text-text flex items-center justify-between border-t py-5 no-underline transition-all duration-200',
+        'group flex items-center justify-between border-t py-5 no-underline',
         last && 'border-line border-b',
       )}
     >
-      <span
-        className={clsx(
-          'font-mono text-[11px] tracking-[0.16em] uppercase transition-colors duration-[180ms]',
-          hover ? 'text-accent' : 'text-faint',
-        )}
-      >
+      <span className="text-faint group-hover:text-accent font-mono text-[11px] tracking-[0.16em] uppercase transition-colors duration-[180ms]">
         {k}
       </span>
-      <span
-        className={clsx(
-          'text-text inline-flex items-center gap-2 text-[14px] transition-transform duration-200 md:gap-2.5 md:text-[16px]',
-          hover ? '-translate-x-1' : 'translate-x-0',
-        )}
-      >
+      <span className="text-dim group-hover:text-text text-[14px] transition-colors duration-[180ms] md:text-[16px]">
         {v}
-        <ArrowUpRight
-          className={clsx(
-            'transition-colors duration-[180ms]',
-            hover ? 'text-accent' : 'text-faint',
-          )}
-        />
       </span>
     </a>
   );
@@ -76,28 +55,19 @@ export default function ContactSection() {
   const { track } = useAnalytics();
   return (
     <div>
-      <SectionHeader
-        label="05 / Contact"
-        title={
-          <>
-            Say <em className="text-accent not-italic">hello.</em>
-          </>
-        }
-      />
+      <SectionHeader label="05 / Contact" title="Contact" />
       <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-[1.2fr_1fr] md:gap-20">
         <div>
           <p className="text-dim mb-8 text-[16px] leading-[1.6] md:text-[19px]">
-            Open to full-time roles and freelance. If you want to talk software
-            or work, email is the best way to reach me. I read everything and
-            reply to most things.
+            Open to full-time roles and freelance. Email is the best way to
+            reach me, and I read everything.
           </p>
           <a
             href="mailto:hello@rosareyes.dev"
             onClick={() => track('email-click')}
-            className="font-display text-text border-accent inline-flex items-center gap-2 border-b pb-1 text-[clamp(22px,4vw,44px)] tracking-[-0.01em] no-underline"
+            className="font-display text-text border-line2 hover:border-accent hover:text-accent inline-block border-b pb-1 text-[clamp(18px,2.4vw,24px)] tracking-[-0.01em] no-underline transition-colors duration-200"
           >
             hello@rosareyes.dev
-            <ArrowRight className="text-accent" />
           </a>
         </div>
 

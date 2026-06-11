@@ -23,21 +23,20 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   const [hover, setHover] = useState(false);
   const { track } = useAnalytics();
-  const href = url || '#';
 
   return (
     <a
-      href={href}
+      href={url || undefined}
       target={url && !url.startsWith('/') ? '_blank' : undefined}
-      rel="noopener noreferrer"
+      rel={url ? 'noopener noreferrer' : undefined}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
-      onClick={() => track('project-click', { name: title })}
+      onClick={url ? () => track('project-click', { name: title }) : undefined}
       className={clsx(
         'flex flex-col text-inherit no-underline',
         'rounded-4.5 relative overflow-hidden border p-7',
         'duration-240m min-h-65 transition-all',
-        hover ? 'border-line2 -translate-y-0.5' : 'border-line translate-y-0',
+        hover ? 'border-accent -translate-y-0.5' : 'border-line translate-y-0',
         !image && (hover ? 'bg-white/2.5' : 'bg-white/1]'),
       )}
     >
@@ -58,15 +57,6 @@ export default function ProjectCard({
           }}
         />
       ) : null}
-
-      {/* Accent radial — colour wash over the image */}
-      <div
-        className={clsx(
-          'pointer-events-none absolute inset-0 transition-opacity duration-300',
-          'bg-[radial-gradient(400px_at_80%_0%,var(--color-accent),transparent_60%)]',
-          hover ? 'opacity-[0.18]' : 'opacity-[0.08]',
-        )}
-      />
 
       {/* Content */}
       <div className="relative flex flex-1 flex-col">
@@ -96,16 +86,18 @@ export default function ProjectCard({
               </span>
             ))}
           </div>
-          <span
-            className={clsx(
-              'shrink-0 font-mono text-[14px] transition-all duration-200',
-              hover
-                ? 'text-accent translate-x-0.5 -translate-y-0.5'
-                : 'text-faint translate-x-0 translate-y-0',
-            )}
-          >
-            <ArrowUpRight />
-          </span>
+          {url ? (
+            <span
+              className={clsx(
+                'shrink-0 font-mono text-[14px] transition-all duration-200',
+                hover
+                  ? 'text-accent translate-x-0.5 -translate-y-0.5'
+                  : 'text-faint translate-x-0 translate-y-0',
+              )}
+            >
+              <ArrowUpRight />
+            </span>
+          ) : null}
         </div>
       </div>
     </a>

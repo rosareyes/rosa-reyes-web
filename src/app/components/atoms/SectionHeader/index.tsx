@@ -11,7 +11,7 @@ export default function SectionHeader({ label, title, kicker }: SectionHeaderPro
         <span>{label}</span>
         <span className="flex-1 h-px bg-line" />
       </div>
-      <h2 className="font-display font-normal text-[clamp(40px,5vw,64px)] leading-[1.05] tracking-[-0.02em] text-text">
+      <h2 className="font-display font-normal text-[clamp(28px,4vw,48px)] leading-[1.05] tracking-[-0.02em] text-text">
         {title}
       </h2>
       {kicker ? (

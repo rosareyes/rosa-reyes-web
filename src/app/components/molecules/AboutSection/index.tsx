@@ -12,14 +12,7 @@ const TAGS = [
 export default function AboutSection() {
   return (
     <section id="about" className="scroll-mt-25 py-16 md:py-25">
-      <SectionHeader
-        label="01 / About"
-        title={
-          <>
-            A bit about <em className="text-accent not-italic">who I am.</em>
-          </>
-        }
-      />
+      <SectionHeader label="01 / About" title="About" />
       <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-[1.4fr_1fr] md:gap-20">
         <div className="text-dim text-[16px] leading-[1.75] md:text-[17px]">
           <p className="mb-6">
@@ -57,7 +50,7 @@ export default function AboutSection() {
             {TAGS.map((t) => (
               <span
                 key={t}
-                className="border-line2 text-text inline-flex items-center rounded-full border bg-white/[0.02] px-3.5 py-2 text-[13px]"
+                className="border-line2 text-text inline-flex items-center rounded border bg-white/[0.02] px-3.5 py-2 text-[13px]"
               >
                 {t}
               </span>
