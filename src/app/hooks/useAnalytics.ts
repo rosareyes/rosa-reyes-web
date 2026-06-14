@@ -7,7 +7,8 @@ type AnalyticsEvent =
   | 'email-click'
   | 'link-click'
   | 'project-click'
-  | 'section-view';
+  | 'section-view'
+  | 'thesis-download';
 
 type EventData = Record<string, string | number | boolean>;
 

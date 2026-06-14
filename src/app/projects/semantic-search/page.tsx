@@ -7,6 +7,7 @@ import {
 } from '@/app/components/molecules/Navbar/Navbar';
 import SectionHeader from '@/app/components/atoms/SectionHeader';
 import { ArrowRight } from '@/app/components/atoms/icons';
+import ThesisDownloadLink from './ThesisDownloadLink';
 
 const NAV: NavSection[] = [
   { id: 'problem', label: 'Problem', n: '01' },
@@ -521,17 +522,13 @@ export default function SemanticSearchPage() {
               Bachelor Thesis · 2026 · UC3M
             </span>
             <span className="bg-line2 h-3 w-px" />
-            {/* TODO: Remove disabled + update href once thesis.pdf is added to /public/thesis.pdf */}
-            <button
-              disabled
-              className="border-line bg-surface text-faint inline-flex cursor-not-allowed items-center gap-2 rounded border px-4 py-2 font-mono text-[11px] tracking-[0.08em] opacity-50"
-            >
+            <ThesisDownloadLink className="border-line bg-surface text-dim hover:border-line2 hover:text-text inline-flex items-center gap-2 rounded border px-4 py-2 font-mono text-[11px] tracking-[0.08em] transition-all duration-240">
               <FileTextIcon size={14} />
               Download Thesis
               <span className="text-accent text-[9px] tracking-[0.12em] uppercase">
-                · Soon
+                · PDF, ES
               </span>
-            </button>
+            </ThesisDownloadLink>
             <button
               disabled
               className="border-line bg-surface text-faint inline-flex cursor-not-allowed items-center gap-2 rounded border px-4 py-2 font-mono text-[11px] tracking-[0.08em] opacity-50"
@@ -818,19 +815,19 @@ export default function SemanticSearchPage() {
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6">
             {[
               {
-                value: '≥ 0.5',
-                label: 'Minimum F1 pass threshold',
-                sub: 'token-level filter accuracy per query',
+                value: '0.93',
+                label: 'Best Token F1 score',
+                sub: 'Gemini 3 Flash (extraction) + Flash-Lite (filter & validation)',
               },
               {
-                value: '53',
-                label: 'Ground-truth test queries',
-                sub: 'natural language to filter string pairs',
+                value: '52',
+                label: 'Golden Dataset queries',
+                sub: 'hand-annotated natural language → filter pairs',
               },
               {
-                value: 'N×M',
-                label: 'Model combinations swept',
-                sub: 'main model × validator model pairs',
+                value: '5',
+                label: 'LLMs benchmarked',
+                sub: 'compared on quality, latency, and cost',
               },
             ].map(({ value, label, sub }) => (
               <div
@@ -882,7 +879,6 @@ export default function SemanticSearchPage() {
           className="border-line scroll-mt-25 border-b py-20 md:py-25"
         >
           <SectionHeader label="07 / Thesis" title="Read the full paper" />
-          {/* TODO: Add thesis PDF to /public/thesis.pdf, remove disabled prop, update href below */}
           <div className="rounded-4.5 border-accent/25 bg-surface flex flex-col items-start gap-8 border p-8 md:flex-row md:items-center md:p-10">
             <div className="text-accent/50 shrink-0">
               <FileTextIcon size={36} />
@@ -895,17 +891,17 @@ export default function SemanticSearchPage() {
               <div className="text-faint font-mono text-[11px] tracking-[0.06em]">
                 Rosa Reyes · Bachelor Thesis · Computer Science · UC3M · 2026
               </div>
+              <div className="text-faint mt-1 font-mono text-[11px] tracking-[0.06em]">
+                Full text in Spanish
+              </div>
             </div>
-            <button
-              disabled
-              className="border-line bg-surface2 text-faint inline-flex shrink-0 cursor-not-allowed items-center gap-2.5 rounded border px-5 py-3 font-mono text-[11px] tracking-[0.08em] opacity-50"
-            >
+            <ThesisDownloadLink className="border-line bg-surface2 text-dim hover:border-line2 hover:text-text inline-flex shrink-0 items-center gap-2.5 rounded border px-5 py-3 font-mono text-[11px] tracking-[0.08em] transition-all duration-240">
               <FileTextIcon size={14} />
               <span>Download PDF</span>
               <span className="text-accent text-[9px] tracking-[0.12em] uppercase">
-                · Soon
+                · PDF, ES
               </span>
-            </button>
+            </ThesisDownloadLink>
           </div>
         </section>
 
