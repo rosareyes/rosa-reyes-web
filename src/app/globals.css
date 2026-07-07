@@ -8,11 +8,12 @@
   --color-text:          #E9ECEF;
   --color-dim:           #9AA3AD;
   --color-faint:         #5A636C;
-  --color-accent:        oklch(0.75 0.13 195);
-  --color-accent-dim:    oklch(0.55 0.11 195);
-  --color-accent-second: oklch(0.72 0.15 330);
-  --color-accent-tags:   oklch(0.84 0.08 285);
-  --color-accent-tags2:  oklch(0.78 0.13 245);
+  /* Dracula palette */
+  --color-accent:        #BD93F9; /* purple */
+  --color-accent-dim:    color-mix(in oklch, #BD93F9 60%, var(--color-ink));
+  --color-accent-second: #FF79C6; /* pink */
+  --color-accent-tags:   #8BE9FD; /* cyan */
+  --color-accent-tags2:  #50FA7B; /* green */
   --color-line:          rgba(255, 255, 255, 0.08);
   --color-line2:         rgba(255, 255, 255, 0.14);
 

@@ -17,7 +17,7 @@ export const jobs: Job[] = [
     co: 'Stylib',
     url: 'https://stylib.com/',
     range: 'May 2022 to Apr 2026 · 4 yrs',
-    loc: 'Remote · Part-time',
+    loc: 'Remote',
     bullets: [
       'Built a visual search widget that lets users upload a photo and get matched to real architectural products, handling the full frontend integration (React, TypeScript, Context API)',
       'Created a multi-agent semantic search system that turns natural language into structured product queries, using an Entity–Filter–Validator pipeline to make finding architectural materials actually work (Python, FastAPI, LLMs, Pydantic AI)',
@@ -63,7 +63,7 @@ export const jobs: Job[] = [
     co: 'Vanrays',
     url: 'https://www.vanrays.com/',
     range: 'Oct 2019 to Sep 2021 · 2 yrs',
-    loc: 'Madrid, ES · Part-time',
+    loc: 'Madrid, ES',
     bullets: [
       'Led development of an internal booking system, coordinating 3+ freelancers and contributing to frontend and backend implementation using React and Node.js.',
       'Automated booking and contract workflows, reducing manual effort by 80% and improving operational efficiency.',

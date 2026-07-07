@@ -77,20 +77,6 @@ function FileTextIcon({ size = 20 }: { size?: number }) {
   );
 }
 
-function PlayIcon() {
-  return (
-    <svg
-      width="22"
-      height="22"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      aria-hidden="true"
-    >
-      <polygon points="5 3 19 12 5 21 5 3" />
-    </svg>
-  );
-}
-
 function ArchitectureDiagram() {
   const T = '#E9ECEF';
   const D = '#9AA3AD';
@@ -705,17 +691,14 @@ export default function SemanticSearchPage() {
           className="border-line scroll-mt-25 border-b py-20 md:py-25"
         >
           <SectionHeader label="03 / Demo" title="See it in action" />
-          {/* TODO: Replace with <video controls src="/thesis-demo.mp4" /> or <iframe> embed once demo is recorded */}
           <div className="rounded-4.5 border-line bg-surface2 relative aspect-video w-full overflow-hidden border">
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(400px_at_50%_50%,var(--color-accent),transparent_65%)] opacity-[0.05]" />
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
-              <div className="border-line2 bg-surface text-dim hover:text-accent hover:border-accent flex h-16 w-16 cursor-pointer items-center justify-center rounded-full border pl-0.5 transition-all duration-240">
-                <PlayIcon />
-              </div>
-              <span className="text-faint font-mono text-[11px] tracking-[0.14em] uppercase">
-                Demo coming soon
-              </span>
-            </div>
+            <video
+              controls
+              playsInline
+              preload="metadata"
+              className="h-full w-full object-contain"
+              src="/thesis-demo.mp4"
+            />
           </div>
           <p className="text-faint mt-4 text-center font-mono text-[11px] tracking-[0.06em]">
             UI walkthrough: natural language query to filtered catalog results

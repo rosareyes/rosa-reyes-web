@@ -1,6 +1,7 @@
 'use client';
 
 import { clsx } from 'clsx';
+import Image from 'next/image';
 import { useScrollProgress } from '../../../hooks/useScrollProgress';
 import { useActiveSection } from '../../../hooks/useActiveSection';
 import { ArrowRight } from '../../atoms/icons';
@@ -32,8 +33,14 @@ export function Navbar({ sections }: { sections?: NavSection[] }) {
         <div className="mx-auto flex max-w-[1180px] items-center justify-between px-5 py-4.5 font-mono text-[12px] tracking-[0.04em] md:px-20">
           {/* Left */}
           <div className="flex items-center gap-3.5">
-            <div className="bg-accent font-display text-ink grid h-7 w-7 shrink-0 place-items-center rounded-lg text-base font-semibold italic">
-              r
+            <div className="bg-accent grid h-7 w-7 shrink-0 place-items-center overflow-hidden rounded-lg">
+              <Image
+                src="/memoji-1.png"
+                alt="Rosa Reyes"
+                width={56}
+                height={56}
+                className="h-full w-full scale-125 object-cover"
+              />
             </div>
             <span className="text-dim">Rosa Reyes</span>
             <span className="text-faint hidden md:inline">·</span>

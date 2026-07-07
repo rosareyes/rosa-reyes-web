@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import SectionHeader from '../../../components/atoms/SectionHeader';
 
 const TAGS = [
@@ -43,7 +44,18 @@ export default function AboutSection() {
         </div>
 
         <div>
-          <div className="text-faint mb-4.5 font-mono text-[10px] tracking-[0.2em] uppercase">
+          <div className="relative aspect-3/4 w-full overflow-hidden rounded-2xl border border-line2 bg-surface">
+            <Image
+              src="/rosa-portrait.jpg"
+              alt="Rosa Reyes"
+              fill
+              sizes="(max-width: 768px) 320px, 30vw"
+              className="object-cover"
+              style={{ filter: 'saturate(0.95) contrast(1.02)' }}
+            />
+          </div>
+
+          <div className="text-faint mt-8 mb-4.5 font-mono text-[10px] tracking-[0.2em] uppercase">
             Currently into
           </div>
           <div className="flex flex-wrap gap-2">
