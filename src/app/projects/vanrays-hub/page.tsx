@@ -1,19 +1,22 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Navbar, type NavSection } from '@/app/components/molecules/Navbar/Navbar';
 import { ArrowRight } from '@/app/components/atoms/icons';
 
 const NAV: NavSection[] = [
-  { id: 'overview', label: 'Overview', n: '01' },
-  { id: 'modules',  label: 'Modules',  n: '02' },
-  { id: 'portals',  label: 'Portals',  n: '03' },
-  { id: 'stack',    label: 'Stack',    n: '04' },
+  { id: 'product',        label: 'Product',        n: '01' },
+  { id: 'overview',       label: 'Overview',       n: '02' },
+  { id: 'modules',        label: 'Modules',        n: '03' },
+  { id: 'portals',        label: 'Portals',        n: '04' },
+  { id: 'infrastructure', label: 'Infrastructure', n: '05' },
+  { id: 'stack',          label: 'Stack',          n: '06' },
 ];
 
 export const metadata: Metadata = {
   title: 'Vanrays HUB — Rosa Reyes',
   description:
-    "Operations platform for Vanrays' rental business: bookings, cleaning, maintenance, and owner settlements in one system, with separate portals for owners, cleaners, and maintenance techs.",
+    "Operations platform for Vanrays' rental business: bookings, cleaning, maintenance, and owner settlements in one system, with a central console for admins and bookers plus scoped portals for owners, cleaners, and maintenance techs.",
 };
 
 const tags = ['React', 'TypeScript', 'Node.js', 'Supabase', 'PostgreSQL', 'Railway'];
@@ -60,7 +63,22 @@ const modules = [
   {
     n: '06',
     title: 'Team & audit',
-    desc: 'Manage bookers, cleaners, and technicians, with portal access per role and a full audit trail of every action in the system.',
+    desc: 'Manage admins, bookers, cleaners, and technicians. Admins and bookers work from the main console; owners, cleaners, and techs get scoped portal access. Full audit trail of every action.',
+  },
+];
+
+const infrastructure = [
+  {
+    n: '01',
+    title: 'Isolated PR previews',
+    tag: 'Railway',
+    desc: 'Every pull request deploys to its own preview environment on Railway, each with its own isolated Postgres database seeded independently of production. QA runs against real flows, bookings, cleanings, settlements, without ever touching live data.',
+  },
+  {
+    n: '02',
+    title: 'Auth & access control',
+    tag: 'Supabase',
+    desc: 'Supabase Auth handles login and session management across the ops console and every portal. Role checks run server-side on top of it, so an owner, cleaner, or tech only ever sees data scoped to them.',
   },
 ];
 
@@ -112,7 +130,7 @@ export default function VanraysHubPage() {
 
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
             <div>
-              <h1 className="font-display font-normal text-[clamp(40px,5.5vw,80px)] leading-[1.03] tracking-[-0.025em] text-text mb-5">
+              <h1 className="font-display font-normal text-[clamp(32px,4.5vw,60px)] leading-[1.03] tracking-[-0.025em] text-text mb-5">
                 Vanrays<br />HUB
               </h1>
               <p className="text-[16px] leading-[1.65] text-dim max-w-130">
@@ -129,6 +147,26 @@ export default function VanraysHubPage() {
           </div>
         </section>
 
+        {/* ── Product ── */}
+        <section id="product" className="scroll-mt-25 py-16 md:py-20 border-b border-line">
+          <div className="flex items-center gap-3.5 mb-8 font-mono text-[11px] tracking-[0.16em] uppercase text-accent">
+            <span>Product</span>
+            <span className="flex-1 h-px bg-line" />
+          </div>
+          <div className="rounded-3.5 border-line overflow-hidden border">
+            <div className="border-line text-faint border-b px-3 py-2 font-mono text-[9px] tracking-[0.12em] uppercase">
+              Operations dashboard — live view
+            </div>
+            <Image
+              src="/vanrays-hub-dashboard.png"
+              alt="Vanrays HUB operations dashboard showing today's check-ins, check-outs, cleanings, and an operations whiteboard timeline"
+              width={2000}
+              height={1215}
+              className="w-full"
+            />
+          </div>
+        </section>
+
         {/* ── Overview ── */}
         <section id="overview" className="scroll-mt-25 py-16 md:py-20 border-b border-line">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
@@ -142,7 +180,7 @@ export default function VanraysHubPage() {
                 Vanrays is a property management company in Madrid with a growing portfolio of short and long-term rentals. Day-to-day operations ran on AppSheet, a no-code tool that worked fine at first but started showing its limits: reservations, cleaning schedules, maintenance tickets, and owner payouts ended up scattered across spreadsheets, forms, and email threads.
               </p>
               <p className="text-[15px] leading-[1.7] text-dim">
-                Vanrays HUB replaces all of that with a real application built around how the team actually works: role-based access for the operations side, plus separate portals for property owners, cleaners, and maintenance techs.
+                Vanrays HUB replaces all of that with a real application built around how the team actually works: admins and bookers run day-to-day operations from a central console, while owners, cleaners, and maintenance techs each get a portal scoped to their role.
               </p>
             </div>
 
@@ -197,7 +235,7 @@ export default function VanraysHubPage() {
             <span className="flex-1 h-px bg-line" />
           </div>
           <p className="text-[15px] leading-[1.7] text-dim mb-10 max-w-155">
-            Three roles, three logins, each scoped to what that person actually needs to see.
+            Owners, cleaners, and maintenance techs each get a login scoped to exactly what they need to see, no access to the main console. Admins and bookers work from the console directly, with full visibility across reservations, cleaning, maintenance, and settlements.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -210,6 +248,34 @@ export default function VanraysHubPage() {
                   <span className="font-mono text-[10px] tracking-[0.1em] text-faint truncate">{p.path}</span>
                 </div>
                 <p className="text-[12px] leading-[1.65] text-dim">{p.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ── Infrastructure ── */}
+        <section id="infrastructure" className="scroll-mt-25 py-16 md:py-20 border-b border-line">
+          <div className="flex items-center gap-3.5 mb-10 font-mono text-[11px] tracking-[0.16em] uppercase text-accent">
+            <span>Infrastructure</span>
+            <span className="flex-1 h-px bg-line" />
+          </div>
+          <p className="text-[15px] leading-[1.7] text-dim mb-10 max-w-155">
+            Built so QA never has to worry about breaking anything real.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {infrastructure.map((item) => (
+              <div key={item.n} className="rounded-3.5 border border-line bg-surface p-5 flex flex-col gap-3">
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-[11px] tracking-[0.14em] text-accent">{item.n}</span>
+                  <span className="font-mono text-[10px] tracking-[0.1em] text-faint px-2 py-0.75 rounded border border-line">
+                    {item.tag}
+                  </span>
+                </div>
+                <h3 className="font-display font-normal text-[18px] tracking-[-0.01em] text-text">
+                  {item.title}
+                </h3>
+                <p className="text-[12px] leading-[1.65] text-dim">{item.desc}</p>
               </div>
             ))}
           </div>

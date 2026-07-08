@@ -67,7 +67,7 @@ export default function ProjectCard({
           <span>{year}</span>
         </div>
 
-        <h3 className="font-display text-text mb-3 text-[32px] font-normal tracking-[-0.01em]">
+        <h3 className="font-display text-text mb-3 text-[22px] font-normal tracking-[-0.01em]">
           {title}
         </h3>
 

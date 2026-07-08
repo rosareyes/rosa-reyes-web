@@ -491,7 +491,7 @@ export default function SemanticSearchPage() {
             ))}
           </div>
 
-          <h1 className="font-display text-text mb-8 text-[clamp(48px,7vw,96px)] leading-[1.02] font-normal tracking-[-0.03em]">
+          <h1 className="font-display text-text mb-8 text-[clamp(36px,5vw,68px)] leading-[1.02] font-normal tracking-[-0.03em]">
             Semantic Search
             <br />
             Engine

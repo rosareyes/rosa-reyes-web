@@ -83,6 +83,7 @@ export const projects: Project[] = [
     tags: ['Python', 'FastAPI', 'NLP', 'LLMs', 'Pydantic AI'],
     github: '',
     url: '/projects/semantic-search',
+    image: '/semantic-search-poc.png',
   },
   {
     title: 'Vanrays HUB',
@@ -93,6 +94,7 @@ export const projects: Project[] = [
     tags: ['React', 'TypeScript', 'Node.js', 'Supabase', 'Railway'],
     github: '',
     url: '/projects/vanrays-hub',
+    image: '/vanrays-hub-dashboard.png',
   },
   {
     title: 'Stylib Visual Search Widget',
