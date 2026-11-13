@@ -540,13 +540,16 @@ export default function SemanticSearchPage() {
                 <div className="border-line text-faint border-b px-3 py-2 font-mono text-[9px] tracking-[0.12em] uppercase">
                   The filter interface users faced
                 </div>
-                <Image
-                  src="/filters_hard.gif"
-                  alt="Traditional catalog filter interface with dozens of facets and dropdowns"
+                <video
+                  src="/filters_hard.mp4"
+                  aria-label="Traditional catalog filter interface with dozens of facets and dropdowns"
                   width={800}
                   height={450}
-                  unoptimized
-                  className="w-full brightness-90"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="block h-auto w-full brightness-90"
                 />
               </div>
               <div className="space-y-3">
