@@ -35,13 +35,23 @@ export default function ProjectCard({
       className={clsx(
         'flex flex-col text-inherit no-underline',
         'rounded-4.5 relative overflow-hidden border p-7',
-        'duration-240m min-h-65 transition-all',
+        'min-h-65 transition-all duration-240',
         hover ? 'border-accent -translate-y-0.5' : 'border-line translate-y-0',
-        !image && (hover ? 'bg-white/2.5' : 'bg-white/1]'),
+        !image && (hover ? 'bg-white/2.5' : 'bg-white/1'),
       )}
     >
-      {/* Background image — CSS background-image works natively with GIFs */}
-      {image ? (
+      {/* Background media: short muted loops as MP4 (far lighter than GIF), stills as CSS bg */}
+      {image?.endsWith('.mp4') ? (
+        <video
+          src={image}
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-hidden
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      ) : image ? (
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${image})` }}

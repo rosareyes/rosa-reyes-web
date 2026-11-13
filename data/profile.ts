@@ -10,7 +10,15 @@ export const jobs: Job[] = [
     bullets: [
       "Currently working on Gini, MyTraffic's geospatial AI for location intelligence and site selection.",
     ],
-    skills: ['LLMs', 'React', 'Python', 'FastAPI', 'PostgreSQL', 'PostGIS', 'Tailwind'],
+    skills: [
+      'LLMs',
+      'React',
+      'Python',
+      'FastAPI',
+      'PostgreSQL',
+      'PostGIS',
+      'Tailwind',
+    ],
   },
   {
     role: 'Software Engineer',
@@ -83,7 +91,7 @@ export const projects: Project[] = [
     tags: ['Python', 'FastAPI', 'NLP', 'LLMs', 'Pydantic AI'],
     github: '',
     url: '/projects/semantic-search',
-    image: '/semantic-search-poc.png',
+    image: '/semantic-search-poc.webp',
   },
   {
     title: 'Vanrays HUB',
@@ -94,7 +102,7 @@ export const projects: Project[] = [
     tags: ['React', 'TypeScript', 'Node.js', 'Supabase', 'Railway'],
     github: '',
     url: '/projects/vanrays-hub',
-    image: '/vanrays-hub-dashboard.png',
+    image: '/vanrays-hub-dashboard.webp',
   },
   {
     title: 'Stylib Visual Search Widget',
@@ -105,7 +113,7 @@ export const projects: Project[] = [
     tags: ['React', 'TypeScript', 'Context API'],
     github: '',
     url: 'https://stylib.com/product-search-engine-for-architectural-products/',
-    image: '/widget.gif',
+    image: '/widget.mp4',
   },
   {
     title: 'Stylib Product Showcase',
@@ -116,7 +124,7 @@ export const projects: Project[] = [
     tags: ['React', 'TypeScript', 'Tailwind', 'Zustand', 'DynamoDB'],
     github: '',
     url: 'https://stylib.com/interactive-product-showcase-for-design-specifications/',
-    image: '/showcase.gif',
+    image: '/showcase.mp4',
   },
   {
     title: 'Stylib HUB',
@@ -127,7 +135,7 @@ export const projects: Project[] = [
     tags: ['React', 'TypeScript', 'PostgreSQL', 'AWS', 'Redux', 'Tailwind'],
     github: '',
     url: 'https://stylib.com/product-catalog-management-software/',
-    image: '/hub.png',
+    image: '/hub.webp',
   },
   {
     title: 'Rosa Reyes Web',
