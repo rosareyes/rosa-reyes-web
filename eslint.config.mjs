@@ -5,7 +5,7 @@ export default [
   ...nextConfig,
   {
     settings: {
-      react: { version: '19.2.5' },
+      react: { version: '19.3.1' },
     },
   },
   {

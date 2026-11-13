@@ -10,42 +10,33 @@
     "test": "VITE_CJS_TRACE=true vitest --watch"
   },
   "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@headlessui/react": "^2.2.10",
-    "@heroicons/react": "^2.1.1",
-    "@tailwindcss/postcss": "^4.2.4",
-    "@vitejs/plugin-react": "^4.2.1",
-    "autoprefixer": "10.4.15",
-    "baby-i-am-faded": "^4.0.14",
-    "clsx": "^2.0.0",
-    "framer-motion": "^12.38.0",
-    "next": "^16.2.4",
-    "postcss": "^8.5.14",
-    "react": "^19.2.5",
-    "react-awesome-reveal": "^4.3.1",
-    "react-dom": "^19.2.5",
-    "react-icons": "^4.10.1",
-    "tailwindcss": "^4.2.4"
+    "@tailwindcss/postcss": "^4.3.5",
+    "clsx": "^2.1.1",
+    "next": "^16.4.6",
+    "postcss": "^8.5.32",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "tailwindcss": "^4.3.5"
   },
   "overrides": {
-    "postcss": "^8.5.14"
+    "postcss": "^8.5.32"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.5",
-    "@testing-library/jest-dom": "^6.9.1",
-    "@testing-library/react": "^16.3.2",
-    "@types/node": "^25.6.0",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
-    "@vitest/eslint-plugin": "^1.6.16",
-    "@vitest/ui": "^4.1.5",
-    "eslint": "^9.39.4",
-    "eslint-config-next": "^16.2.4",
-    "eslint-plugin-vitest": "^0.3.18",
-    "jsdom": "^23.0.1",
-    "prettier": "^3.8.3",
-    "prettier-plugin-tailwindcss": "^0.8.0",
+    "@eslint/eslintrc": "^3.3.7",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@types/node": "^25.9.9",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^5.2.0",
+    "@vitest/eslint-plugin": "^1.6.28",
+    "@vitest/ui": "^4.1.12",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.4.6",
+    "jsdom": "^29.1.1",
+    "prettier": "^3.10.1",
+    "prettier-plugin-tailwindcss": "^0.8.1",
     "typescript": "^6.0.3",
-    "vitest": "^4.1.5"
+    "vitest": "^4.1.12"
   }
 }
