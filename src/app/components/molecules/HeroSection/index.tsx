@@ -39,17 +39,13 @@ export default function HeroSection() {
         {/* Right: intro */}
         <div className="text-center md:text-left">
           <p className="text-dim text-[15px] leading-[1.6] md:text-[16px]">
-            I build products end-to-end: interfaces, systems, and everything in
-            between. Now building Gini,{' '}
+            I&apos;m into how systems fit together, why they break, and what
+            makes them good to use. I work across the stack, and I&apos;m
+            usually the one getting{' '}
             <span className="border-accent text-text border-b border-dashed pb-px">
-              MyTraffic
-            </span>
-            &apos;s location-intelligence AI, after four years at Stylib and a
-            CS degree at{' '}
-            <span className="border-accent text-text border-b border-dashed pb-px">
-              UC3M
-            </span>
-            .
+              product, design and engineering
+            </span>{' '}
+            in the same room.
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 md:justify-start">
             <a
