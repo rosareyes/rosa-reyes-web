@@ -59,7 +59,7 @@ export default function ContactSection() {
       <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-[1.2fr_1fr] md:gap-20">
         <div>
           <p className="text-dim mb-8 text-[16px] leading-[1.6] md:text-[19px]">
-            Open to freelance work and interesting conversations. Email is the best way to
+            Always up for an interesting conversation. Email is the best way to
             reach me, and I read everything.
           </p>
           <a

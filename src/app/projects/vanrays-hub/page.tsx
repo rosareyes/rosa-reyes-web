@@ -371,7 +371,7 @@ export default function VanraysHubPage() {
           </div>
         </section>
 
-        {/* ── Stack + What's next ── */}
+        {/* ── Stack ── */}
         <section id="stack" className="scroll-mt-25 py-16 md:py-20">
           <div className="flex flex-col gap-12 md:flex-row md:items-start md:gap-20">
             {/* Stack */}
@@ -389,20 +389,6 @@ export default function VanraysHubPage() {
                     {item}
                   </span>
                 ))}
-              </div>
-            </div>
-
-            {/* What's next */}
-            <div className="shrink-0 md:w-80">
-              <div className="rounded-4.5 border-line2 bg-surface flex flex-col gap-2.5 border p-7">
-                <div className="font-display text-text text-[18px] font-normal tracking-[-0.01em]">
-                  What&rsquo;s next
-                </div>
-                <p className="text-dim text-[13px] leading-[1.6]">
-                  PDF exports for owner settlements, splitting bookings into
-                  tourist vs. corporate with their own commissions, a
-                  consolidated owner profile view, and automated booking emails.
-                </p>
               </div>
             </div>
           </div>
