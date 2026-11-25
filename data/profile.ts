@@ -128,6 +128,28 @@ export const projects: Project[] = [
     url: '/',
   },
   {
+    title: 'Food Tracker',
+    kind: 'Personal',
+    year: '2026',
+    description:
+      'The nutrition tracker I use every day, built as a Claude artifact on top of a nutrition MCP server. I log meals by chatting or sending a photo, and it keeps track of macros, weight trends and a weekly meal plan, with Apple Health synced through iPhone Shortcuts.',
+    tags: ['Claude', 'MCP', 'JavaScript', 'iOS Shortcuts'],
+    github: '',
+    url: '',
+    image: '/food-tracker.webp',
+  },
+  {
+    title: 'Budget App',
+    kind: 'Personal',
+    year: '2026',
+    description:
+      "My personal budget, running on Google Sheets. An Apps Script API sits on top of the sheet, so iPhone Shortcuts and a Scriptable widget can log an expense in seconds, and a small app shows what's left to spend each day.",
+    tags: ['Apps Script', 'Google Sheets', 'iOS Shortcuts', 'Scriptable'],
+    github: '',
+    url: '',
+    image: '/budget-app.webp',
+  },
+  {
     title: 'Stylib Visual Search Widget',
     kind: 'Work',
     year: '2024',
