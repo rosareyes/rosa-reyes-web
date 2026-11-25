@@ -29,9 +29,10 @@ export const jobs: Job[] = [
     range: 'May 2022 to Apr 2026 · 4 yrs',
     loc: 'Remote',
     bullets: [
-      'Built a visual search widget that lets users upload a photo and get matched to real architectural products, handling the full frontend integration (React, TypeScript, Context API)',
+      'Owned the entire frontend for my last year in a small team, across the catalog platform, the search widgets and the product showcase.',
+      'Built a visual search widget that lets users upload a photo and get matched to real architectural products, rolled out to 3–4 of our key clients (React, TypeScript, Context API)',
       'Created a multi-agent semantic search system that turns natural language into structured product queries, using an Entity–Filter–Validator pipeline to make finding architectural materials actually work (Python, FastAPI, LLMs, Pydantic AI)',
-      'Architected Stylib HUB, a catalog management platform that lets suppliers consolidate and distribute product data across channels while keeping every catalog accurate (React, TypeScript, Redux, PostgreSQL, AWS)',
+      'Architected Stylib HUB, a catalog management platform that 100+ suppliers used to keep thousands of products and variants accurate across channels (React, TypeScript, Redux, PostgreSQL, AWS)',
       'Built an interactive product showcase that makes complex design specifications effortless to browse, with a focus on performance (React, TypeScript, Tailwind, Zustand)',
     ],
     skills: [
@@ -111,7 +112,7 @@ export const projects: Project[] = [
     kind: 'Work',
     year: '2025',
     description:
-      'Product catalog management dashboard for architectural material suppliers. A centralised hub to consolidate, manage, and distribute product data, images, and documents across channels, keeping every catalog accurate and up to date.',
+      'Product catalog management dashboard used by 100+ architectural material suppliers. A centralised hub to consolidate, manage, and distribute product data, images, and documents across channels, keeping every catalog accurate and up to date.',
     tags: ['React', 'TypeScript', 'PostgreSQL', 'AWS', 'Redux', 'Tailwind'],
     github: '',
     url: 'https://stylib.com/product-catalog-management-software/',
