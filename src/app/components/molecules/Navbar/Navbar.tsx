@@ -51,6 +51,8 @@ export function Navbar({ sections }: { sections?: NavSection[] }) {
 
           {/* Right */}
           <div className="flex items-center gap-3">
+            {/* Plain <a> on purpose: next/link skips the scroll when the URL already ends in #contact. */}
+            {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
             <a
               href="/#contact"
               className="text-text border-line2 inline-flex items-center gap-1.5 rounded border bg-white/[0.02] px-3.5 py-2 font-mono text-[11px] tracking-[0.06em] uppercase no-underline"
