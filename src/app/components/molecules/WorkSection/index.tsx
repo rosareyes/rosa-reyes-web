@@ -124,7 +124,7 @@ export default function WorkSection() {
       <SectionHeader
         label="02 / Work"
         title="Work"
-        kicker="Five years, product and freelance. Click to expand."
+        kicker="Since 2019, product and freelance. Click to expand."
       />
       <div className="flex flex-col">
         {jobs.map((job, i) => (

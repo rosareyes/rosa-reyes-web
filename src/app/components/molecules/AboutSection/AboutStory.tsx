@@ -98,8 +98,8 @@ export default function AboutStory() {
           <Trigger id="coffee" {...t}>
             deep cup of coffee
           </Trigger>
-          . I&apos;m into the engineering side of things: how systems fit
-          together, why they break, and what makes them feel good to use.
+          . Lately most of my work sits where products meet AI: agents,
+          search, and the backend work that keeps them reliable.
         </p>
         <p className="mb-6">
           I got into programming as a kid because I wanted more out of The Sims.

@@ -17,9 +17,24 @@ const NAV: NavSection[] = [
 ];
 
 export const metadata: Metadata = {
-  title: 'Vanrays HUB — Rosa Reyes',
+  title: 'Vanrays HUB - Rosa Reyes',
   description:
     "Operations platform for Vanrays' rental business: bookings, cleaning, maintenance, and owner settlements in one system, with a central console for admins and bookers plus scoped portals for owners, cleaners, and maintenance techs.",
+  alternates: { canonical: '/projects/vanrays-hub' },
+  openGraph: {
+    title: 'Vanrays HUB - Rosa Reyes',
+    description:
+      "Operations platform for Vanrays' rental business: bookings, cleaning, maintenance, and owner settlements in one system, with a central console for admins and bookers plus scoped portals for owners, cleaners, and maintenance techs.",
+    url: '/projects/vanrays-hub',
+    siteName: 'Rosa Reyes',
+    type: 'article',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Vanrays HUB - Rosa Reyes',
+    description:
+      "Operations platform for Vanrays' rental business: bookings, cleaning, maintenance, and owner settlements in one system, with a central console for admins and bookers plus scoped portals for owners, cleaners, and maintenance techs.",
+  },
 };
 
 const tags = [

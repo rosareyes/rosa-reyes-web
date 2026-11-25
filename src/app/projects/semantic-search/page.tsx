@@ -23,6 +23,21 @@ export const metadata: Metadata = {
   title: 'Semantic Search Engine - Rosa Reyes',
   description:
     'CS bachelor thesis: a 3-stage multi-agent pipeline that converts natural language queries into structured product catalog filters using Pydantic AI and LLMs.',
+  alternates: { canonical: '/projects/semantic-search' },
+  openGraph: {
+    title: 'Semantic Search Engine - Rosa Reyes',
+    description:
+      'CS bachelor thesis: a 3-stage multi-agent pipeline that converts natural language queries into structured product catalog filters using Pydantic AI and LLMs.',
+    url: '/projects/semantic-search',
+    siteName: 'Rosa Reyes',
+    type: 'article',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Semantic Search Engine - Rosa Reyes',
+    description:
+      'CS bachelor thesis: a 3-stage multi-agent pipeline that converts natural language queries into structured product catalog filters using Pydantic AI and LLMs.',
+  },
 };
 
 const tags = ['Python', 'FastAPI', 'Pydantic AI', 'NLP', 'LLMs', 'OpenRouter'];
