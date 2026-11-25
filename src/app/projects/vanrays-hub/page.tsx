@@ -172,10 +172,10 @@ export default function VanraysHubPage() {
 
             <div className="flex shrink-0 flex-col gap-2 md:items-end">
               <span className="text-faint font-mono text-[11px] tracking-[0.08em]">
-                Freelance · 2026
+                Side project · 2026
               </span>
               <span className="border-line2 bg-surface text-dim inline-flex items-center gap-2 rounded border px-4 py-2.5 font-mono text-[11px] tracking-[0.08em]">
-                In progress · internal tool
+                Internal tool
               </span>
             </div>
           </div>
