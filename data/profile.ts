@@ -74,11 +74,10 @@ export const jobs: Job[] = [
     co: 'Vanrays',
     url: 'https://www.vanrays.com/',
     range: 'Oct 2019 to Sep 2021 · 2 yrs',
-    loc: 'Madrid, ES',
+    loc: 'Madrid, ES · Part-time',
     bullets: [
-      'Led development of an internal booking system, coordinating 3+ freelancers and contributing to frontend and backend implementation using React and Node.js.',
-      'Automated booking and contract workflows, reducing manual effort by 80% and improving operational efficiency.',
-      'Improved system reliability through data handling and process automation solutions.',
+      'Led the build of an internal booking system: gathered requirements, coordinated three freelancers and wrote part of the React and Node.js code myself.',
+      'Automated the booking and contract workflows, which cut manual work by around 80%.',
     ],
     skills: ['React', 'Node.js', 'JavaScript', 'Process Automation'],
   },
@@ -98,10 +97,10 @@ export const projects: Project[] = [
   },
   {
     title: 'Vanrays HUB',
-    kind: 'Freelance',
+    kind: 'Side project',
     year: '2026',
     description:
-      "Operations platform for Vanrays' property management business: bookings, cleaning, maintenance, and owner settlements in one place, replacing a patchwork of spreadsheets and AppSheet forms. Separate portals for owners, cleaners, and maintenance techs. In progress.",
+      "Operations platform for Vanrays' property management business: bookings, cleaning, maintenance, and owner settlements in one place, replacing a patchwork of spreadsheets and AppSheet forms. Separate portals for owners, cleaners, and maintenance techs.",
     tags: ['React', 'TypeScript', 'Node.js', 'Supabase', 'Railway'],
     github: '',
     url: '/projects/vanrays-hub',
