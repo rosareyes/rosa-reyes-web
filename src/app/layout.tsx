@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: 'Rosa Reyes - Software Engineer',
     description:
       'Software engineer in Madrid. I work across the stack and care about how systems fit together, why they break, and what makes them good to use.',
